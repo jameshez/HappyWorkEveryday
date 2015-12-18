@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using HappyWorkEveryday.Helper;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +27,11 @@ namespace HappyWorkEveryday
         public MainPage()
         {
             this.InitializeComponent();
+
+            ///testing
+            //var k = AppHelper.getCurrentUserName();
         }
+
+
     }
 }
