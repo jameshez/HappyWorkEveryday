@@ -30,6 +30,8 @@ namespace HappyWorkEveryday
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+
         }
 
         /// <summary>
