@@ -29,7 +29,12 @@ namespace HappyWorkEveryday
             this.InitializeComponent();
 
             ///testing
-            //var k = AppHelper.getCurrentUserName();
+            test();
+        }
+
+        public async void test()
+        {
+            var k = await AppHelper.getCurrentUserName();
         }
 
 
