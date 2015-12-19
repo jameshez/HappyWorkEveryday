@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using HappyWorkEveryday.Helper;
+using System.Diagnostics;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -34,7 +35,15 @@ namespace HappyWorkEveryday
 
         public async void test()
         {
-            var k = await AppHelper.getCurrentUserName();
+            var k = await LocalInformationHelper.getCurrentUserName();
+            if (k.Item1 == true)
+            {
+                Debug.WriteLine(k.Item2);
+            }
+            else
+            {
+                Debug.WriteLine(k.Item2);
+            }
         }
 
 
