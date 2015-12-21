@@ -8,7 +8,22 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Hello"></Button>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Width="500" Height="500">
+            <Grid Width="500" Height="500">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Background="#FFF25022" Grid.Column="0" Grid.Row="0" Width="230" Height="230"></StackPanel>
+                <StackPanel Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230"></StackPanel>
+                <StackPanel Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230"></StackPanel>
+                <StackPanel Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230"></StackPanel>
+            </Grid>
+        </StackPanel>
        
     </Grid>
 </Page>
