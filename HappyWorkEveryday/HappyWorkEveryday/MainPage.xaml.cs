@@ -47,72 +47,77 @@ namespace HappyWorkEveryday
             }
         }
 
-        private void StackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void AskForLeavelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel1.BorderBrush = new SolidColorBrush(Colors.Aqua);
-            StackPanel1.BorderThickness = new Thickness(2);
+            AskForLeavelStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
+            AskForLeavelStackPanel.BorderThickness = new Thickness(2);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 30;
-            StackPanel1.Projection = PlaneProjection;
+            AskForLeavelStackPanel.Projection = PlaneProjection;
         }
 
-        private void StackPanel1_PointerExited(object sender, PointerRoutedEventArgs e)
+        private void AskForLeavelStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel1.BorderThickness = new Thickness(0);
+            AskForLeavelStackPanel.BorderThickness = new Thickness(0);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 0;
-            StackPanel1.Projection = PlaneProjection;
+            AskForLeavelStackPanel.Projection = PlaneProjection;
         }
 
-        private void StackPanel2_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void FlexibleLevelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel2.BorderBrush = new SolidColorBrush(Colors.Aqua);
-            StackPanel2.BorderThickness = new Thickness(2);
+            FlexibleLevelStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
+            FlexibleLevelStackPanel.BorderThickness = new Thickness(2);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 30;
-            StackPanel2.Projection = PlaneProjection;
+            FlexibleLevelStackPanel.Projection = PlaneProjection;
         }
 
-        private void StackPanel2_PointerExited(object sender, PointerRoutedEventArgs e)
+        private void FlexibleLevelStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel2.BorderThickness = new Thickness(0);
+            FlexibleLevelStackPanel.BorderThickness = new Thickness(0);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 0;
-            StackPanel2.Projection = PlaneProjection;
+            FlexibleLevelStackPanel.Projection = PlaneProjection;
         }
 
-        private void StackPanel3_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void AnnualLevelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel3.BorderBrush = new SolidColorBrush(Colors.Aqua);
-            StackPanel3.BorderThickness = new Thickness(2);
+            AnnualLevelStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
+            AnnualLevelStackPanel.BorderThickness = new Thickness(2);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 30;
-            StackPanel3.Projection = PlaneProjection;
+            AnnualLevelStackPanel.Projection = PlaneProjection;
         }
 
-        private void StackPanel3_PointerExited(object sender, PointerRoutedEventArgs e)
+        private void AnnualLevelStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel3.BorderThickness = new Thickness(0);
+            AnnualLevelStackPanel.BorderThickness = new Thickness(0);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 0;
-            StackPanel3.Projection = PlaneProjection;
+            AnnualLevelStackPanel.Projection = PlaneProjection;
         }
 
-        private void StackPanel4_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void OrganizationStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel4.BorderBrush = new SolidColorBrush(Colors.Aqua);
-            StackPanel4.BorderThickness = new Thickness(2);
+            OrganizationStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
+            OrganizationStackPanel.BorderThickness = new Thickness(2);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 30;
-            StackPanel4.Projection = PlaneProjection;
+            OrganizationStackPanel.Projection = PlaneProjection;
         }
 
-        private void StackPanel4_PointerExited(object sender, PointerRoutedEventArgs e)
+        private void OrganizationStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            StackPanel4.BorderThickness = new Thickness(0);
+            OrganizationStackPanel.BorderThickness = new Thickness(0);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 0;
-            StackPanel4.Projection = PlaneProjection;
+            OrganizationStackPanel.Projection = PlaneProjection;
+        }
+
+        private void AskForLeavelStackPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AskForLeavelPage));
         }
     }
 }

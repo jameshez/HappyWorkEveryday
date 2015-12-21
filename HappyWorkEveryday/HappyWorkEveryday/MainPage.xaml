@@ -20,16 +20,22 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Name="StackPanel1" Orientation="Horizontal"  Background="#FFF25022" Grid.Column="0" Grid.Row="0" Width="230" Height="230" PointerEntered="StackPanel_PointerEntered" PointerExited="StackPanel1_PointerExited">
-                        <Image Width="45" Source="email-icon_png.png" Margin="0,90"/>
+                    <StackPanel Name="AskForLeavelStackPanel" Orientation="Horizontal"  Background="#FFF25022" Grid.Column="0" Grid.Row="0" Width="230" Height="230" PointerEntered="AskForLeavelStackPanel_PointerEntered" PointerExited="AskForLeavelStackPanel_PointerExited" Tapped="AskForLeavelStackPanel_Tapped">
+                        <Image Width="45" Source="Image/AskForLeavel-icon_png.png" Margin="0,90"/>
                         <TextBlock Foreground="DarkBlue"  Text="Ask for Leavel" FontSize="23" FontWeight="Black" Margin="10,90,0,0"/>
                     </StackPanel>
-                    <StackPanel Name="StackPanel2" Orientation="Horizontal" Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230" PointerEntered="StackPanel2_PointerEntered" PointerExited="StackPanel2_PointerExited">
-                        <Image Source="search_64.png" Width="40" Height="40"></Image>
-                        <TextBlock Text="Flexible Leave " FontSize="23" FontWeight="Black" Margin="10,90,0,0" Width="179"/>
+                    <StackPanel Name="FlexibleLevelStackPanel" Orientation="Horizontal" Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230" PointerEntered="FlexibleLevelStackPanel_PointerEntered" PointerExited="FlexibleLevelStackPanel_PointerExited">
+                        <Image Source="Image/FlexibleLevel-icon.png" Width="40" Height="40"></Image>
+                        <TextBlock Text="Flexible Leave " Foreground="Bisque"  FontSize="23" FontWeight="Black" Margin="10,90,0,0" Width="179"/>
                     </StackPanel>
-                    <StackPanel Name="StackPanel3"  Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230" PointerEntered="StackPanel3_PointerEntered" PointerExited="StackPanel3_PointerExited"/>
-                    <StackPanel Name="StackPanel4"  Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230" PointerEntered="StackPanel4_PointerEntered" PointerExited="StackPanel4_PointerExited"></StackPanel>
+                    <StackPanel Name="AnnualLevelStackPanel" Orientation="Horizontal" Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230" PointerEntered="AnnualLevelStackPanel_PointerEntered" PointerExited="AnnualLevelStackPanel_PointerExited">
+                        <Image Source="Image/AnnualLevel-icon.png" Width="40" Height="40"></Image>
+                        <TextBlock Text="Annual Leave " FontSize="23" FontWeight="Black" Foreground="DarkOliveGreen"  Margin="10,90,0,0" Width="179"/>
+                    </StackPanel>
+                    <StackPanel Name="OrganizationStackPanel" Orientation="Horizontal" Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230" PointerEntered="OrganizationStackPanel_PointerEntered" PointerExited="OrganizationStackPanel_PointerExited">
+                        <Image Source="Image/Organization-icon.png" Width="38" Height="38"></Image>
+                        <TextBlock Text="Organization " Foreground="Black"  FontSize="23" FontWeight="Black" Margin="10,90,0,0" Width="179"/>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
 
