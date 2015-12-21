@@ -123,6 +123,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Image\AnnualLevel-icon.png" />
     <Content Include="Image\FlexibleLevel-icon.png" />
+    <Content Include="Warning-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
