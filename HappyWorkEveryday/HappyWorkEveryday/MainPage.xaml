@@ -8,7 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Width="500" Height="500">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="700">
+            <TextBlock FontWeight="Black" x:Name="textBlock" HorizontalAlignment="Center" FontSize="70" TextWrapping="Wrap" Text="MSDN" VerticalAlignment="Top" Height="97"/>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Width="500" Height="500">
             <Grid Width="500" Height="500">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -18,12 +20,13 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <StackPanel Background="#FFF25022" Grid.Column="0" Grid.Row="0" Width="230" Height="230"></StackPanel>
-                <StackPanel Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230"></StackPanel>
-                <StackPanel Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230"></StackPanel>
-                <StackPanel Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230"></StackPanel>
+                <StackPanel Name="StackPanel1"  Background="#FFF25022" Grid.Column="0" Grid.Row="0" Width="230" Height="230" PointerEntered="StackPanel_PointerEntered" PointerExited="StackPanel1_PointerExited"/>
+                <StackPanel Name="StackPanel2"  Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230" PointerEntered="StackPanel2_PointerEntered" PointerExited="StackPanel2_PointerExited"/>
+                <StackPanel Name="StackPanel3"  Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230" PointerEntered="StackPanel3_PointerEntered" PointerExited="StackPanel3_PointerExited"/>
+                <StackPanel Name="StackPanel4"  Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230" PointerEntered="StackPanel4_PointerEntered" PointerExited="StackPanel4_PointerExited"></StackPanel>
             </Grid>
         </StackPanel>
        
+      </StackPanel>
     </Grid>
 </Page>
