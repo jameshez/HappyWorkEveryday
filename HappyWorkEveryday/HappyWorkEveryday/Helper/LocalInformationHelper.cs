@@ -13,10 +13,8 @@ namespace HappyWorkEveryday.Helper
     public static class LocalInformationHelper
     {
         /// <summary>
-        /// Get Current User Domain Name
-        /// Return result format: 
-        /// true, v-jamehe
-        /// false, error message
+        /// Get Current User Domain Name,
+        /// Return result format: (true, v-jamehe) or (false, error message)
         /// </summary>
         public static async Task<Tuple<bool,string>> getCurrentUserName()
         {
@@ -31,11 +29,11 @@ namespace HappyWorkEveryday.Helper
                     return Tuple.Create(true, userInfo[1]);
                 }
 
-                return Tuple.Create(false, "Please use the microsoft domain");
+                return Tuple.Create(false, "Please use the microsoft domain.");
             }
             catch
             {
-                return Tuple.Create(false, "Cannot get the user name");
+                return Tuple.Create(false, "Cannot get the user name, perhaps the setting does not enabled.");
             }
         }
 
