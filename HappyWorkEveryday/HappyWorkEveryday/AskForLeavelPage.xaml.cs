@@ -25,6 +25,7 @@ namespace HappyWorkEveryday
         public AskForLeavelPage()
         {
             this.InitializeComponent();
+
         }
     }
 }
