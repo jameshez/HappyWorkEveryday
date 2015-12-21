@@ -26,14 +26,5 @@ namespace HappyWorkEveryday
         {
             this.InitializeComponent();
         }
-
-        private void AskLeavelForOthersCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            if (AskLeavelForOthersCheckBox.IsChecked == true)
-            {
-                Flyout MyFlyout = Resources["MyFlyout"] as Flyout;
-                MyFlyout.ShowAt(MyStackPanel);
-            }
-        }
     }
 }
