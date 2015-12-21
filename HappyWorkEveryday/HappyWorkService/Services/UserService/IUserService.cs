@@ -51,14 +51,14 @@ namespace HappyWorkService.Services
         Tb_User Find(object id);
         #endregion
 
-        #region Find a collection by a certain condition
-        //[OperationContract]
-        ////[WebInvoke(
-        ////  UriTemplate = "Find",
-        ////  RequestFormat = WebMessageFormat.Json,
-        ////  ResponseFormat = WebMessageFormat.Json,
-        ////  Method = "POST")]
-        //IList<Tb_User> Find(params object[] parameters);
+        #region Find all record
+        [OperationContract]
+        //[WebInvoke(
+        //  UriTemplate = "Find",
+        //  RequestFormat = WebMessageFormat.Json,
+        //  ResponseFormat = WebMessageFormat.Json,
+        //  Method = "POST")]
+        IList<Tb_User> FindAll();
         #endregion
     }
 }
