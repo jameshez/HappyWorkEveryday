@@ -120,11 +120,7 @@ namespace HappyWorkEveryday.UserServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Find", ReplyAction="http://tempuri.org/IUserService/FindResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HappyWorkEveryday.UserServiceReference.Tb_User))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<HappyWorkEveryday.UserServiceReference.Tb_User>))]
         System.Threading.Tasks.Task<HappyWorkEveryday.UserServiceReference.Tb_User> FindAsync(object id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/FindAll", ReplyAction="http://tempuri.org/IUserService/FindAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<HappyWorkEveryday.UserServiceReference.Tb_User>> FindAllAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -184,10 +180,6 @@ namespace HappyWorkEveryday.UserServiceReference {
         
         public System.Threading.Tasks.Task<HappyWorkEveryday.UserServiceReference.Tb_User> FindAsync(object id) {
             return base.Channel.FindAsync(id);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<HappyWorkEveryday.UserServiceReference.Tb_User>> FindAllAsync() {
-            return base.Channel.FindAllAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync() {

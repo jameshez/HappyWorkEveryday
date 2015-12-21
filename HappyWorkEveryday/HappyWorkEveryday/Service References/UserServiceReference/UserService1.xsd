@@ -57,16 +57,4 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="FindAll">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="FindAllResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/HappyWorkService" minOccurs="0" name="FindAllResult" nillable="true" type="q5:ArrayOfTb_User" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
 </xs:schema>

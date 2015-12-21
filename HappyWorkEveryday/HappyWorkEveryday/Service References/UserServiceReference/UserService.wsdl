@@ -31,12 +31,6 @@
   <wsdl:message name="IUserService_Find_OutputMessage">
     <wsdl:part name="parameters" element="tns:FindResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserService_FindAll_InputMessage">
-    <wsdl:part name="parameters" element="tns:FindAll" />
-  </wsdl:message>
-  <wsdl:message name="IUserService_FindAll_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FindAllResponse" />
-  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Add" message="tns:IUserService_Add_InputMessage" />
@@ -53,10 +47,6 @@
     <wsdl:operation name="Find">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Find" message="tns:IUserService_Find_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/FindResponse" message="tns:IUserService_Find_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="FindAll">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/FindAll" message="tns:IUserService_FindAll_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/FindAllResponse" message="tns:IUserService_FindAll_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
@@ -90,15 +80,6 @@
     </wsdl:operation>
     <wsdl:operation name="Find">
       <soap:operation soapAction="http://tempuri.org/IUserService/Find" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FindAll">
-      <soap:operation soapAction="http://tempuri.org/IUserService/FindAll" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
