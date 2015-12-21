@@ -16,11 +16,15 @@ namespace HappyWorkEveryday.ViewModel
     public class AskforLeaveViewModel: INotifyPropertyChanged
     {
         UserServiceReference.UserServiceClient client = new UserServiceReference.UserServiceClient();
-        public AskforLeaveViewModel()
+        public  AskforLeaveViewModel()
         {
-            UserGroup = null;
+            loaddata();
         }
 
+        private async void loaddata()
+        {
+            UserGroup = await client.FindAllAsync();
+        }
         //Implement the interface
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String info)
