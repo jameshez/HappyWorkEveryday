@@ -10,4 +10,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tb_User" nillable="true" type="tns:Tb_User" />
+  <xs:complexType name="ArrayOfTb_User">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tb_User" nillable="true" type="tns:Tb_User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTb_User" nillable="true" type="tns:ArrayOfTb_User" />
 </xs:schema>
