@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using HappyWorkEveryday.Helper;
 using System.Diagnostics;
 using Windows.UI;
+using HappyWorkEveryday.ViewModel;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -36,6 +37,9 @@ namespace HappyWorkEveryday
 
         public async void test()
         {
+            AskforLeaveViewModel testmodel = new AskforLeaveViewModel();
+
+
             var k = await LocalInformationHelper.getCurrentUserName();
             if (k.Item1 == true)
             {
