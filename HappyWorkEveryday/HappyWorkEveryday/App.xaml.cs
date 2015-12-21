@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyWorkEveryday.Helper;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace HappyWorkEveryday
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-
+            Logger.CreateLog();
         }
 
         /// <summary>
@@ -78,6 +79,9 @@ namespace HappyWorkEveryday
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+
+           
         }
 
         /// <summary>
