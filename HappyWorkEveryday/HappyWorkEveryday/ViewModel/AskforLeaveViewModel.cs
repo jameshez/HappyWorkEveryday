@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 
 using HappyWorkEveryday.Model;
+using HappyWorkEveryday.UserServiceReference;
 
 namespace HappyWorkEveryday.ViewModel
 {
@@ -14,9 +15,10 @@ namespace HappyWorkEveryday.ViewModel
 
     public class AskforLeaveViewModel: INotifyPropertyChanged
     {
+        UserServiceReference.UserServiceClient client = new UserServiceReference.UserServiceClient();
         public AskforLeaveViewModel()
         {
-          
+            UserGroup = null;
         }
 
         //Implement the interface
@@ -31,8 +33,8 @@ namespace HappyWorkEveryday.ViewModel
 
         //Initialize property for binding
         //User group property
-        private ObservableCollection<User> usergroup = new ObservableCollection<User>();
-        public ObservableCollection<User> UserGroup
+        private ObservableCollection<Tb_User> usergroup = new ObservableCollection<Tb_User>();
+        public ObservableCollection<Tb_User> UserGroup
         {
             get { return usergroup; }
             set
@@ -42,9 +44,9 @@ namespace HappyWorkEveryday.ViewModel
             }
         }
         //SelectedItem property
-        private User selectedItem = new User();
+        private Tb_User selectedItem = new Tb_User();
 
-        public User SelectedItem
+        public Tb_User SelectedItem
         {
             get { return selectedItem; }
             set
