@@ -12,9 +12,12 @@ namespace HappyWorkEveryday.ViewModel
 {
 
 
-    class AskforLeaveViewModel: INotifyPropertyChanged
+    public class AskforLeaveViewModel: INotifyPropertyChanged
     {
-
+        public AskforLeaveViewModel()
+        {
+          
+        }
 
         //Implement the interface
         public event PropertyChangedEventHandler PropertyChanged;
