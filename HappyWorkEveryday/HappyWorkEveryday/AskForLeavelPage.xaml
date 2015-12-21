@@ -8,8 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="166,10,0,0" TextWrapping="Wrap" Text="Your shift is 9:00-18:00" Foreground="Red" VerticalAlignment="Top"/>
-
 
     </Grid>
 </Page>
