@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyWorkService.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,27 +14,27 @@ namespace HappyWorkService.Services
     {
         public int Add(Tb_Technology t)
         {
-            throw new NotImplementedException();
+            return DBRepository<Tb_Technology>.GetInstance().Add(t);
         }
 
         public int Delete(Tb_Technology t)
         {
-            throw new NotImplementedException();
+            return DBRepository<Tb_Technology>.GetInstance().Delete(t);
         }
 
         public Tb_Technology Find(object id)
         {
-            throw new NotImplementedException();
+            return DBRepository<Tb_Technology>.GetInstance().Find(id);
         }
 
         public IList<Tb_Technology> FindAll()
         {
-            throw new NotImplementedException();
+            return DBRepository<Tb_Technology>.GetInstance().FindAll();
         }
 
         public int Update(Tb_Technology t)
         {
-            throw new NotImplementedException();
+            return DBRepository<Tb_Technology>.GetInstance().Update(t);
         }
     }
 }

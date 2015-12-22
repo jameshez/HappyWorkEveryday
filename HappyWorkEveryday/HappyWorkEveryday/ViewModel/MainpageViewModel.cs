@@ -52,15 +52,15 @@ namespace HappyWorkEveryday.ViewModel
         }
         
 
-        private async void ShowPopUpExecute(object s)
+        private void ShowPopUpExecute(object s)
         {
-
-            var dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
-            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(Pages.SplitViewPage),s);
-            });
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(Pages.SplitViewPage), s);
+            //var dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
+            //await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            //{
+                
+            //});
         }
 
         private void ExecutePointerEnter(object s)

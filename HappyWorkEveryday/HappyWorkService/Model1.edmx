@@ -153,7 +153,7 @@
           <Property Name="OverTime" Type="Double" Nullable="false" />
           <Property Name="RoleId" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="AttendanceEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AttendanceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tb_AdminLog" EntityType="Self.Tb_AdminLog" />
           <EntitySet Name="Tb_Detail" EntityType="Self.Tb_Detail" />
           <EntitySet Name="Tb_MSDNUser" EntityType="Self.Tb_MSDNUser" />
@@ -173,7 +173,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AttendanceModelStoreContainer" CdmEntityContainer="AttendanceEntities1">
+        <EntityContainerMapping StorageEntityContainer="AttendanceModelStoreContainer" CdmEntityContainer="AttendanceEntities">
           <EntitySetMapping Name="Tb_AdminLog">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_AdminLog">
               <MappingFragment StoreEntitySet="Tb_AdminLog">
@@ -260,7 +260,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
