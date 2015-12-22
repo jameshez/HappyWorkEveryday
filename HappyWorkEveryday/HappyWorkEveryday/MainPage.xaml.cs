@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using HappyWorkEveryday.Helper;
 using System.Diagnostics;
 using Windows.UI;
+using HappyWorkEveryday.ViewModel;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -26,26 +27,32 @@ namespace HappyWorkEveryday
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        MainpageViewModel a = new MainpageViewModel();
         public MainPage()
         {
             this.InitializeComponent();
 
+            
+            this.DataContext = a;
             ///testing
-            test();
+            //test();
         }
 
-        public async void test()
-        {
-            var k = await LocalInformationHelper.getCurrentUserName();
-            if (k.Item1 == true)
-            {
-                Debug.WriteLine(k.Item2);
-            }
-            else
-            {
-                Debug.WriteLine(k.Item2);
-            }
-        }
+        //public async void test()
+        //{
+        //    AskforLeaveViewModel testmodel = new AskforLeaveViewModel();
+
+
+        //    var k = await LocalInformationHelper.getCurrentUserName();
+        //    if (k.Item1 == true)
+        //    {
+        //        Debug.WriteLine(k.Item2);
+        //    }
+        //    else
+        //    {
+        //        Debug.WriteLine(k.Item2);
+        //    }
+        //}
 
         private void AskForLeavelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
@@ -117,7 +124,7 @@ namespace HappyWorkEveryday
 
         private void AskForLeavelStackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Pages.AskForLeavePage));
+            //this.Frame.Navigate(typeof(AskForLeavelPage));
         }
     }
 }

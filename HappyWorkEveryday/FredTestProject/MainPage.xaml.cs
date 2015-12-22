@@ -13,19 +13,30 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace HappyWorkEveryday.Pages
+namespace FredTestProject
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class QueryLeavelPage : Page
+    public sealed partial class MainPage : Page
     {
-        public QueryLeavelPage()
+        public MainPage()
         {
             this.InitializeComponent();
-            
+
+
+
+            this.Loaded += MainPage_Loaded;
+        }
+
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            //ServiceReference1.UserServiceClient db = new ServiceReference1.UserServiceClient();
+            //var r = await db.FindAsync(1);
+
+            //var s = r.EnglishName;
         }
     }
 }
