@@ -118,6 +118,12 @@
     <Compile Include="Pages\AskForLeavePage.xaml.cs">
       <DependentUpon>AskForLeavePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LeavelRecordsPage.xaml.cs">
+      <DependentUpon>LeavelRecordsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrganizationPage.xaml.cs">
+      <DependentUpon>OrganizationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\QueryLeavelPage.xaml.cs">
       <DependentUpon>QueryLeavelPage.xaml</DependentUpon>
     </Compile>
@@ -171,6 +177,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\AskForLeavePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LeavelRecordsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrganizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -43,7 +43,7 @@ namespace HappyWorkEveryday.Pages
         {
                     
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE8D6", Text = "AskForLeavel" });
-            SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE11A", Text = "QuryLeavel" });
+            SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE11A", Text = "QueryLeavel" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE90B", Text = "LeavelRecords" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE710", Text = "Organization" });
             MyListViewPanel.SelectedIndex = 0;
@@ -68,11 +68,11 @@ namespace HappyWorkEveryday.Pages
             }
           else if (MyListViewPanel.SelectedIndex == 2)
             {
-                frame.Navigate(typeof(Pages.AskForLeavePage));
+                frame.Navigate(typeof(Pages.LeavelRecordsPage));
             }
           else if (MyListViewPanel.SelectedIndex == 3)
             {
-                frame.Navigate(typeof(Pages.AskForLeavePage));
+                frame.Navigate(typeof(Pages.OrganizationPage));
             }
 
         }
