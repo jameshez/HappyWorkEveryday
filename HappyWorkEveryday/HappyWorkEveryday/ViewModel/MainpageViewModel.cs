@@ -18,27 +18,27 @@ namespace HappyWorkEveryday.ViewModel
 
         public MainpageViewModel()
         {
-            NavigateCommand = new RelayCommand(
-                ShowPopUpExecute, () => true
+            NavigateCommand = new RelayCommand<string>(
+                (s) => ShowPopUpExecute(s)
                 );
         }
 
-        public ICommand NavigateCommand
+        public RelayCommand<string> NavigateCommand
         {
             get; private set;
         }
 
-        private async void ShowPopUpExecute()
+        private async void ShowPopUpExecute(string s)
         {
 
             var dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
-            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, async() =>
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                MessageDialog a = new MessageDialog("asdasdasda");
-                await a.ShowAsync();
-
                 Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(Pages.SplitViewPage));
+                if (s == "navToAsk")
+                {
+                    rootFrame.Navigate(typeof(Pages.SplitViewPage));
+                }
             });
         }
     }
