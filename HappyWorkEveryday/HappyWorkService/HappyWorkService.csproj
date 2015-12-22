@@ -140,8 +140,34 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\ModelClasses.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AdminService\AdminService.svc.cs">
+      <DependentUpon>AdminService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AdminService\IAdminService.cs" />
+    <Compile Include="Services\DetailService\DetailService.svc.cs">
+      <DependentUpon>DetailService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DetailService\IDetailService.cs" />
+    <Compile Include="Services\TechnologyService\ITechnologyService.cs" />
+    <Compile Include="Services\TeamInfoService\ITeamInfoService.cs" />
+    <Compile Include="Services\RoleService\IRoleService.cs" />
+    <Compile Include="Services\MSDNUserService\IMSDNUserService.cs" />
+    <Compile Include="Services\MSDNUserService\MSDNUserService.svc.cs">
+      <DependentUpon>MSDNUserService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\RoleService\RoleService.svc.cs">
+      <DependentUpon>RoleService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\TeamInfoService\TeamInfoService.svc.cs">
+      <DependentUpon>TeamInfoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\TechnologyService\TechnologyService.svc.cs">
+      <DependentUpon>TechnologyService.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\UserService\IUserService.cs" />
     <Compile Include="Services\UserService\UserService.svc.cs">
@@ -184,6 +210,12 @@
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Service1.svc" />
+    <Content Include="Services\AdminService\AdminService.svc" />
+    <Content Include="Services\DetailService\DetailService.svc" />
+    <Content Include="Services\MSDNUserService\MSDNUserService.svc" />
+    <Content Include="Services\RoleService\RoleService.svc" />
+    <Content Include="Services\TeamInfoService\TeamInfoService.svc" />
+    <Content Include="Services\TechnologyService\TechnologyService.svc" />
     <Content Include="Services\UserService\UserService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -229,7 +261,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>8791</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://10.168.172.218/HappyWorkService</IISUrl>
+          <IISUrl>http://10.168.172.218:8090/HappyWorkService</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

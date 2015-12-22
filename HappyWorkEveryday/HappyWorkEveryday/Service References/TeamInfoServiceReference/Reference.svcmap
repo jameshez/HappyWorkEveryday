@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0cb704c5-0ef0-4e05-91c9-5da2e6c672da" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.168.172.218:8090/Services/TeamInfoService/TeamInfoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TeamInfoService.wsdl" MetadataType="Wsdl" ID="5666b5ce-3d88-407d-8480-30f46bd02c1b" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/TeamInfoService/TeamInfoService.svc?wsdl" />
+    <MetadataFile FileName="TeamInfoService.xsd" MetadataType="Schema" ID="38741fdc-a3d7-4cb6-8a48-2206aafc4a02" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/TeamInfoService/TeamInfoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TeamInfoService1.xsd" MetadataType="Schema" ID="a295ff93-43af-4578-a74e-4cea1fa49266" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/TeamInfoService/TeamInfoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TeamInfoService.disco" MetadataType="Disco" ID="7ed3bd26-523d-4d59-9acd-c98a4d8b2ac3" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/TeamInfoService/TeamInfoService.svc?disco" />
+    <MetadataFile FileName="TeamInfoService2.xsd" MetadataType="Schema" ID="d3b34e9e-1182-401c-ade9-a64ba836a148" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/TeamInfoService/TeamInfoService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
