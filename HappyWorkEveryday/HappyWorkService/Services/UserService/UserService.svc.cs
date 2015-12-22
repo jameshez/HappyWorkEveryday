@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyWorkService.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -11,36 +12,29 @@ namespace HappyWorkService.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select UserService.svc or UserService.svc.cs at the Solution Explorer and start debugging.
     public class UserService : IUserService
     {
-        protected AttendanceEntities db = new AttendanceEntities();
         public int Add(Tb_User t)
         {
-            db.Tb_User.Attach(t);
-            db.Entry(t).State = System.Data.Entity.EntityState.Added;
-            return db.SaveChanges();
+            return DBRepository<Tb_User>.GetInstance().Add(t);
         }
 
         public int Delete(Tb_User t)
         {
-            db.Tb_User.Attach(t);
-            db.Entry(t).State = System.Data.Entity.EntityState.Deleted;
-            return db.SaveChanges();
+            return DBRepository<Tb_User>.GetInstance().Delete(t);
         }
-        
+
         public Tb_User Find(object id)
         {
-           return db.Tb_User.Find(id);
+            return DBRepository<Tb_User>.GetInstance().Find(id);
         }
 
         public IList<Tb_User> FindAll()
         {
-            return db.Tb_User.ToList();
+            return DBRepository<Tb_User>.GetInstance().FindAll();
         }
 
         public int Update(Tb_User t)
         {
-            db.Tb_User.Attach(t);
-            db.Entry(t).State = System.Data.Entity.EntityState.Modified;
-            return db.SaveChanges();
+            return DBRepository<Tb_User>.GetInstance().Update(t);
         }
     }
 }
