@@ -10,7 +10,11 @@
     xmlns:m="using:Microsoft.Xaml.Interactions.Media"
     
     mc:Ignorable="d">
-
+    
+    <!--<Page.DataContext>
+        <Binding Path="Login" Source="{StaticResource Locator}"></Binding>
+    </Page.DataContext>-->
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="root">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="700">
             <TextBlock FontWeight="Black" x:Name="textBlock" HorizontalAlignment="Center" FontSize="70" TextWrapping="Wrap" Text="MSDN" VerticalAlignment="Top" Height="97"/>
@@ -42,7 +46,7 @@
                     <StackPanel Name="QueryLeavelStackPanel" Orientation="Horizontal" Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230">
                         <i:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="Tapped">
-                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="0"/>
+                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="1"/>
                             </core:EventTriggerBehavior>
                             <core:EventTriggerBehavior EventName="PointerEntered">
                                 <core:InvokeCommandAction Command="{Binding PointerEnterCommand}" CommandParameter="{Binding ElementName=QueryLeavelStackPanel, Path=Name}"/>
@@ -57,7 +61,7 @@
                     <StackPanel Name="LeavelRecordsStackPanel" Orientation="Horizontal" Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230">
                         <i:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="Tapped">
-                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="0"/>
+                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="2"/>
                             </core:EventTriggerBehavior>
                             <core:EventTriggerBehavior EventName="PointerEntered">
                                 <core:InvokeCommandAction Command="{Binding PointerEnterCommand}" CommandParameter="{Binding ElementName=LeavelRecordsStackPanel, Path=Name}"/>
@@ -72,7 +76,7 @@
                     <StackPanel Name="OrganizationStackPanel" Orientation="Horizontal" Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230">
                         <i:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="Tapped">
-                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="0"/>
+                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="3"/>
                             </core:EventTriggerBehavior>
                             <core:EventTriggerBehavior EventName="PointerEntered">
                                 <core:InvokeCommandAction Command="{Binding PointerEnterCommand}" CommandParameter="{Binding ElementName=OrganizationStackPanel, Path=Name}"/>
@@ -88,7 +92,7 @@
             </StackPanel>
 
         </StackPanel>
-        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="Copyright" Text="&#xA9; Pactera Corporation. All rights reserved."
+        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="Copyright" Text="&#xA9; Pactera-MSDN-UWP Corporation. All rights reserved."
                                    RelativePanel.Above="LinksPanel" 
                                    TextWrapping="Wrap"/>
     </Grid>

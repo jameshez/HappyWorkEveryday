@@ -8,18 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Name="MyGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Hub>
-            <HubSection Header="FlextibleLeavel">
-                <DataTemplate>
-                    <Grid Background="Gray" Width="200" Height="600"/>
-                </DataTemplate>
-            </HubSection>
-            <HubSection Header="AnnualLeavel">
-                <DataTemplate>
-                    <Grid/>
-                </DataTemplate>
-            </HubSection>
-        </Hub>
+        <Pivot>
+            <PivotItem Header="Flexible Leavel">
+                
+            </PivotItem>
+            <PivotItem Header="Annual Leavel"></PivotItem>
+        </Pivot>
 
     </Grid>
 </Page>

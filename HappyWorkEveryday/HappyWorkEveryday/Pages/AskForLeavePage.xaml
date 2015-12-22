@@ -10,6 +10,9 @@
     xmlns:m="using:Microsoft.Xaml.Interactions.Media"
     xmlns:helper="using:HappyWorkEveryday.Helper"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <Binding Path="AskForLeavePage" Source="{StaticResource Locator}"></Binding>
+    </Page.DataContext>
     <Page.Resources>
         <Flyout x:Key="MyFlyout" x:Name="fly" helper:FlyoutHelpers.IsOpen="{Binding IsFlyoutOpen,Mode=TwoWay}" helper:FlyoutHelpers.Parent="{Binding ElementName=ForOthersRadioButton}">
             <Grid Background="Gray" Width="200">

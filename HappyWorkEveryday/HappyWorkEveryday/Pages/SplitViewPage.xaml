@@ -29,45 +29,52 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <SplitView x:Name="RootSpiltView" OpenPaneLength="250" CompactPaneLength="50" DisplayMode="CompactInline">
-
-            <SplitView.Pane>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Height="auto">
-                        <Button Name="PanelOpenButton" BorderThickness="0" Background="Transparent" Click="PanelOpenButton_Click">
-                            <Button.Content>
-                                <TextBlock Text="&#xE700;" FontFamily="Segoe MDL2 Assets" FontSize="25" />
-                            </Button.Content>
-                        </Button>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Grid.Row="1">
-                        <ListView x:Name="MyListViewPanel" SelectionChanged="MyListViewPanel_SelectionChanged" Grid.Row="1" Margin="0,20,0,0" IsItemClickEnabled="True" CanDragItems="True" Height="630">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Width="180" >
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="auto"/>
-                                            <ColumnDefinition />
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock Text="{Binding Button}" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="25" />
-                                        <TextBlock Grid.Column="1" Text="{Binding Text}" FontFamily="Times New Roman" VerticalAlignment="Center" Margin="15" FontSize="22"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="Copyright" Text="&#xA9; Pactera Corporation. All rights reserved."
-                                   RelativePanel.Above="LinksPanel" 
+        
+            <SplitView x:Name="RootSpiltView" OpenPaneLength="250" CompactPaneLength="48" DisplayMode="CompactInline">
+                <SplitView.Pane>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Height="auto" Orientation="Horizontal">
+                            <Button Name="PanelOpenButton" BorderThickness="0" Background="Transparent" Click="PanelOpenButton_Click">
+                                <Button.Content>
+                                    <TextBlock Text="&#xE700;" FontFamily="Segoe MDL2 Assets" FontSize="25" />
+                                </Button.Content>
+                            </Button>
+                            <Button Name="BackButton" Click="BackButton_Click" BorderThickness="0" Background="Transparent">
+                                <Button.Content>
+                                    <TextBlock Text="&#xE72B;" FontFamily="Segoe MDL2 Assets" FontSize="25"/>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="1">
+                            <ListView x:Name="MyListViewPanel" SelectionChanged="MyListViewPanel_SelectionChanged" Grid.Row="1" Margin="0,20,0,0" IsItemClickEnabled="True" CanDragItems="True" Height="630">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Width="230" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Button}" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="25" />
+                                            <TextBlock Grid.Column="1" Text="{Binding Text}" FontFamily="Times New Roman" VerticalAlignment="Center" Margin="15" FontSize="22"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                       
+                        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="CopyrightTextBlock" Text="&#xA9; Pactera-MSDN-UWP Corporation. All rights reserved."
+                                   
                                    TextWrapping="Wrap"/>
-                    </StackPanel>
-                </Grid>
-            </SplitView.Pane>
-            <SplitView.Content>
-                <Frame x:Name="frame" Background="Transparent" ></Frame>
-            </SplitView.Content>
-        </SplitView>
-    </Grid>
+                        </StackPanel>
+                    </Grid>
+                </SplitView.Pane>
+                <SplitView.Content>
+                    <Frame x:Name="frame" Background="Transparent" ></Frame>
+                </SplitView.Content>
+            </SplitView>
+        </Grid>
+   
 </Page>

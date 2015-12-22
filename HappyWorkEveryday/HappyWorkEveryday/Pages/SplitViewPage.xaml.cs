@@ -36,8 +36,11 @@ namespace HappyWorkEveryday.Pages
             this.InitializeComponent();
             SpltViewItemTestList = new ObservableCollection<SpltViewItemTest>();
             MyListViewPanel.ItemsSource = SpltViewItemTestList;
+        
 
         }
+
+      
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -47,13 +50,48 @@ namespace HappyWorkEveryday.Pages
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE90B", Text = "LeavelRecords" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE710", Text = "Organization" });
 
-
             MyListViewPanel.SelectedIndex = Convert.ToInt32(e.Parameter);
+            
 
         }
 
         private void PanelOpenButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+            int count = 0;
+            if (this.RootSpiltView.IsPaneOpen == true)
+            {
+                foreach (SpltViewItemTest test in SpltViewItemTestList)
+                {
+                    if (test.Button.Equals("\uE72B"))
+                    {
+                        count = count + 1;
+                    }
+                }
+                if (count == 0)
+
+                {
+                    SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE72B", Text = "" });
+                    MyListViewPanel.ItemsSource = SpltViewItemTestList;
+                }
+
+                CopyrightTextBlock.Visibility = Visibility.Collapsed;
+
+            }
+
+            else
+            {
+                for(int i=0;i<SpltViewItemTestList.Count;i++)
+                {
+                    if (SpltViewItemTestList[i].Button.Equals("\uE72B"))
+                    {
+                        SpltViewItemTestList.Remove(SpltViewItemTestList[i]);
+                    }                  
+                    
+                }
+                MyListViewPanel.ItemsSource = SpltViewItemTestList;
+
+            }
+
             this.RootSpiltView.IsPaneOpen = !this.RootSpiltView.IsPaneOpen; //pane open or close
         }
 
@@ -76,7 +114,16 @@ namespace HappyWorkEveryday.Pages
             {
                 frame.Navigate(typeof(Pages.OrganizationPage));
             }
+            else if (MyListViewPanel.SelectedIndex == 4)
+            {
+                this.Frame.Navigate(typeof(MainPage));
+            }
 
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

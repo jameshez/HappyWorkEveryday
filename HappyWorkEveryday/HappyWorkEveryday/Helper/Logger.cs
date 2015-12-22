@@ -54,7 +54,7 @@ namespace HappyWorkEveryday.Helper
             try
             {
                 StorageFile file = await CreateFile(flag);
-                await FileIO.AppendTextAsync(file, DateTime.Now.ToString("yyyyMMddmmss") + " " + e.HResult + " " + e.Message + "\r\n");
+                await FileIO.AppendTextAsync(file, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff") + " " + e.HResult + " " + e.Message + "\r\n");
             }
             finally
             {
@@ -69,7 +69,7 @@ namespace HappyWorkEveryday.Helper
             {
                 StorageFile file = await CreateFile(flag);
                 Debug.WriteLine(message);
-                await FileIO.AppendTextAsync(file, DateTime.Now.ToString("yyyyMMddmmss") + " " + message + "\r\n");
+                await FileIO.AppendTextAsync(file, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff") + " " + message + "\r\n");
             }
             finally
             {
