@@ -27,14 +27,14 @@ namespace HappyWorkEveryday.ViewModel
             //UserGroup = await client.FindAllAsync();
         }
         //Implement the interface
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String info)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //private void NotifyPropertyChanged(String info)
+        //{
+        //    if (PropertyChanged != null)
+        //    {
+        //        PropertyChanged(this, new PropertyChangedEventArgs(info));
+        //    }
+        //}
 
         //Initialize property for binding
         //User group property
@@ -45,7 +45,8 @@ namespace HappyWorkEveryday.ViewModel
             set
             {
                 usergroup = value;
-                NotifyPropertyChanged("UserGroup");
+                RaisePropertyChanged("UserGroup");
+                //NotifyPropertyChanged("UserGroup");
             }
         }
         //SelectedItem property
@@ -57,7 +58,7 @@ namespace HappyWorkEveryday.ViewModel
             set
             {
                 selectedItem = value;
-                NotifyPropertyChanged("SelectedItem");
+                RaisePropertyChanged("SelectedItem");
             }
         }
 

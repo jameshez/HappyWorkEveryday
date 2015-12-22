@@ -32,24 +32,24 @@ namespace HappyWorkEveryday
             this.InitializeComponent();
 
             ///testing
-            test();
+            //test();
         }
 
-        public async void test()
-        {
-            AskforLeaveViewModel testmodel = new AskforLeaveViewModel();
+        //public async void test()
+        //{
+        //    AskforLeaveViewModel testmodel = new AskforLeaveViewModel();
 
 
-            var k = await LocalInformationHelper.getCurrentUserName();
-            if (k.Item1 == true)
-            {
-                Debug.WriteLine(k.Item2);
-            }
-            else
-            {
-                Debug.WriteLine(k.Item2);
-            }
-        }
+        //    var k = await LocalInformationHelper.getCurrentUserName();
+        //    if (k.Item1 == true)
+        //    {
+        //        Debug.WriteLine(k.Item2);
+        //    }
+        //    else
+        //    {
+        //        Debug.WriteLine(k.Item2);
+        //    }
+        //}
 
         private void AskForLeavelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
