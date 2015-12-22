@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Core;
+using Windows.UI.Popups;
 
 namespace HappyWorkEveryday.ViewModel
 {
@@ -22,10 +24,15 @@ namespace HappyWorkEveryday.ViewModel
             get; private set;
         }
 
-        private void ShowPopUpExecute()
+        private async void ShowPopUpExecute()
         {
-            //MessageBox.Show("Hello!");
-            //Dispatcher
+
+            var dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                MessageDialog a = new MessageDialog("asdasdasda");
+                await a.ShowAsync();
+            });
         }
     }
 }
