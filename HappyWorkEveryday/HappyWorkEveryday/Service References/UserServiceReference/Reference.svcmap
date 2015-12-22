@@ -21,14 +21,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://10.168.172.218/HappyWorkService/Services/UserService/UserService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://10.168.172.218:8090/Services/UserService/UserService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserService.disco" MetadataType="Disco" ID="1bc3a44a-220d-4042-9a06-7de032efafc0" SourceId="1" SourceUrl="http://10.168.172.218/HappyWorkService/Services/UserService/UserService.svc?disco" />
-    <MetadataFile FileName="UserService.xsd" MetadataType="Schema" ID="b31d3a7a-cd2d-41d4-a8e2-37e652594447" SourceId="1" SourceUrl="http://10.168.172.218/HappyWorkService/Services/UserService/UserService.svc?xsd=xsd1" />
-    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="25df1afd-858e-4083-9885-4c05a5818865" SourceId="1" SourceUrl="http://10.168.172.218/HappyWorkService/Services/UserService/UserService.svc?wsdl" />
-    <MetadataFile FileName="UserService1.xsd" MetadataType="Schema" ID="8b24eb80-a91a-4968-807e-96dc23de18a7" SourceId="1" SourceUrl="http://10.168.172.218/HappyWorkService/Services/UserService/UserService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserService2.xsd" MetadataType="Schema" ID="77f7ad3e-1168-404a-b282-bd74b56ff411" SourceId="1" SourceUrl="http://10.168.172.218/HappyWorkService/Services/UserService/UserService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserService3.xsd" MetadataType="Schema" ID="b4364490-97a4-4564-abad-9ae1ba527e81" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/UserService/UserService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserService31.xsd" MetadataType="Schema" ID="30da0224-4959-462d-a908-354447e3d698" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/UserService/UserService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserService32.xsd" MetadataType="Schema" ID="6f92f234-3ab5-4c61-913a-96dadbb0b9f0" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/UserService/UserService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserService1.wsdl" MetadataType="Wsdl" ID="abc44f54-1578-474a-a95e-e806b919dd19" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/UserService/UserService.svc?wsdl" />
+    <MetadataFile FileName="UserService1.disco" MetadataType="Disco" ID="b64fdc1d-c99d-4ab3-984f-ce9a7a1590a8" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/UserService/UserService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

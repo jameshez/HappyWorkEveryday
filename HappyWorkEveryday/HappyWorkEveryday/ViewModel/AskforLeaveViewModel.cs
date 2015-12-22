@@ -18,7 +18,7 @@ namespace HappyWorkEveryday.ViewModel
     public class AskforLeaveViewModel: ViewModelBase
     {
         
-        UserServiceReference.UserServiceClient client = new UserServiceReference.UserServiceClient();
+        UserServiceClient client = new UserServiceClient();
         public  AskforLeaveViewModel()
         {
             ShowUserCommand = new RelayCommand(
@@ -43,7 +43,9 @@ namespace HappyWorkEveryday.ViewModel
 
         private async void loaddata()
         {
-            //UserGroup = await client.FindAllAsync();
+            usergroup = await client.FindAllAsync();
+
+            var s = usergroup.ToList();
         }
         //Implement the interface
         //public event PropertyChangedEventHandler PropertyChanged;

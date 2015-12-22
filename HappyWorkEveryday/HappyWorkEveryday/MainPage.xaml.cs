@@ -31,8 +31,9 @@ namespace HappyWorkEveryday
         public MainPage()
         {
             this.InitializeComponent();
+            AskforLeaveViewModel vm = new AskforLeaveViewModel();
 
-            
+
             this.DataContext = a;
             ///testing
             //test();

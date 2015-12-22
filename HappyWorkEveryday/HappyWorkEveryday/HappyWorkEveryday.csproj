@@ -95,14 +95,14 @@
     <None Include="Service References\UserServiceReference\HappyWorkEveryday.UserServiceReference.Tb_User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UserServiceReference\UserService.wsdl" />
-    <None Include="Service References\UserServiceReference\UserService.xsd">
+    <None Include="Service References\UserServiceReference\UserService1.wsdl" />
+    <None Include="Service References\UserServiceReference\UserService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserServiceReference\UserService1.xsd">
+    <None Include="Service References\UserServiceReference\UserService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserServiceReference\UserService2.xsd">
+    <None Include="Service References\UserServiceReference\UserService32.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -156,13 +156,13 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <None Include="Service References\UserServiceReference\UserService1.disco" />
     <None Include="Service References\UserServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\UserServiceReference\configuration.svcinfo" />
     <None Include="Service References\UserServiceReference\configuration91.svcinfo" />
-    <None Include="Service References\UserServiceReference\UserService.disco" />
     <Content Include="Image\QueryLeavel-icon.png" />
     <Content Include="Image\LeavelRecords-icon.png" />
     <Content Include="Image\Warning-icon.png" />
