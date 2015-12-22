@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyWorkEveryday.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,10 +26,10 @@ namespace HappyWorkEveryday.Pages
         public AskForLeavePage()
         {
             this.InitializeComponent();
+            this.DataContext = new AskforLeaveViewModel();
         }
 
-       
-     
+      
         private void ForOthersRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             if (ForOthersRadioButton.IsChecked == true)

@@ -5,9 +5,13 @@
     xmlns:local="using:HappyWorkEveryday.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:m="using:Microsoft.Xaml.Interactions.Media"
+    xmlns:helper="using:HappyWorkEveryday.Helper"
     mc:Ignorable="d">
     <Page.Resources>
-        <Flyout x:Key="MyFlyout">
+        <Flyout x:Key="MyFlyout" x:Name="fly" helper:FlyoutHelpers.IsOpen="{Binding IsFlyoutOpen,Mode=TwoWay}" helper:FlyoutHelpers.Parent="{Binding ElementName=ForOthersRadioButton}">
             <Grid Background="Gray" Width="200">
                 <ComboBox Width="200" PlaceholderText="Please choose one alias">
                     <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
@@ -42,7 +46,17 @@
                     </StackPanel>
                     <StackPanel Name="MyStackPanel" Orientation="Horizontal">
                         <RadioButton Content="For Myself" Width="300" FontSize="23"></RadioButton>
-                        <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="23" Checked="ForOthersRadioButton_Checked"></RadioButton>
+                        <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="23" FlyoutBase.AttachedFlyout="{StaticResource MyFlyout}">
+                            <i:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="Checked">
+                                    <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForOthersRadioButton}">
+                                        
+                                    </core:InvokeCommandAction>
+                                </core:EventTriggerBehavior>
+                                
+                            </i:Interaction.Behaviors>
+                            
+                        </RadioButton>
                     </StackPanel>
                 </StackPanel>
             </Border>
