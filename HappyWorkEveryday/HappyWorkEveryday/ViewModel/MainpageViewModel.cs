@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Core;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace HappyWorkEveryday.ViewModel
 {
@@ -16,7 +18,9 @@ namespace HappyWorkEveryday.ViewModel
 
         public MainpageViewModel()
         {
-            NavigateCommand = new RelayCommand(() => ShowPopUpExecute(), () => true);
+            NavigateCommand = new RelayCommand(
+                ShowPopUpExecute, () => true
+                );
         }
 
         public ICommand NavigateCommand
@@ -28,10 +32,13 @@ namespace HappyWorkEveryday.ViewModel
         {
 
             var dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
-            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 MessageDialog a = new MessageDialog("asdasdasda");
                 await a.ShowAsync();
+
+                Frame rootFrame = Window.Current.Content as Frame;
+                rootFrame.Navigate(typeof(AskForLeavelPage));
             });
         }
     }

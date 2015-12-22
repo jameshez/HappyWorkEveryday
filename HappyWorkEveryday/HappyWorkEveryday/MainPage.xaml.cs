@@ -124,7 +124,7 @@ namespace HappyWorkEveryday
 
         private void AskForLeavelStackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AskForLeavelPage));
+            //this.Frame.Navigate(typeof(AskForLeavelPage));
         }
     }
 }
