@@ -1,0 +1,120 @@
+﻿<Page
+    x:Class="HappyWorkEveryday.Pages.AskForLeavePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HappyWorkEveryday.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Flyout x:Key="MyFlyout">
+            <Grid Background="Gray" Width="200">
+                <ComboBox Width="200" PlaceholderText="Please choose one alias">
+                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
+                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
+                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </Flyout>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border BorderThickness="0,0,0,1" BorderBrush="Black">
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Image Source="ms-appx:///Image/Warning-icon.png"></Image>
+                <TextBlock Text="Your shift is 9:00-18:00" FontSize="30" Foreground="Red"></TextBlock>
+             </StackPanel>
+            </Border>
+            <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="1">
+                <StackPanel Orientation="Vertical" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Please choose who will ask for leavel:" FontSize="30"></TextBlock>
+                        <TextBlock FontSize="30" Text="v-fapeng" Width="150" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Name="MyStackPanel" Orientation="Horizontal">
+                        <RadioButton Content="For Myself" Width="300" FontSize="30"></RadioButton>
+                        <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="30" Checked="ForOthersRadioButton_Checked"></RadioButton>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="2">
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Width="500">
+                        <TextBlock Text="Date break from:" FontSize="30"/>
+                        <StackPanel Orientation="Horizontal" BorderThickness="2">
+                            <TextBox Width="100" Height="50"/>
+                            <Image Width="40" Height="50"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="300">
+                        <TextBlock Text="To:" FontSize="30" ></TextBlock>
+                        <StackPanel Orientation="Horizontal" BorderThickness="2">
+                            <TextBox Width="100" Height="50"></TextBox>
+                            <Image Width="30" Height="50"></Image>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Available FlexibleLeavel (hours):" FontSize="30" ></TextBlock>
+                        <StackPanel Orientation="Horizontal" BorderThickness="2">
+                            <TextBlock Text="40h" Width="100" Height="50" FontSize="30" Foreground="Red"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="3">
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Width="500">
+                        <TextBlock Text="Time break from:" FontSize="30"/>
+                        <StackPanel Orientation="Horizontal" BorderThickness="2">
+                            <TextBox Width="100" Height="50"/>
+                            <Image Width="40" Height="50"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="300">
+                        <TextBlock Text="To:" FontSize="30" ></TextBlock>
+                        <StackPanel Orientation="Horizontal" BorderThickness="2">
+                            <TextBox Width="100" Height="50"></TextBox>
+                            <Image Width="30" Height="50"></Image>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Duration (hours):" FontSize="30" ></TextBlock>
+                        <TextBox Width="100" Height="50"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="4">
+                <StackPanel Orientation="Horizontal" Grid.Row="4">
+                    <StackPanel Orientation="Horizontal" Width="500">
+                        <TextBlock Text="Backup:" FontSize="30"/>
+                        <StackPanel Orientation="Horizontal" BorderThickness="2">
+                            <TextBox Width="100" Height="50"/>
+                            <Image Width="40" Height="50"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="500">
+                        <TextBlock Text="Forums:" FontSize="30"/>
+                        <StackPanel Orientation="Horizontal" BorderThickness="2">
+                            <TextBox Width="100" Height="50"/>
+                            <Image Width="40" Height="50"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <StackPanel Orientation="Vertical"  Grid.Row="5">
+                <TextBlock Text="Reason:" FontSize="30" ></TextBlock>
+                <RichEditBox Width="500" Height="150" Margin="0,0,490,0" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <Button Grid.Row="6" Content="Sumbit" FontSize="30" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="51" Margin="474,98,0,41" Width="371"></Button>
+        </Grid>
+    </Grid>
+</Page>
