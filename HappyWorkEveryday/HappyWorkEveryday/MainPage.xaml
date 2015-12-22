@@ -88,7 +88,7 @@
             </StackPanel>
 
         </StackPanel>
-        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="Copyright" Text="&#xA9; Pactera Corporation. All rights reserved."
+        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="Copyright" Text="&#xA9; Pactera-MSDN-UWP Corporation. All rights reserved."
                                    RelativePanel.Above="LinksPanel" 
                                    TextWrapping="Wrap"/>
     </Grid>
