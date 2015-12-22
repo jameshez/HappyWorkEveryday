@@ -64,38 +64,38 @@ namespace HappyWorkEveryday
             AskForLeavelStackPanel.Projection = PlaneProjection;
         }
 
-        private void FlexibleLevelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void QueryLeavelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            FlexibleLevelStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
-            FlexibleLevelStackPanel.BorderThickness = new Thickness(2);
+            QueryLeavelStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
+            QueryLeavelStackPanel.BorderThickness = new Thickness(2);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 30;
-            FlexibleLevelStackPanel.Projection = PlaneProjection;
+            QueryLeavelStackPanel.Projection = PlaneProjection;
         }
 
-        private void FlexibleLevelStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
+        private void QueryLeavelStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            FlexibleLevelStackPanel.BorderThickness = new Thickness(0);
+            QueryLeavelStackPanel.BorderThickness = new Thickness(0);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 0;
-            FlexibleLevelStackPanel.Projection = PlaneProjection;
+            QueryLeavelStackPanel.Projection = PlaneProjection;
         }
 
-        private void AnnualLevelStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void LeavelRecordsStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-            AnnualLevelStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
-            AnnualLevelStackPanel.BorderThickness = new Thickness(2);
+            LeavelRecordsStackPanel.BorderBrush = new SolidColorBrush(Colors.Aqua);
+            LeavelRecordsStackPanel.BorderThickness = new Thickness(2);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 30;
-            AnnualLevelStackPanel.Projection = PlaneProjection;
+            LeavelRecordsStackPanel.Projection = PlaneProjection;
         }
 
-        private void AnnualLevelStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
+        private void LeavelRecordsStackPanel_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            AnnualLevelStackPanel.BorderThickness = new Thickness(0);
+            LeavelRecordsStackPanel.BorderThickness = new Thickness(0);
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 0;
-            AnnualLevelStackPanel.Projection = PlaneProjection;
+            LeavelRecordsStackPanel.Projection = PlaneProjection;
         }
 
         private void OrganizationStackPanel_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -117,7 +117,7 @@ namespace HappyWorkEveryday
 
         private void AskForLeavelStackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AskForLeavelPage));
+            this.Frame.Navigate(typeof(Pages.AskForLeavePage));
         }
     }
 }
