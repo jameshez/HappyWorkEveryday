@@ -245,6 +245,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModel\AskforLeaveViewModel.cs" />
     <Compile Include="ViewModel\MainpageViewModel.cs" />
   </ItemGroup>

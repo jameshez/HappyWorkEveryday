@@ -10,7 +10,11 @@
     xmlns:m="using:Microsoft.Xaml.Interactions.Media"
     
     mc:Ignorable="d">
-
+    
+    <!--<Page.DataContext>
+        <Binding Path="Login" Source="{StaticResource Locator}"></Binding>
+    </Page.DataContext>-->
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="root">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="700">
             <TextBlock FontWeight="Black" x:Name="textBlock" HorizontalAlignment="Center" FontSize="70" TextWrapping="Wrap" Text="MSDN" VerticalAlignment="Top" Height="97"/>

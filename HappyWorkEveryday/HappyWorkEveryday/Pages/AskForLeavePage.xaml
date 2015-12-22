@@ -6,6 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <Binding Path="AskForLeavePage" Source="{StaticResource Locator}"></Binding>
+    </Page.DataContext>
     <Page.Resources>
         <Flyout x:Key="MyFlyout">
             <Grid Background="Gray" Width="200">
