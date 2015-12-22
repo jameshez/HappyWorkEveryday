@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using HappyWorkEveryday.Model;
 using HappyWorkEveryday.UserServiceReference;
-using GalaSoft.MvvmLight;
+using System.Windows.Input;
 
 namespace HappyWorkEveryday.ViewModel
 {
@@ -16,11 +17,29 @@ namespace HappyWorkEveryday.ViewModel
 
     public class AskforLeaveViewModel: ViewModelBase
     {
+        
         UserServiceReference.UserServiceClient client = new UserServiceReference.UserServiceClient();
         public  AskforLeaveViewModel()
         {
+            ShowUserCommand = new RelayCommand(
+                   PopupUser, () => true
+                );
+
             loaddata();
         }
+
+
+
+        public ICommand ShowUserCommand
+        {
+            get; private set;
+        }
+
+        private async void PopupUser()
+        {
+
+        }
+
 
         private async void loaddata()
         {
