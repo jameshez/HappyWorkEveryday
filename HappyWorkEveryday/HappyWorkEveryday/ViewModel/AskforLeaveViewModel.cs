@@ -23,7 +23,7 @@ namespace HappyWorkEveryday.ViewModel
 
         private async void loaddata()
         {
-            UserGroup = await client.FindAllAsync();
+            //UserGroup = await client.FindAllAsync();
         }
         //Implement the interface
         public event PropertyChangedEventHandler PropertyChanged;
