@@ -38,7 +38,7 @@ namespace HappyWorkEveryday.ViewModel
                 await a.ShowAsync();
 
                 Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(typeof(Pages.AskForLeavePage));
+                rootFrame.Navigate(typeof(Pages.SplitViewPage));
             });
         }
     }
