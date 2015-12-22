@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HappyWorkService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HappyWorkService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Tb_AdminLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tb_AdminLog" nillable="true" type="tns:Tb_AdminLog" />
+  <xs:complexType name="ArrayOfTb_AdminLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tb_AdminLog" nillable="true" type="tns:Tb_AdminLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTb_AdminLog" nillable="true" type="tns:ArrayOfTb_AdminLog" />
+</xs:schema>

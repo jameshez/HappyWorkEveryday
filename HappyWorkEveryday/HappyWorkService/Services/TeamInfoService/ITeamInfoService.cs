@@ -1,5 +1,4 @@
-﻿using HappyWorkService.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -8,9 +7,9 @@ using System.Text;
 
 namespace HappyWorkService.Services
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IUserService" in both code and config file together.
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "ITeamInfoService" in both code and config file together.
     [ServiceContract]
-    public interface IUserService
+    public interface ITeamInfoService
     {
         #region Add
         [OperationContract]
@@ -19,7 +18,7 @@ namespace HappyWorkService.Services
         //    RequestFormat = WebMessageFormat.Json,
         //    ResponseFormat = WebMessageFormat.Json,
         //    Method = "POST")]
-        int Add(Tb_User t);
+        int Add(Tb_TeamInfo t);
         #endregion
 
         #region Update
@@ -29,7 +28,7 @@ namespace HappyWorkService.Services
         //    RequestFormat = WebMessageFormat.Json,
         //    ResponseFormat = WebMessageFormat.Json,
         //    Method = "POST")]
-        int Update(Tb_User t);
+        int Update(Tb_TeamInfo t);
         #endregion
 
         #region Delete
@@ -39,7 +38,7 @@ namespace HappyWorkService.Services
         //   RequestFormat = WebMessageFormat.Json,
         //   ResponseFormat = WebMessageFormat.Json,
         //   Method = "POST")]
-        int Delete(Tb_User t);
+        int Delete(Tb_TeamInfo t);
         #endregion
 
         #region Find a object by id
@@ -49,7 +48,7 @@ namespace HappyWorkService.Services
         //   RequestFormat = WebMessageFormat.Json,
         //   ResponseFormat = WebMessageFormat.Json,
         //   Method = "POST")]
-        Tb_User Find(object id);
+        Tb_TeamInfo Find(object id);
         #endregion
 
         #region Find all record
@@ -59,7 +58,7 @@ namespace HappyWorkService.Services
         //  RequestFormat = WebMessageFormat.Json,
         //  ResponseFormat = WebMessageFormat.Json,
         //  Method = "POST")]
-        IList<Tb_User> FindAll();
+        IList<Tb_TeamInfo> FindAll();
         #endregion
     }
 }
