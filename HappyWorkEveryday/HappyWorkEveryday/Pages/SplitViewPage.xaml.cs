@@ -74,6 +74,8 @@ namespace HappyWorkEveryday.Pages
                     MyListViewPanel.ItemsSource = SpltViewItemTestList;
                 }
 
+                CopyrightTextBlock.Visibility = Visibility.Collapsed;
+
             }
 
             else

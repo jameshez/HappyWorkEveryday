@@ -65,8 +65,8 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                        
-                        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="Copyright" Text="&#xA9; Pactera Corporation. All rights reserved."
-                                   RelativePanel.Above="LinksPanel" 
+                        <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="CopyrightTextBlock" Text="&#xA9; Pactera Corporation. All rights reserved."
+                                   
                                    TextWrapping="Wrap"/>
                         </StackPanel>
                     </Grid>
