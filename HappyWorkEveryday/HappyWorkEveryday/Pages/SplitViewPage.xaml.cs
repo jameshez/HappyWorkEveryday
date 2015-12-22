@@ -46,7 +46,9 @@ namespace HappyWorkEveryday.Pages
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE11A", Text = "QuryLeavel" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE90B", Text = "LeavelRecords" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE710", Text = "Organization" });
-            MyListViewPanel.SelectedIndex = 0;
+
+
+            MyListViewPanel.SelectedIndex = Convert.ToInt32(e.Parameter);
 
         }
 

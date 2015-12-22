@@ -30,21 +30,42 @@
                                 Tapped="AskForLeavelStackPanel_Tapped">
                         <i:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="Tapped">
-                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="navToAsk"/>
+                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="0"/>
                             </core:EventTriggerBehavior>
                         </i:Interaction.Behaviors>
                         <Image Width="45" Source="Image/AskForLeavel-icon_png.png" Margin="0,90"/>
                         <TextBlock Foreground="DarkBlue"  Text="Ask for Leavel" FontSize="23" FontWeight="Black" Margin="10,90,0,0"/>
                     </StackPanel>
-                    <StackPanel Name="QueryLeavelStackPanel" Orientation="Horizontal" Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230" PointerEntered="QueryLeavelStackPanel_PointerEntered" PointerExited="QueryLeavelStackPanel_PointerExited">
+                    <StackPanel Name="QueryLeavelStackPanel" Orientation="Horizontal" Background="#FF7FBA00" Grid.Column="1" Grid.Row="0" Width="230" Height="230" 
+                                PointerEntered="QueryLeavelStackPanel_PointerEntered" 
+                                PointerExited="QueryLeavelStackPanel_PointerExited">
+                        <i:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Tapped">
+                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="1"/>
+                            </core:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <Image Source="Image/QueryLeavel-icon.png" Width="40" Height="40"></Image>
                         <TextBlock Text="Query Leave " Foreground="Bisque"  FontSize="23" FontWeight="Black" Margin="10,90,0,0" Width="179"/>
                     </StackPanel>
-                    <StackPanel Name="LeavelRecordsStackPanel" Orientation="Horizontal" Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230" PointerEntered="LeavelRecordsStackPanel_PointerEntered" PointerExited="LeavelRecordsStackPanel_PointerExited">
+                    <StackPanel Name="LeavelRecordsStackPanel" Orientation="Horizontal" Background="#FF01A4EF" Grid.Column="0" Grid.Row="1" Width="230" Height="230" 
+                                PointerEntered="LeavelRecordsStackPanel_PointerEntered" 
+                                PointerExited="LeavelRecordsStackPanel_PointerExited">
+                        <i:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Tapped">
+                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="2"/>
+                            </core:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <Image Source="Image/LeavelRecords-icon.png" Width="40" Height="40"></Image>
                         <TextBlock Text="Leave Records " FontSize="23" FontWeight="Black" Foreground="DarkOliveGreen"  Margin="10,90,0,0" Width="179"/>
                     </StackPanel>
-                    <StackPanel Name="OrganizationStackPanel" Orientation="Horizontal" Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230" PointerEntered="OrganizationStackPanel_PointerEntered" PointerExited="OrganizationStackPanel_PointerExited">
+                    <StackPanel Name="OrganizationStackPanel" Orientation="Horizontal" Background="#FFFFB901" Grid.Column="1" Grid.Row="1" Width="230" Height="230" 
+                                PointerEntered="OrganizationStackPanel_PointerEntered" 
+                                PointerExited="OrganizationStackPanel_PointerExited">
+                        <i:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Tapped">
+                                <core:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="3"/>
+                            </core:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
                         <Image Source="Image/Organization-icon.png" Width="38" Height="38"></Image>
                         <TextBlock Text="Organization " Foreground="Black"  FontSize="23" FontWeight="Black" Margin="10,90,0,0" Width="179"/>
                     </StackPanel>

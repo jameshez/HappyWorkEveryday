@@ -35,10 +35,7 @@ namespace HappyWorkEveryday.ViewModel
             await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 Frame rootFrame = Window.Current.Content as Frame;
-                if (s == "navToAsk")
-                {
-                    rootFrame.Navigate(typeof(Pages.SplitViewPage));
-                }
+                rootFrame.Navigate(typeof(Pages.SplitViewPage),s);
             });
         }
     }
