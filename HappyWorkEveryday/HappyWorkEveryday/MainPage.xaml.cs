@@ -27,10 +27,13 @@ namespace HappyWorkEveryday
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        MainpageViewModel a = new MainpageViewModel();
         public MainPage()
         {
             this.InitializeComponent();
 
+            
+            this.DataContext = a;
             ///testing
             //test();
         }
