@@ -8,12 +8,13 @@ using System.ComponentModel;
 
 using HappyWorkEveryday.Model;
 using HappyWorkEveryday.UserServiceReference;
+using GalaSoft.MvvmLight;
 
 namespace HappyWorkEveryday.ViewModel
 {
 
 
-    public class AskforLeaveViewModel: INotifyPropertyChanged
+    public class AskforLeaveViewModel: ViewModelBase
     {
         UserServiceReference.UserServiceClient client = new UserServiceReference.UserServiceClient();
         public  AskforLeaveViewModel()
