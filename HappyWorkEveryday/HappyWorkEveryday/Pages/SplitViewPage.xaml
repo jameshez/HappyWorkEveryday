@@ -64,6 +64,7 @@
                                         </Grid>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
+                       
                             </ListView>
                        
                         <TextBlock FontWeight="Black" VerticalAlignment="Bottom" x:Name="CopyrightTextBlock" Text="&#xA9; Pactera-MSDN-UWP Corporation. All rights reserved."

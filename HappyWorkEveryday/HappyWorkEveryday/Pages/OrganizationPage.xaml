@@ -19,7 +19,7 @@
                             <ListViewItem Content="v-fapeng"></ListViewItem>
                         </ListView>
                         <TextBlock Width="100"></TextBlock>
-                        <ListView Background="DarkBlue">
+                        <ListView Background="Blue">
                             <ListViewItem Content="Technical Forums"></ListViewItem>
                             <ListViewItem Content="UWP"></ListViewItem>
                             <ListViewItem Content="UWP"></ListViewItem>
@@ -36,7 +36,7 @@
                             <ListViewItem Content="v-fapeng"></ListViewItem>
                         </ListView>
                         <TextBlock Width="100"></TextBlock>
-                        <ListView Background="DarkBlue">
+                        <ListView Background="Blue">
                             <ListViewItem Content="Technical Forums"></ListViewItem>
                             <ListViewItem Content="UWP"></ListViewItem>
                             <ListViewItem Content="UWP"></ListViewItem>
@@ -44,6 +44,40 @@
                     </StackPanel>
                 </controls:AccordionItem.Content>
         </controls:AccordionItem>
+            <controls:AccordionItem Header="UWP Team3" FontWeight="Black" FontSize="20">
+                <controls:AccordionItem.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <ListView Background="Gray">
+                            <ListViewItem Content="Team Member"></ListViewItem>
+                            <ListViewItem Content="v-fapeng"></ListViewItem>
+                            <ListViewItem Content="v-fapeng"></ListViewItem>
+                        </ListView>
+                        <TextBlock Width="100"></TextBlock>
+                        <ListView Background="Blue">
+                            <ListViewItem Content="Technical Forums"></ListViewItem>
+                            <ListViewItem Content="UWP"></ListViewItem>
+                            <ListViewItem Content="UWP"></ListViewItem>
+                        </ListView>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
+            <controls:AccordionItem Header="UWP Team4" FontWeight="Black" FontSize="20">
+                <controls:AccordionItem.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <ListView Background="Gray">
+                            <ListViewItem Content="Team Member"></ListViewItem>
+                            <ListViewItem Content="v-fapeng"></ListViewItem>
+                            <ListViewItem Content="v-fapeng"></ListViewItem>
+                        </ListView>
+                        <TextBlock Width="100"></TextBlock>
+                        <ListView Background="Blue">
+                            <ListViewItem Content="Technical Forums"></ListViewItem>
+                            <ListViewItem Content="UWP"></ListViewItem>
+                            <ListViewItem Content="UWP"></ListViewItem>
+                        </ListView>
+                    </StackPanel>
+                </controls:AccordionItem.Content>
+            </controls:AccordionItem>
         </controls:Accordion>
 
 

@@ -10,10 +10,28 @@
     <Grid Name="MyGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Pivot>
             <PivotItem Header="Flexible Leavel">
-                
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBox PlaceholderText="Please enter alias:v-fapeng" Width="400"></TextBox>
+                    <Image Source="ms-appx:///Image/LeavelRecords-icon.png"></Image>
+                </StackPanel>
+                </Grid>
             </PivotItem>
-            <PivotItem Header="Annual Leavel"></PivotItem>
-        </Pivot>
+            <PivotItem Header="Annual Leavel">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <HyperlinkButton Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" NavigateUri="http://attendance.pactera.com/index_EN.aspx" Content="Click here to query your annual leavel" ></HyperlinkButton>
+                </Grid>
+            </PivotItem>
+   
+    </Pivot>
 
     </Grid>
 </Page>
