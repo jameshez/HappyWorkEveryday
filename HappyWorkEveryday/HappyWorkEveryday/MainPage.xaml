@@ -11,7 +11,11 @@
     
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="root">
+    <Grid  x:Name="root">
+        <Grid.Background>
+            <ImageBrush ImageSource="Image/bg.jpg"></ImageBrush>
+        </Grid.Background>
+       
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="700">
             <TextBlock FontWeight="Black" x:Name="textBlock" HorizontalAlignment="Center" FontSize="70" TextWrapping="Wrap" Text="MSDN" VerticalAlignment="Top" Height="97"/>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Width="500" Height="500">

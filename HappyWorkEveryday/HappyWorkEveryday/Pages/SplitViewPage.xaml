@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+    
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
 
@@ -72,7 +73,9 @@
                     </Grid>
                 </SplitView.Pane>
                 <SplitView.Content>
-                    <Frame x:Name="frame" Background="Transparent" ></Frame>
+                    <Frame x:Name="frame" Background="Transparent">
+                    
+                </Frame>
                 </SplitView.Content>
             </SplitView>
         </Grid>
