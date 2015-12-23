@@ -57,6 +57,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="FindByAlias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByAliasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/HappyWorkService" minOccurs="0" name="FindByAliasResult" nillable="true" type="q5:Tb_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="FindAll">
     <xs:complexType>
       <xs:sequence />
@@ -65,7 +79,7 @@
   <xs:element name="FindAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/HappyWorkService" minOccurs="0" name="FindAllResult" nillable="true" type="q5:ArrayOfTb_User" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/HappyWorkService" minOccurs="0" name="FindAllResult" nillable="true" type="q6:ArrayOfTb_User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

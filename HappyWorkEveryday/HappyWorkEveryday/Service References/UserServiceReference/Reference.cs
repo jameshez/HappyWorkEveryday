@@ -123,6 +123,9 @@ namespace HappyWorkEveryday.UserServiceReference {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<HappyWorkEveryday.UserServiceReference.Tb_User>))]
         System.Threading.Tasks.Task<HappyWorkEveryday.UserServiceReference.Tb_User> FindAsync(object id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/FindByAlias", ReplyAction="http://tempuri.org/IUserService/FindByAliasResponse")]
+        System.Threading.Tasks.Task<HappyWorkEveryday.UserServiceReference.Tb_User> FindByAliasAsync(string Alias);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/FindAll", ReplyAction="http://tempuri.org/IUserService/FindAllResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<HappyWorkEveryday.UserServiceReference.Tb_User>> FindAllAsync();
     }
@@ -184,6 +187,10 @@ namespace HappyWorkEveryday.UserServiceReference {
         
         public System.Threading.Tasks.Task<HappyWorkEveryday.UserServiceReference.Tb_User> FindAsync(object id) {
             return base.Channel.FindAsync(id);
+        }
+        
+        public System.Threading.Tasks.Task<HappyWorkEveryday.UserServiceReference.Tb_User> FindByAliasAsync(string Alias) {
+            return base.Channel.FindByAliasAsync(Alias);
         }
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<HappyWorkEveryday.UserServiceReference.Tb_User>> FindAllAsync() {

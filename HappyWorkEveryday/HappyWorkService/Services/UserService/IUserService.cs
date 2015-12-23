@@ -51,6 +51,16 @@ namespace HappyWorkService.Services
         Tb_User Find(object id);
         #endregion
 
+        #region Find a object by passed Alias
+        [OperationContract]
+        //[WebInvoke(
+        //   UriTemplate = "Find",
+        //   RequestFormat = WebMessageFormat.Json,
+        //   ResponseFormat = WebMessageFormat.Json,
+        //   Method = "POST")]
+        Tb_User FindByAlias(string Alias);
+        #endregion
+
         #region Find all record
         [OperationContract]
         //[WebInvoke(
