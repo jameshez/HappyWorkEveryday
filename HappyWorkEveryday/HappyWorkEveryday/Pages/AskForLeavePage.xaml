@@ -14,7 +14,8 @@
         <Binding Path="AskForLeavePage" Source="{StaticResource Locator}"></Binding>
     </Page.DataContext>
     <Page.Resources>
-        <Flyout x:Key="MyFlyout" x:Name="fly" helper:FlyoutHelpers.IsOpen="{Binding IsFlyoutOpen,Mode=TwoWay}" helper:FlyoutHelpers.Parent="{Binding ElementName=ForOthersRadioButton}">
+        <Flyout x:Key="MyFlyout" x:Name="fly" helper:FlyoutHelpers.IsOpen="{Binding IsFlyoutOpen,Mode=TwoWay}"
+                helper:FlyoutHelpers.Parent="{Binding ElementName=ForOthersRadioButton}">
             <Grid Background="Gray" Width="200">
                 <ComboBox Width="200" PlaceholderText="Please choose one alias">
                     <ComboBoxItem Content="v-fapeng"></ComboBoxItem>

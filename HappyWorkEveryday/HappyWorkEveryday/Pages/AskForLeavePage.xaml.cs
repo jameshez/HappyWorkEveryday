@@ -26,7 +26,7 @@ namespace HappyWorkEveryday.Pages
         public AskForLeavePage()
         {
             this.InitializeComponent();
-            this.DataContext = new AskforLeaveViewModel();
+            //this.DataContext = new AskforLeaveViewModel();
         }
 
       
