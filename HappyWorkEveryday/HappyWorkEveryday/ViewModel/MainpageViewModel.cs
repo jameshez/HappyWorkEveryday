@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Media;
 
 namespace HappyWorkEveryday.ViewModel
 {
-    class MainpageViewModel:ViewModelBase
+    class MainpageViewModel: ViewModelBase
     {
         Grid root;
 

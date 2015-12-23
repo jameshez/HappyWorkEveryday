@@ -10,6 +10,10 @@ using GalaSoft.MvvmLight.Command;
 using HappyWorkEveryday.Model;
 using HappyWorkEveryday.UserServiceReference;
 using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+using HappyWorkEveryday.Helper;
+using Windows.UI.Popups;
 
 namespace HappyWorkEveryday.ViewModel
 {
@@ -17,27 +21,45 @@ namespace HappyWorkEveryday.ViewModel
 
     public class AskforLeaveViewModel: ViewModelBase
     {
-        
+
+        private bool isFlyoutOpen;
+        public bool IsFlyoutOpen
+        {
+            get { return isFlyoutOpen; }
+            set {
+                isFlyoutOpen = value;
+                RaisePropertyChanged("IsFlyoutOpen");
+            }
+        }
+
+
+        public RelayCommand<object> OpenCommand { get; set; }
+        public RelayCommand CloseCommand { get; set; }
+
         UserServiceClient client = new UserServiceClient();
         public  AskforLeaveViewModel()
         {
-            ShowUserCommand = new RelayCommand(
-                   PopupUser, () => true
-                );
+            OpenCommand = new RelayCommand<object>((x)=> {
+                RadioButton rb = (RadioButton)x;
+                Flyout flyout = rb.FindName("fly") as Flyout;
+                flyout.ShowAt(rb);
+            });
+            CloseCommand = new RelayCommand(() => IsFlyoutOpen = false);
+
 
             loaddata();
         }
 
+        
 
-
-        public ICommand ShowUserCommand
+        public RelayCommand ShowUserCommand
         {
             get; private set;
         }
 
         private async void PopupUser()
         {
-
+           
         }
 
 
