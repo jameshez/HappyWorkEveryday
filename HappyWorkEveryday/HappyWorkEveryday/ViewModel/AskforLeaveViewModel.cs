@@ -14,70 +14,28 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using HappyWorkEveryday.Helper;
 using Windows.UI.Popups;
-
+using HappyWorkEveryday.MSDNUserServiceReference;
 namespace HappyWorkEveryday.ViewModel
 {
 
 
-    public class AskforLeaveViewModel: ViewModelBase
+    public class AskforLeaveViewModel : ViewModelBase
     {
 
+        UserServiceClient client = new UserServiceClient();
+        MSDNUserServiceClient MSDNUser_Client = new MSDNUserServiceClient();
+
+        #region Property
         private bool isFlyoutOpen;
         public bool IsFlyoutOpen
         {
             get { return isFlyoutOpen; }
-            set {
+            set
+            {
                 isFlyoutOpen = value;
                 RaisePropertyChanged("IsFlyoutOpen");
             }
         }
-
-
-        public RelayCommand<object> OpenCommand { get; set; }
-        public RelayCommand CloseCommand { get; set; }
-
-        UserServiceClient client = new UserServiceClient();
-        public  AskforLeaveViewModel()
-        {
-            OpenCommand = new RelayCommand<object>((x)=> {
-                RadioButton rb = (RadioButton)x;
-                Flyout flyout = rb.FindName("fly") as Flyout;
-                flyout.ShowAt(rb);
-            });
-            CloseCommand = new RelayCommand(() => IsFlyoutOpen = false);
-
-
-            loaddata();
-        }
-
-        
-
-        public RelayCommand ShowUserCommand
-        {
-            get; private set;
-        }
-
-        private async void PopupUser()
-        {
-           
-        }
-
-
-        private async void loaddata()
-        {
-            usergroup = await client.FindAllAsync();
-
-            var s = usergroup.ToList();
-        }
-        //Implement the interface
-        //public event PropertyChangedEventHandler PropertyChanged;
-        //private void NotifyPropertyChanged(String info)
-        //{
-        //    if (PropertyChanged != null)
-        //    {
-        //        PropertyChanged(this, new PropertyChangedEventArgs(info));
-        //    }
-        //}
 
         //Initialize property for binding
         //User group property
@@ -92,20 +50,62 @@ namespace HappyWorkEveryday.ViewModel
                 //NotifyPropertyChanged("UserGroup");
             }
         }
-        //SelectedItem property
-        private Tb_User selectedItem = new Tb_User();
+        //SelectedUserRecord property
+        private Tb_User selectedUserRecord = new Tb_User();
 
-        public Tb_User SelectedItem
+        public Tb_User SelectedUserRecord
         {
-            get { return selectedItem; }
+            get { return selectedUserRecord; }
             set
             {
-                selectedItem = value;
-                RaisePropertyChanged("SelectedItem");
+                selectedUserRecord = value;
+                RaisePropertyChanged("SelectedUserRecord");
+            }
+        }
+        //Get List alias
+        private ObservableCollection<string> _user_alias_group = new ObservableCollection<string>();
+
+        public ObservableCollection<string> User_Alias_Group
+        {
+            get { return _user_alias_group; }
+            set
+            {
+                _user_alias_group = value;
+                RaisePropertyChanged("User_Alias_Group");
             }
         }
 
-        
+        #endregion
+
+
+        #region Command
+        public RelayCommand<object> OpenCommand { get; set; }
+        public RelayCommand CloseCommand { get; set; }
+        #endregion
+
+
+
+
+        public AskforLeaveViewModel()
+        {
+            OpenCommand = new RelayCommand<object>((x) =>
+            {
+                RadioButton rb = (RadioButton)x;
+                Flyout flyout = rb.FindName("fly") as Flyout;
+                flyout.ShowAt(rb);
+            });
+            CloseCommand = new RelayCommand(() => IsFlyoutOpen = false);
+
+            InitializeData();
+
+        }
+        private async void InitializeData()
+        {
+            //usergroup = await client.FindAllAsync();
+            _user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));
+            
+        }
+
 
     }
 }

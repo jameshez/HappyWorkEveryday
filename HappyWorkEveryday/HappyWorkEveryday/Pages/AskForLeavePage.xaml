@@ -17,11 +17,12 @@
         <Flyout x:Key="MyFlyout" x:Name="fly" helper:FlyoutHelpers.IsOpen="{Binding IsFlyoutOpen,Mode=TwoWay}"
                 helper:FlyoutHelpers.Parent="{Binding ElementName=ForOthersRadioButton}">
             <Grid Background="Gray" Width="200">
-                <ComboBox Width="200" PlaceholderText="Please choose one alias">
+                <ComboBox Width="200" PlaceholderText="Please choose one alias" ItemsSource="{Binding User_Alias_Group}">
+                    <!--<ComboBoxItem Content="v-fapeng"></ComboBoxItem>
                     <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
-                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
-                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
+                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>-->
                 </ComboBox>
+               
             </Grid>
         </Flyout>
     </Page.Resources>
