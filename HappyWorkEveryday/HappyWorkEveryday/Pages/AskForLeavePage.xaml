@@ -54,12 +54,9 @@
                             <i:Interaction.Behaviors>
                                 <core:EventTriggerBehavior EventName="Checked">
                                     <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForOthersRadioButton}">
-                                        
                                     </core:InvokeCommandAction>
                                 </core:EventTriggerBehavior>
-                                
                             </i:Interaction.Behaviors>
-                            
                         </RadioButton>
                     </StackPanel>
                 </StackPanel>
