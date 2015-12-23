@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -36,11 +37,12 @@ namespace HappyWorkEveryday.Pages
             this.InitializeComponent();
             SpltViewItemTestList = new ObservableCollection<SpltViewItemTest>();
             MyListViewPanel.ItemsSource = SpltViewItemTestList;
-        
+          
+
 
         }
 
-      
+       
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -97,10 +99,12 @@ namespace HappyWorkEveryday.Pages
 
         private void MyListViewPanel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            if(MyListViewPanel.SelectedIndex==0)
-            {
+           
+
+            if (MyListViewPanel.SelectedIndex==0)
+            {              
                 frame.Navigate(typeof(Pages.AskForLeavePage));
+            
             }
            else if (MyListViewPanel.SelectedIndex == 1)
             {
@@ -118,7 +122,7 @@ namespace HappyWorkEveryday.Pages
             {
                 this.Frame.Navigate(typeof(MainPage));
             }
-
+          
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
