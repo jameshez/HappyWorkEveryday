@@ -75,12 +75,25 @@ namespace HappyWorkEveryday.ViewModel
             }
         }
 
+        private string _selectedalias;
+
+        public string SelectedAlias
+        {
+            get { return _selectedalias; }
+            set
+            {
+                _selectedalias = value;
+                RaisePropertyChanged("SelectedAlias");
+            }
+        }
         #endregion
 
 
         #region Command
         public RelayCommand<object> OpenCommand { get; set; }
         public RelayCommand CloseCommand { get; set; }
+
+        public RelayCommand<object> ComboBoxSelectCommand { get; set; }
         #endregion
 
 
@@ -95,6 +108,12 @@ namespace HappyWorkEveryday.ViewModel
                 flyout.ShowAt(rb);
             });
             CloseCommand = new RelayCommand(() => IsFlyoutOpen = false);
+            ComboBoxSelectCommand = new RelayCommand<object>(async(x) =>
+            {
+                ComboBox cb = (ComboBox)x;
+                SelectedAlias=cb.SelectedItem.ToString();
+                selectedUserRecord=await client.FindByAliasAsync(SelectedAlias);
+            });
 
             InitializeData();
 
@@ -102,9 +121,10 @@ namespace HappyWorkEveryday.ViewModel
         private async void InitializeData()
         {
             //usergroup = await client.FindAllAsync();
-            _user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));
-            
+            _user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));       
         }
+
+      
 
 
     }
