@@ -8,11 +8,12 @@
     xmlns:controls="using:ZeroProximity.Controls"
     mc:Ignorable="d">
 
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item">
+        <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item" >
             <controls:Accordion.ItemTemplate>
                 <DataTemplate>
-                    <controls:AccordionItem Header="{Binding Key}" FontWeight="Black" FontSize="20" Content="{Binding}">
+                    <controls:AccordionItem Header="{Binding Key}" FontWeight="Black" FontSize="20" >
                         <controls:AccordionItem.ContentTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -30,7 +31,7 @@
                 </DataTemplate>
             </controls:Accordion.ItemTemplate>
         </controls:Accordion>
-        
+
         <!--<controls:AccordionItem Header="UWP Team" FontWeight="Black" FontSize="20">
                 <controls:AccordionItem.Content>
                     <StackPanel Orientation="Horizontal">

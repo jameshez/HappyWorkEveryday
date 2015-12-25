@@ -33,28 +33,28 @@
 
         <Grid Margin="20,0,0,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition Height="200"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="70*"></RowDefinition>
+                <RowDefinition Height="60*"></RowDefinition>
+                <RowDefinition Height="60*"></RowDefinition>
+                <RowDefinition Height="60*"></RowDefinition>
+                <RowDefinition Height="200*"></RowDefinition>
+                <RowDefinition Height="200*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black">
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <Image Source="ms-appx:///Image/Warning-icon.png" Margin="0,0,0,10" Width="45"></Image>
-                    <TextBlock Text="Your shift is 9:00-18:00" FontSize="23" Foreground="Red"></TextBlock>
+                    <Image Source="ms-appx:///Image/Warning-icon.png" Margin="0,0,0,10" Width="35"></Image>
+                    <TextBlock Text="Your shift is 9:00-18:00" FontSize="21" Foreground="Red"></TextBlock>
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="1">
                 <StackPanel Orientation="Vertical" Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Please choose who will ask for leavel:" FontSize="23"></TextBlock>
-                        <TextBlock Name="SelectedUserTextBox" FontSize="23" Text="{Binding SelectedUserRecord.Alias,Mode=TwoWay}" Width="559" Foreground="Red" Height="21"></TextBlock>
+                        <TextBlock Text="Please choose who will ask for leavel:" FontSize="21"></TextBlock>
+                        <TextBlock Name="SelectedUserTextBox" FontSize="21" VerticalAlignment="Center" Text="{Binding SelectedUserRecord.Alias,Mode=TwoWay}" Width="559" Foreground="Red" Height="30"></TextBlock>
                     </StackPanel>
                     <StackPanel Name="MyStackPanel" Orientation="Horizontal">
-                        <RadioButton Name="ForMySelfRadioButton"  Content="For Myself" Width="300" FontSize="23">
+                        <RadioButton Name="ForMySelfRadioButton" VerticalAlignment="Center" Content="For Myself" Width="300" FontSize="21">
                             <i:Interaction.Behaviors>
                                 <core:EventTriggerBehavior EventName="Checked">
                                     <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForMySelfRadioButton}">
@@ -63,7 +63,7 @@
                             </i:Interaction.Behaviors>
                         </RadioButton>
                         
-                        <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="23" FlyoutBase.AttachedFlyout="{StaticResource MyFlyout}">
+                        <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="21" VerticalAlignment="Center" FlyoutBase.AttachedFlyout="{StaticResource MyFlyout}">
                             <i:Interaction.Behaviors>
                                 <core:EventTriggerBehavior EventName="Checked">
                                     <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForOthersRadioButton}">
@@ -77,23 +77,23 @@
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="2">
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Date break from:" FontSize="23"/>
+                        <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="100" Height="40"/>
-                            <Image Width="40" Height="40" Source="Image/calendar-icon.png"/>
+                            <TextBox Width="130" Height="30"/>
+                            <Image Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
-                        <TextBlock Text="To:" FontSize="23" ></TextBlock>
+                        <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="100" Height="40"></TextBox>
-                            <Image Width="40" Height="40" Source="Image/calendar-icon.png"></Image>
+                            <TextBox Width="130" Height="30"></TextBox>
+                            <Image Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Available FlexibleLeavel (hours):" FontSize="23" ></TextBlock>
+                        <TextBlock Text="Available FlexibleLeavel (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBlock Text="{Binding SelectedUserRecord.OverTime,Mode=TwoWay}" Width="100" Height="50" FontSize="23" Foreground="Red"></TextBlock>
+                            <TextBlock Text="{Binding SelectedUserRecord.OverTime,Mode=TwoWay}" Width="100" Height="30" FontSize="21" VerticalAlignment="Center" Foreground="Red"></TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -101,48 +101,48 @@
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="3">
                 <StackPanel Grid.Row="3" Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Time break from:" FontSize="23"/>
+                        <TextBlock Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="100" Height="40"/>
-                            <Image Width="40" Height="40"/>
+                            <TextBox Width="130" Height="30" TextChanged="TextBox_TextChanged"/>
+                            <Image Width="30" Height="30" Source="ms-appx:///Image/Time-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
-                        <TextBlock Text="To:" FontSize="23" ></TextBlock>
+                        <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="100" Height="40"></TextBox>
-                            <Image Width="40" Height="40"></Image>
+                            <TextBox Width="130" Height="30"></TextBox>
+                            <Image Width="30" Height="30" Source="ms-appx:///Image/Time-icon.png"></Image>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Duration (hours):" FontSize="23" ></TextBlock>
-                        <TextBox Width="100" Height="50"></TextBox>
+                        <TextBlock Text="Duration (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
+                        <TextBox Width="130" Height="30"></TextBox>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="4">
                 <StackPanel Orientation="Horizontal" Grid.Row="4">
                     <StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Backup:" FontSize="23"/>
+                        <TextBlock Text="Backup:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="100" Height="40"/>
-                            <Image Width="40" Height="40"/>
+                            <TextBox Width="130" Height="30"/>
+                            <Image Width="30" Height="30"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Forums:" FontSize="23"/>
+                        <TextBlock Text="Forums:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="100" Height="40"/>
-                            <Image Width="40" Height="40"/>
+                            <TextBox Width="130" Height="30"/>
+                            <Image Width="30" Height="30"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Border>
             <StackPanel Orientation="Vertical"  Grid.Row="5">
-                <TextBlock Text="Reason:" FontSize="23" ></TextBlock>
+                <TextBlock Text="Reason:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                 <RichEditBox Width="300" Height="150" Margin="0,0,490,0" HorizontalAlignment="Left"/>
             </StackPanel>
-            <Button Grid.Row="6" Content="Sumbit" FontSize="23" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="51" Width="371"></Button>
+            <Button Grid.Row="6" Content="Sumbit" FontSize="21" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="371"></Button>
         </Grid>
     </Grid>
 </Page>

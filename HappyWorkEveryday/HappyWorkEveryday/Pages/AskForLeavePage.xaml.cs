@@ -29,7 +29,12 @@ namespace HappyWorkEveryday.Pages
             //this.DataContext = new AskforLeaveViewModel();
         }
 
-      
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+
         //private void ForOthersRadioButton_Checked(object sender, RoutedEventArgs e)
         //{
         //    if (ForOthersRadioButton.IsChecked == true)
