@@ -33,7 +33,7 @@
         
             <SplitView x:Name="RootSpiltView" OpenPaneLength="200" CompactPaneLength="48" DisplayMode="CompactInline">
                 <SplitView.Pane>
-                    <Grid>
+                <Grid Background="#FF79D8EE">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>

@@ -9,11 +9,12 @@
     mc:Ignorable="d">
 
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item" >
+    <Grid>
+        <Grid Margin="10,0,0,0">
+            <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item" >
             <controls:Accordion.ItemTemplate>
                 <DataTemplate>
-                    <controls:AccordionItem Header="{Binding Key}" FontWeight="Black" FontSize="20" >
+                    <controls:AccordionItem Header="{Binding Key}" FontWeight="Black" FontSize="20" Content="{Binding}">
                         <controls:AccordionItem.ContentTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -102,6 +103,6 @@
             </controls:AccordionItem>
         </controls:Accordion>-->
 
-
+        </Grid>
     </Grid>
 </Page>

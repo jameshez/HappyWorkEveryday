@@ -261,7 +261,10 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1307090.jpg" />
     <Content Include="Image\bg.jpg" />
+    <Content Include="Image\bg1.jpg" />
+    <Content Include="Image\bg11.PNG" />
     <Content Include="Image\calendar-icon.png" />
     <Content Include="Image\Forums-icon.png" />
     <Content Include="Image\Organization-icon.png" />
