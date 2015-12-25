@@ -30,13 +30,13 @@ namespace HappyWorkEveryday.Pages
         }
 
       
-        private void ForOthersRadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            if (ForOthersRadioButton.IsChecked == true)
-            {
-                Flyout MyFlyout = Resources["MyFlyout"] as Flyout;
-                MyFlyout.ShowAt(ForOthersRadioButton);
-            }
-        }
+        //private void ForOthersRadioButton_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    if (ForOthersRadioButton.IsChecked == true)
+        //    {
+        //        Flyout MyFlyout = Resources["MyFlyout"] as Flyout;
+        //        MyFlyout.ShowAt(ForOthersRadioButton);
+        //    }
+        //}
     }
 }

@@ -17,17 +17,20 @@
         <Flyout x:Key="MyFlyout" x:Name="fly" helper:FlyoutHelpers.IsOpen="{Binding IsFlyoutOpen,Mode=TwoWay}"
                 helper:FlyoutHelpers.Parent="{Binding ElementName=ForOthersRadioButton}">
             <Grid Background="Gray" Width="200">
-                <ComboBox Width="200" PlaceholderText="Please choose one alias" ItemsSource="{Binding User_Alias_Group}">
-                    <!--<ComboBoxItem Content="v-fapeng"></ComboBoxItem>
-                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>
-                    <ComboBoxItem Content="v-fapeng"></ComboBoxItem>-->
+                <ComboBox Name="AliasComboBox" Width="200" PlaceholderText="Please choose one alias" ItemsSource="{Binding User_Alias_Group}">
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="SelectionChanged">
+                            <core:InvokeCommandAction Command="{Binding ComboBoxSelectCommand}" CommandParameter="{Binding ElementName=AliasComboBox}">
+                            </core:InvokeCommandAction>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
                 </ComboBox>
-               
+
             </Grid>
         </Flyout>
     </Page.Resources>
     <Grid>
-       
+
         <Grid Margin="20,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
@@ -39,19 +42,27 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black">
-            <StackPanel Orientation="Horizontal" Grid.Row="0">
-                <Image Source="ms-appx:///Image/Warning-icon.png" Margin="0,0,0,10" Width="45"></Image>
-                <TextBlock Text="Your shift is 9:00-18:00" FontSize="23" Foreground="Red"></TextBlock>
-             </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Image Source="ms-appx:///Image/Warning-icon.png" Margin="0,0,0,10" Width="45"></Image>
+                    <TextBlock Text="Your shift is 9:00-18:00" FontSize="23" Foreground="Red"></TextBlock>
+                </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="1">
                 <StackPanel Orientation="Vertical" Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Please choose who will ask for leavel:" FontSize="23"></TextBlock>
-                        <TextBlock FontSize="23" Text="v-fapeng" Width="150" Foreground="Red"></TextBlock>
+                        <TextBlock Name="SelectedUserTextBox" FontSize="23" Text="{Binding SelectedUserRecord.Alias,Mode=TwoWay}" Width="559" Foreground="Red" Height="21"></TextBlock>
                     </StackPanel>
                     <StackPanel Name="MyStackPanel" Orientation="Horizontal">
-                        <RadioButton Content="For Myself" Width="300" FontSize="23"></RadioButton>
+                        <RadioButton Name="ForMySelfRadioButton"  Content="For Myself" Width="300" FontSize="23">
+                            <i:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="Checked">
+                                    <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForMySelfRadioButton}">
+                                    </core:InvokeCommandAction>
+                                </core:EventTriggerBehavior>
+                            </i:Interaction.Behaviors>
+                        </RadioButton>
+                        
                         <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="23" FlyoutBase.AttachedFlyout="{StaticResource MyFlyout}">
                             <i:Interaction.Behaviors>
                                 <core:EventTriggerBehavior EventName="Checked">
@@ -82,7 +93,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Available FlexibleLeavel (hours):" FontSize="23" ></TextBlock>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBlock Text="40h" Width="100" Height="50" FontSize="23" Foreground="Red"></TextBlock>
+                            <TextBlock Text="{Binding SelectedUserRecord.OverTime,Mode=TwoWay}" Width="100" Height="50" FontSize="23" Foreground="Red"></TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
