@@ -257,6 +257,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Image\bg.jpg" />
+    <Content Include="Image\calendar-icon.png" />
     <Content Include="Image\Organization-icon.png" />
     <Content Include="Image\AskForLeavel-icon.png" />
     <Content Include="Properties\Default.rd.xml" />

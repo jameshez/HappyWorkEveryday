@@ -67,16 +67,16 @@
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Date break from:" FontSize="23"/>
-                        <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="100" Height="50"/>
-                            <Image Width="40" Height="50"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="100" Height="40"/>
+                            <Image Width="40" Height="40" Source="Image/calendar-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
                         <TextBlock Text="To:" FontSize="23" ></TextBlock>
-                        <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="100" Height="50"></TextBox>
-                            <Image Width="30" Height="50"></Image>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="100" Height="40"></TextBox>
+                            <Image Width="40" Height="40" Source="Image/calendar-icon.png"></Image>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -91,16 +91,16 @@
                 <StackPanel Grid.Row="3" Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Time break from:" FontSize="23"/>
-                        <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="100" Height="50"/>
-                            <Image Width="40" Height="50"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="100" Height="40"/>
+                            <Image Width="40" Height="40"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
                         <TextBlock Text="To:" FontSize="23" ></TextBlock>
-                        <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="100" Height="50"></TextBox>
-                            <Image Width="30" Height="50"></Image>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="100" Height="40"></TextBox>
+                            <Image Width="40" Height="40"></Image>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -114,15 +114,15 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Backup:" FontSize="23"/>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="100" Height="50"/>
-                            <Image Width="40" Height="50"/>
+                            <TextBox Width="100" Height="40"/>
+                            <Image Width="40" Height="40"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Forums:" FontSize="23"/>
-                        <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="100" Height="50"/>
-                            <Image Width="40" Height="50"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="100" Height="40"/>
+                            <Image Width="40" Height="40"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
