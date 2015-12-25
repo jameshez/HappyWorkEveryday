@@ -35,18 +35,18 @@
 
         <Grid Margin="20,0,0,0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="40*"></RowDefinition>
+                <RowDefinition Height="60*"></RowDefinition>
                 <RowDefinition Height="50*"></RowDefinition>
-                <RowDefinition Height="70*"></RowDefinition>
-                <RowDefinition Height="60*"></RowDefinition>
-                <RowDefinition Height="60*"></RowDefinition>
-                <RowDefinition Height="60*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
                 <RowDefinition Height="200*"></RowDefinition>
                 <RowDefinition Height="200*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black">
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <Image Source="ms-appx:///Image/Warning-icon.png" Margin="0,0,0,10" Width="35"></Image>
-                    <TextBlock Text="Your shift is 9:00-18:00" FontSize="21" Foreground="Red"></TextBlock>
+                    <Image Source="ms-appx:///Image/Warning-icon.png" Margin="0" Width="25" VerticalAlignment="Center"></Image>
+                    <TextBlock Text="Your shift is 9:00-18:00" FontSize="21" VerticalAlignment="Center" Foreground="Red"></TextBlock>
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="1">
@@ -64,7 +64,7 @@
                                 </core:EventTriggerBehavior>
                             </i:Interaction.Behaviors>
                         </RadioButton>
-                        
+
                         <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="21" VerticalAlignment="Center" FlyoutBase.AttachedFlyout="{StaticResource MyFlyout}">
                             <i:Interaction.Behaviors>
                                 <core:EventTriggerBehavior EventName="Checked">
@@ -77,7 +77,8 @@
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="2">
-                <StackPanel Grid.Row="2" Orientation="Horizontal">
+          
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Name="FromDateStackPanel">
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
@@ -85,7 +86,8 @@
                             <Image Name="DateImage" Tapped="DateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="300">
+               
+                <StackPanel Orientation="Horizontal" Width="300" Name="ToDateStackPanel">
                         <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <TextBox Width="130" Height="30"></TextBox>
@@ -99,6 +101,7 @@
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
+            
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="3">
                 <StackPanel Grid.Row="3" Orientation="Horizontal">
@@ -128,14 +131,14 @@
                         <TextBlock Text="Backup:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
                             <TextBox Width="130" Height="30"/>
-                            <Image Width="30" Height="30"/>
+                            <Image Width="30" Height="30" Source="ms-appx:///Image/people-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Forums:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="130" Height="30"/>
-                            <Image Width="30" Height="30"/>
+                            <TextBox Width="200" Height="30"/>
+                            <Image Width="38" Source="ms-appx:///Image/Forums-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -144,7 +147,7 @@
                 <TextBlock Text="Reason:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                 <RichEditBox Width="300" Height="150" Margin="0,0,490,0" HorizontalAlignment="Left"/>
             </StackPanel>
-            <Button Grid.Row="6" Content="Sumbit" FontSize="21" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="371"></Button>
+            <Button Grid.Row="6" Content="Sumbit" FontSize="21" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="300" Margin="0,0,0,144"></Button>
         </Grid>
     </Grid>
 </Page>
