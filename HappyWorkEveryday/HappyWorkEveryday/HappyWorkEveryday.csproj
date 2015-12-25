@@ -253,6 +253,7 @@
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModel\AskforLeaveViewModel.cs" />
     <Compile Include="ViewModel\MainpageViewModel.cs" />
+    <Compile Include="ViewModel\OrganizationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

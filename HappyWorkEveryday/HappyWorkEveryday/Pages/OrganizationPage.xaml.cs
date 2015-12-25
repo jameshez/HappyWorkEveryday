@@ -27,12 +27,9 @@ namespace HappyWorkEveryday.Pages
         public OrganizationPage()
         {
             this.InitializeComponent();
+            something();
+            
 
-            a.Add(new Tb_MSDNUser() { Alias = "v-assss", Id = 1, Name = "dsas" });
-            a.Add(new Tb_MSDNUser() { Alias = "v-assss", Id = 1, Name = "dsas" });
-            a.Add(new Tb_MSDNUser() { Alias = "v-assss", Id = 1, Name = "dsas" });
-            a.Add(new Tb_MSDNUser() { Alias = "v-assss", Id = 1, Name = "dsas" });
-            a.Add(new Tb_MSDNUser() { Alias = "v-assss", Id = 1, Name = "dsas" });
         }
 
 
@@ -42,7 +39,20 @@ namespace HappyWorkEveryday.Pages
 
         public async void something()
         {
-            var a = await MSDNUser_Client.FindAllAsync();
+            //var a = await MSDNUser_Client.FindAllAsync();
+
+            a.Add(new Tb_MSDNUser() { Alias = "UWP", Id = 1, Name = "Fang" });
+            a.Add(new Tb_MSDNUser() { Alias = "UWP", Id = 2, Name = "James" });
+            a.Add(new Tb_MSDNUser() { Alias = "F&D", Id = 2, Name = "Barry" });
+            a.Add(new Tb_MSDNUser() { Alias = "F&D", Id = 1, Name = "Dongwei" });
+            a.Add(new Tb_MSDNUser() { Alias = "JJKS", Id = 1, Name = "Minxing" });
+
+
+            var t = from p in a
+                    group p by p.Alias into g
+                    select g;
+
+            item.ItemsSource = t;
         }
     }
 }
