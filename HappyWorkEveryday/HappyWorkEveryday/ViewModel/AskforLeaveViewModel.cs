@@ -137,8 +137,8 @@ namespace HappyWorkEveryday.ViewModel
         }
         private async void InitializeData()
         {
-            usergroup = await client.FindAllAsync();
-            //_user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));
+            //usergroup = await client.FindAllAsync();
+            _user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));
         }
 
 

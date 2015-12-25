@@ -6,7 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
- 
+    <Page.Resources>
+        <DatePickerFlyout x:Key="MyDatePickFlyout"/>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"></RowDefinition>
@@ -18,14 +20,14 @@
             <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <TextBox Width="130" Height="30"/>
-                <Image Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
+                <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
             <StackPanel Orientation="Horizontal">
                 <TextBox Width="130" Height="30"></TextBox>
-                <Image Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
+                <Image Name="ToDateImage" Tapped="ToDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
             </StackPanel>
         </StackPanel>
         </StackPanel>

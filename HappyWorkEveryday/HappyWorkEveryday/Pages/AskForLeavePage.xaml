@@ -83,7 +83,7 @@
                         <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
                             <TextBox Width="130" Height="30"/>
-                            <Image Name="DateImage" Tapped="DateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
+                            <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                
@@ -91,7 +91,7 @@
                         <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <TextBox Width="130" Height="30"></TextBox>
-                            <Image Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
+                            <Image Name="ToDateImage" Tapped="ToDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -109,14 +109,14 @@
                         <TextBlock Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
                             <TextBox Width="130" Height="30"/>
-                            <Image Width="30" Name="TimeImage" Tapped="TimeImage_Tapped"  Height="30" Source="ms-appx:///Image/Time-icon.png"/>
+                            <Image Width="30" Name="FromTimeImage" Tapped="FromTimeImage_Tapped"  Height="30" Source="ms-appx:///Image/Time-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
                         <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <TextBox Width="130" Height="30"></TextBox>
-                            <Image Width="30" Height="30" Source="ms-appx:///Image/Time-icon.png"></Image>
+                            <Image Name="ToTimeImage" Tapped="ToTimeImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/Time-icon.png"></Image>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">

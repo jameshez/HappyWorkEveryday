@@ -31,7 +31,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         
-            <SplitView x:Name="RootSpiltView" OpenPaneLength="250" CompactPaneLength="48" DisplayMode="CompactInline">
+            <SplitView x:Name="RootSpiltView" OpenPaneLength="200" CompactPaneLength="48" DisplayMode="CompactInline">
                 <SplitView.Pane>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -59,8 +59,8 @@
                                                 <ColumnDefinition Width="auto"/>
                                                 <ColumnDefinition />
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Text="{Binding Button}" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="25" />
-                                            <TextBlock Grid.Column="1" Text="{Binding Text}" FontFamily="Times New Roman" VerticalAlignment="Center" Margin="15" FontSize="22"/>
+                                            <TextBlock Text="{Binding Button}" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" FontSize="21" />
+                                            <TextBlock Grid.Column="1" Text="{Binding Text}" FontFamily="Segoe UI" VerticalAlignment="Center" Margin="15" FontSize="21"/>
                                         </Grid>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>

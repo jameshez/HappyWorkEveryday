@@ -29,16 +29,28 @@ namespace HappyWorkEveryday.Pages
             //this.DataContext = new AskforLeaveViewModel();
         }
 
-        private void DateImage_Tapped(object sender, TappedRoutedEventArgs e)
+        private void FromDateImage_Tapped(object sender, TappedRoutedEventArgs e)
         {
             DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
-            myflyout.ShowAt(DateImage);
+            myflyout.ShowAt(FromDateImage);
         }
 
-        private void TimeImage_Tapped(object sender, TappedRoutedEventArgs e)
+        private void FromTimeImage_Tapped(object sender, TappedRoutedEventArgs e)
         {
             TimePickerFlyout myflyout = Resources["MyTimePickerFlyout"] as TimePickerFlyout;
-            myflyout.ShowAt(TimeImage);
+            myflyout.ShowAt(FromTimeImage);
+        }
+
+        private void ToDateImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
+            myflyout.ShowAt(ToDateImage);
+        }
+
+        private void ToTimeImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            TimePickerFlyout myflyout = Resources["MyTimePickerFlyout"] as TimePickerFlyout;
+            myflyout.ShowAt(ToTimeImage);
         }
 
 
