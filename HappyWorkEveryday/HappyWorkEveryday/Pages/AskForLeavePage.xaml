@@ -28,6 +28,8 @@
 
             </Grid>
         </Flyout>
+        <DatePickerFlyout x:Key="MyDatePickFlyout"/>
+        <TimePickerFlyout x:Key="MyTimePickerFlyout"/>
     </Page.Resources>
     <Grid>
 
@@ -80,7 +82,7 @@
                         <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
                             <TextBox Width="130" Height="30"/>
-                            <Image Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
+                            <Image Name="DateImage" Tapped="DateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
@@ -103,8 +105,8 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="130" Height="30" TextChanged="TextBox_TextChanged"/>
-                            <Image Width="30" Height="30" Source="ms-appx:///Image/Time-icon.png"/>
+                            <TextBox Width="130" Height="30"/>
+                            <Image Width="30" Name="TimeImage" Tapped="TimeImage_Tapped"  Height="30" Source="ms-appx:///Image/Time-icon.png"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
