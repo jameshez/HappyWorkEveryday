@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,7 @@ namespace HappyWorkEveryday.ViewModel
         private void ShowPopUpExecute(object s)
         {
             Frame rootFrame = Window.Current.Content as Frame;
+            Debug.WriteLine("Navigation Start at {0}", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff"));
             rootFrame.Navigate(typeof(Pages.SplitViewPage), s);
             //var dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
             //await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>

@@ -1,6 +1,7 @@
 ﻿using HappyWorkEveryday.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,6 +27,8 @@ namespace HappyWorkEveryday.Pages
         public AskForLeavePage()
         {
             this.InitializeComponent();
+
+            Debug.WriteLine("AskForLeavePage initialized at {0}", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff"));
             //this.DataContext = new AskforLeaveViewModel();
         }
 
