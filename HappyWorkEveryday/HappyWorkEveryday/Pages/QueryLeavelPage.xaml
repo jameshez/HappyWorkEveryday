@@ -6,32 +6,65 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid Name="MyGrid" Background="#FF89E9FF">
-        <Pivot>
-            <PivotItem Header="Flexible Leavel">
-                <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <TextBox PlaceholderText="Please enter alias:v-fapeng" Width="400"></TextBox>
-                    <Image Source="ms-appx:///Image/LeavelRecords-icon.png"></Image>
-                </StackPanel>
-                </Grid>
-            </PivotItem>
-            <PivotItem Header="Annual Leavel">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <HyperlinkButton Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" NavigateUri="http://attendance.pactera.com/index_EN.aspx" Content="Click here to query your annual leavel" ></HyperlinkButton>
-                </Grid>
-            </PivotItem>
-   
-    </Pivot>
+        <Grid Margin="10,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Border BorderThickness="0,0,0,1" BorderBrush="Black" Height="45" >
+                    <StackPanel Orientation="Horizontal" Height="30" Grid.Row="0">
+                        <Image Source="ms-appx:///Assets/smile.png" Margin="0" Width="23" VerticalAlignment="Center"></Image>
+                        <TextBlock Text="Welcome to query your Leave" FontSize="21" VerticalAlignment="Center" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,10,0,0" BorderBrush="#FF0A9DE2" Margin="-1,0,0,0"></Border>
+                <Pivot Name="MyPivot" Grid.Row="1" SelectionChanged="MyPivot_SelectionChanged">
+                    <PivotItem>
+                        <PivotItem.Header>
+                            <TextBlock Name="MyTextBlockFlexible" Text="Flexible Leavel" FontSize="23" FontWeight="Bold" Foreground="#FF0A9DE2"></TextBlock>
+                        </PivotItem.Header>
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Please enter your alias:" FontSize="20"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox PlaceholderText="For example:v-fapeng" Width="400"></TextBox>
+                                <Image Height="30" Source="ms-appx:///Image/QueryRecords-icon.png"></Image>
+                            </StackPanel>
+                                <TextBlock Text="Output:" FontSize="20"></TextBlock>
+                                <ListView>
+                                    <!--<ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Alias}"></TextBlock>
+                                                <TextBlock Text="{Binding EnglishName}"></TextBlock>
+                                                <TextBlock Text="{Binding OverTime}"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>-->
+                                </ListView>
+                            </StackPanel>
+                       
+                        </Grid>
+                    </PivotItem>
+                    <PivotItem>
+                        <PivotItem.Header>
+                            <TextBlock Name="MyTextBlockAnnual" Text="Annual Leavel" FontWeight="Bold" FontSize="23" Foreground="#FF0A9DE2"></TextBlock>
+                        </PivotItem.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                           
+                                <HyperlinkButton Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" NavigateUri="http://attendance.pactera.com/index_EN.aspx" Content="Click here to query your annual leavel" FontSize="20"></HyperlinkButton>
+                      
+                        </Grid>
+                    </PivotItem>
 
+                </Pivot>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

@@ -192,6 +192,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BackUPUserControl.xaml.cs">
+      <DependentUpon>BackUPUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper\FlyoutHelpers.cs" />
     <Compile Include="Helper\LocalInformationHelper.cs" />
     <Compile Include="Helper\Logger.cs" />
@@ -262,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1307090.jpg" />
+    <Content Include="Assets\smile.png" />
     <Content Include="Image\bg.jpg" />
     <Content Include="Image\bg1.jpg" />
     <Content Include="Image\bg11.PNG" />
@@ -338,6 +342,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BackUPUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
