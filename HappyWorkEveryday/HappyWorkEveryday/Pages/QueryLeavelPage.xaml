@@ -34,7 +34,7 @@
                             </StackPanel>
                                 <TextBlock Text="Output:" FontSize="20"></TextBlock>
                                 <ListView>
-                                    <!--<ListView.ItemTemplate>
+                                    <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Alias}"></TextBlock>
@@ -42,7 +42,7 @@
                                                 <TextBlock Text="{Binding OverTime}"></TextBlock>
                                             </StackPanel>
                                         </DataTemplate>
-                                    </ListView.ItemTemplate>-->
+                                    </ListView.ItemTemplate>
                                 </ListView>
                             </StackPanel>
                        
