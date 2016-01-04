@@ -257,6 +257,7 @@
     <Compile Include="ViewModel\AskforLeaveViewModel.cs" />
     <Compile Include="ViewModel\MainpageViewModel.cs" />
     <Compile Include="ViewModel\OrganizationViewModel.cs" />
+    <Compile Include="ViewModel\QueryforLveaveViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
