@@ -9,11 +9,13 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:m="using:Microsoft.Xaml.Interactions.Media"
     xmlns:helper="using:HappyWorkEveryday.Helper"
+    xmlns:localcontrol="using:HappyWorkEveryday"
     mc:Ignorable="d" Background="Black">
     <Page.DataContext>
         <Binding Path="AskForLeavePage" Source="{StaticResource Locator}"></Binding>
     </Page.DataContext>
     <Page.Resources>
+     
         <Flyout x:Key="MyFlyout" x:Name="fly" helper:FlyoutHelpers.IsOpen="{Binding IsFlyoutOpen,Mode=TwoWay}"
                 helper:FlyoutHelpers.Parent="{Binding ElementName=ForOthersRadioButton}">
             <Grid Background="Gray" Width="200">
@@ -67,7 +69,7 @@
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="MyBorder">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Blue"/>
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#FF0A9DE2"/>
                                             </ObjectAnimationUsingKeyFrames>
                                             <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}"/>
@@ -107,12 +109,12 @@
         <Grid Margin="10,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40*"></RowDefinition>
-                <RowDefinition Height="60*"></RowDefinition>
-                <RowDefinition Height="50*"></RowDefinition>
-                <RowDefinition Height="50*"></RowDefinition>
-                <RowDefinition Height="50*"></RowDefinition>
-                <RowDefinition Height="200*"></RowDefinition>
-                <RowDefinition Height="250*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="40*"></RowDefinition>
+                <RowDefinition Height="40*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="40*"></RowDefinition>
+                <RowDefinition Height="400*"></RowDefinition>
             </Grid.RowDefinitions>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black">
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
@@ -121,7 +123,9 @@
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="1">
-                <StackPanel Orientation="Vertical" Grid.Row="1">
+                <Border BorderThickness="0,10,0,0" BorderBrush="#FF0A9DE2">
+                    <StackPanel Orientation="Vertical" Grid.Row="1">
+                  
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Please choose who will ask for leavel:" FontSize="21"></TextBlock>
                         <TextBlock Name="SelectedUserTextBox" FontSize="21" VerticalAlignment="Center" Text="{Binding SelectedUserRecord.Alias,Mode=TwoWay}" Width="559" Foreground="Red" Height="30"></TextBlock>
@@ -145,7 +149,9 @@
                             </i:Interaction.Behaviors>
                         </RadioButton>
                     </StackPanel>
+                  
                 </StackPanel>
+                </Border>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="2">
 
@@ -153,7 +159,7 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Width="130" Height="30"/>
+                            <TextBox Name="FromDateTextBox" Width="130" Height="30"/>
                             <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
                         </StackPanel>
                     </StackPanel>
@@ -197,8 +203,14 @@
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="4">
-                <StackPanel Orientation="Horizontal" Grid.Row="4">
-                    <StackPanel Orientation="Horizontal" Width="500">
+                <StackPanel Orientation="Vertical" Grid.Row="4">
+                <StackPanel Orientation="Vertical" Name="BackupStackPanel">
+                        <StackPanel Name="BackupStackPanelFirst" Orientation="Horizontal">
+                        <localcontrol:BackUPUserControl></localcontrol:BackUPUserControl>
+                        <Button Content="Cancle" Name="CancleButton" Click="CancleButton_Click"></Button>
+                    </StackPanel>
+                
+                    <!--<StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Backup:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
                             <TextBox Width="130" Height="30"/>
@@ -212,13 +224,26 @@
                             <Image Width="38" Source="ms-appx:///Image/Forums-icon.png"/>
                         </StackPanel>
                     </StackPanel>
+                    <Button Content="Add"></Button>-->
+
+                    </StackPanel>
+                    <Button Content="Add" Click="Button_Click"></Button>
                 </StackPanel>
             </Border>
-            <StackPanel Orientation="Vertical"  Grid.Row="5">
+            <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="5">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Leavel Type:" FontSize="21" Width="120" VerticalAlignment="Center"></TextBlock>
+                    <RadioButton Content="Flexible Leavel" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
+                    <RadioButton Content="Sick Leavel" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
+                    <RadioButton Content="Annual Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
+                </StackPanel>
+            </Border>
+            <StackPanel Orientation="Vertical"  Grid.Row="6">
                 <TextBlock Text="Reason:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
-                <RichEditBox Width="300" Height="150" Margin="0,0,490,0" HorizontalAlignment="Left"/>
+                <RichEditBox Height="100" Width="300" HorizontalAlignment="Left"/>
+           
+            <Button Content="Sumbit" Background="#FF79D8EE" FontSize="21" Style="{StaticResource ButtonStyle1}" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="300" Margin="0,25,0,0"></Button>
             </StackPanel>
-            <Button Grid.Row="6" Content="Sumbit" Background="#FF79D8EE" FontSize="21" Style="{StaticResource ButtonStyle1}" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="300" Margin="0,0,0,200"></Button>
         </Grid>
     </Grid>
 </Page>

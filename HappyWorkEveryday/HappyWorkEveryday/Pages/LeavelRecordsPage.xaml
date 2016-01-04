@@ -12,11 +12,20 @@
     <Grid Background="#FF89E9FF">
         <Grid Margin="10,0,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="35*"></RowDefinition>
-            <RowDefinition Height="35*"></RowDefinition>
+            <RowDefinition Height="40*"></RowDefinition>
+            <RowDefinition Height="40*"></RowDefinition>
             <RowDefinition Height="500*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <Border BorderThickness="0,0,0,1" BorderBrush="Black" Height="45" >
+                    <StackPanel Orientation="Horizontal" Height="30" Grid.Row="0">
+                        <Image Source="ms-appx:///Image/LeavelRecords-icon.png" Margin="0" Width="23" VerticalAlignment="Center"></Image>
+                        <TextBlock Text="Welcome to search your Leave records" FontSize="21" VerticalAlignment="Center" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,10,0,0" BorderBrush="#FF0A9DE2" Margin="-1,0,0,0"></Border>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top">
         <StackPanel Orientation="Horizontal" Width="400">
             <TextBlock Text="Date from:" FontSize="21" VerticalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
@@ -32,9 +41,9 @@
             </StackPanel>
         </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top">
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top">
             <TextBox PlaceholderText="Please enter alias:v-fapeng" Width="200" Height="30"></TextBox>
-            <Image Source="ms-appx:///Image/LeavelRecords-icon.png" Width="30" Height="30"></Image>
+            <Image Source="ms-appx:///Image/QueryLeavel-icon.png" Width="30" Height="30"></Image>
         </StackPanel>
         </Grid>
     </Grid>
