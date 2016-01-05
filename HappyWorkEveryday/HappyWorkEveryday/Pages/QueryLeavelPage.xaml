@@ -31,7 +31,7 @@
                 <Pivot Name="MyPivot" Grid.Row="1" SelectionChanged="MyPivot_SelectionChanged">
                     <PivotItem>
                         <PivotItem.Header>
-                            <TextBlock Name="MyTextBlockFlexible" Text="Flexible Leavel" FontSize="23" FontWeight="Bold" Foreground="#FF0A9DE2"></TextBlock>
+                            <TextBlock Name="MyTextBlockFlexible" Text="Flexible Leave" FontSize="23" FontWeight="Bold" Foreground="#FF0A9DE2"></TextBlock>
                         </PivotItem.Header>
                         <Grid>
                             <StackPanel Orientation="Vertical">
@@ -81,7 +81,7 @@
                     </PivotItem>
                     <PivotItem>
                         <PivotItem.Header>
-                            <TextBlock Name="MyTextBlockAnnual" Text="Annual Leavel" FontWeight="Bold" FontSize="23" Foreground="#FF0A9DE2"></TextBlock>
+                            <TextBlock Name="MyTextBlockAnnual" Text="Annual Leave" FontWeight="Bold" FontSize="23" Foreground="#FF0A9DE2"></TextBlock>
                         </PivotItem.Header>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -89,7 +89,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            <HyperlinkButton Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" NavigateUri="http://attendance.pactera.com/index_EN.aspx" Content="Click here to query your annual leavel" FontSize="20"></HyperlinkButton>
+                            <HyperlinkButton Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" NavigateUri="http://attendance.pactera.com/index_EN.aspx" Content="Click here to query your annual leave" FontSize="20"></HyperlinkButton>
 
                         </Grid>
                     </PivotItem>

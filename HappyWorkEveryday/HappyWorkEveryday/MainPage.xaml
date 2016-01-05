@@ -41,7 +41,7 @@
                             </core:EventTriggerBehavior>
                         </i:Interaction.Behaviors>
                         <Image Width="45" Source="Image/AskForLeavel-icon_png.png" Margin="0,90"/>
-                        <TextBlock Foreground="DarkBlue"  Text="Ask for Leavel" FontSize="23" FontWeight="Black" Margin="10,90,0,0"/>
+                        <TextBlock Foreground="DarkBlue"  Text="Ask for Leave" FontSize="23" FontWeight="Black" Margin="10,90,0,0"/>
                     </StackPanel>
                     <StackPanel Name="QueryLeavelStackPanel" Orientation="Horizontal" Background="#FFA1CD44" Grid.Column="1" Grid.Row="0" Width="230" Height="230">
                         <i:Interaction.Behaviors>

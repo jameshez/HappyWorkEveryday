@@ -127,7 +127,7 @@
                     <StackPanel Orientation="Vertical" Grid.Row="1">
                   
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Please choose who will ask for leavel:" FontSize="21"></TextBlock>
+                        <TextBlock Text="Please choose who will ask for leave:" FontSize="21"></TextBlock>
                         <TextBlock Name="SelectedUserTextBox" FontSize="21" VerticalAlignment="Center" Text="{Binding SelectedUserRecord.Alias,Mode=TwoWay}" Width="559" Foreground="Red" Height="30"></TextBlock>
                     </StackPanel>
                     <StackPanel Name="MyStackPanel" Orientation="Horizontal">
@@ -172,7 +172,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Available FlexibleLeavel (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
+                        <TextBlock Text="Available FlexibleLeave (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
                             <TextBlock Text="{Binding SelectedUserRecord.OverTime,Mode=TwoWay}" Width="100" Height="30" FontSize="21" VerticalAlignment="Center" Foreground="Red"></TextBlock>
                         </StackPanel>
@@ -233,8 +233,8 @@
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="5">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Leavel Type:" FontSize="21" Width="120" VerticalAlignment="Center"></TextBlock>
-                    <RadioButton Content="Flexible Leavel" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
-                    <RadioButton Content="Sick Leavel" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
+                    <RadioButton Content="Flexible Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
+                    <RadioButton Content="Sick Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
                     <RadioButton Content="Annual Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
                 </StackPanel>
             </Border>
