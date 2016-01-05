@@ -24,6 +24,12 @@ namespace HappyWorkEveryday.DetailServiceReference {
         
         private System.DateTime EndTimeField;
         
+        private int IdField;
+        
+        private int IsApprovedField;
+        
+        private string LeaveTypeField;
+        
         private string MyBackUpField;
         
         private string ReasonField;
@@ -56,6 +62,45 @@ namespace HappyWorkEveryday.DetailServiceReference {
                 if ((this.EndTimeField.Equals(value) != true)) {
                     this.EndTimeField = value;
                     this.RaisePropertyChanged("EndTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IsApproved {
+            get {
+                return this.IsApprovedField;
+            }
+            set {
+                if ((this.IsApprovedField.Equals(value) != true)) {
+                    this.IsApprovedField = value;
+                    this.RaisePropertyChanged("IsApproved");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LeaveType {
+            get {
+                return this.LeaveTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LeaveTypeField, value) != true)) {
+                    this.LeaveTypeField = value;
+                    this.RaisePropertyChanged("LeaveType");
                 }
             }
         }

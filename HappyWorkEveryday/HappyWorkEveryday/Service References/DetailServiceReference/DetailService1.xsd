@@ -4,6 +4,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsApproved" type="xs:int" />
+      <xs:element minOccurs="0" name="LeaveType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MyBackUp" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />

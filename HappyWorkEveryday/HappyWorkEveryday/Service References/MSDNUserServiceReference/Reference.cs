@@ -30,6 +30,8 @@ namespace HappyWorkEveryday.MSDNUserServiceReference {
         
         private string NameField;
         
+        private System.Nullable<int> TeamIdField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Alias {
             get {
@@ -91,6 +93,19 @@ namespace HappyWorkEveryday.MSDNUserServiceReference {
                 if ((object.ReferenceEquals(this.NameField, value) != true)) {
                     this.NameField = value;
                     this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TeamId {
+            get {
+                return this.TeamIdField;
+            }
+            set {
+                if ((this.TeamIdField.Equals(value) != true)) {
+                    this.TeamIdField = value;
+                    this.RaisePropertyChanged("TeamId");
                 }
             }
         }

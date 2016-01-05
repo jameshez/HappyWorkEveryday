@@ -24,6 +24,8 @@ namespace HappyWorkEveryday.UserServiceReference {
         
         private string EnglishNameField;
         
+        private System.Nullable<int> MsdnIDField;
+        
         private double OverTimeField;
         
         private int RoleIdField;
@@ -52,6 +54,19 @@ namespace HappyWorkEveryday.UserServiceReference {
                 if ((object.ReferenceEquals(this.EnglishNameField, value) != true)) {
                     this.EnglishNameField = value;
                     this.RaisePropertyChanged("EnglishName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> MsdnID {
+            get {
+                return this.MsdnIDField;
+            }
+            set {
+                if ((this.MsdnIDField.Equals(value) != true)) {
+                    this.MsdnIDField = value;
+                    this.RaisePropertyChanged("MsdnID");
                 }
             }
         }

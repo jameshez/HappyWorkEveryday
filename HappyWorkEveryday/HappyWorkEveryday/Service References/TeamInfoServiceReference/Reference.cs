@@ -22,6 +22,8 @@ namespace HappyWorkEveryday.TeamInfoServiceReference {
         
         private int IdField;
         
+        private string TeamLeaderField;
+        
         private string TeamNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -33,6 +35,19 @@ namespace HappyWorkEveryday.TeamInfoServiceReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TeamLeader {
+            get {
+                return this.TeamLeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TeamLeaderField, value) != true)) {
+                    this.TeamLeaderField = value;
+                    this.RaisePropertyChanged("TeamLeader");
                 }
             }
         }
