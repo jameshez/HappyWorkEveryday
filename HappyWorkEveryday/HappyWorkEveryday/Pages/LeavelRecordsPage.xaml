@@ -12,9 +12,10 @@
     <Grid Background="#FF89E9FF">
         <Grid Margin="10,0,0,0">
         <Grid.RowDefinitions>
+            <RowDefinition Height="50*"></RowDefinition>
             <RowDefinition Height="40*"></RowDefinition>
             <RowDefinition Height="40*"></RowDefinition>
-            <RowDefinition Height="500*"></RowDefinition>
+                <RowDefinition Height="500*"></RowDefinition>
         </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical" Grid.Row="0">
                 <Border BorderThickness="0,0,0,1" BorderBrush="Black" Height="45" >
@@ -26,25 +27,56 @@
                 <Border BorderThickness="0,10,0,0" BorderBrush="#FF0A9DE2" Margin="-1,0,0,0"></Border>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top">
-        <StackPanel Orientation="Horizontal" Width="400">
+        <StackPanel Orientation="Horizontal" Width="460">
             <TextBlock Text="Date from:" FontSize="21" VerticalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
-                <TextBox Width="130" Height="30"/>
+                        <TextBox BorderBrush="#FF0A9DE2" Width="130" Height="30"/>
                 <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
             <StackPanel Orientation="Horizontal">
-                <TextBox Width="130" Height="30"></TextBox>
+                        <TextBox BorderBrush="#FF0A9DE2" Width="130" Height="30"></TextBox>
                 <Image Name="ToDateImage" Tapped="ToDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
             </StackPanel>
         </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top">
-            <TextBox PlaceholderText="Please enter alias:v-fapeng" Width="200" Height="30"></TextBox>
+                <TextBox BorderBrush="#FF0A9DE2" PlaceholderText="Please enter alias:v-fapeng" Width="200" Height="30"></TextBox>
             <Image Source="ms-appx:///Image/QueryLeavel-icon.png" Width="30" Height="30"></Image>
         </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="3">
+                <TextBlock Text="Output:" FontSize="20" HorizontalAlignment="Left"></TextBlock>
+                <Border Width="650" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FF0A9DE2">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Background="#FF0A9DE2" Orientation="Horizontal" BorderThickness="0">
+                            <TextBlock Width="100" FontWeight="Black" HorizontalAlignment="Left" Text="Alias" Margin="10,0,0,0" ></TextBlock>
+                            <TextBlock Width="100" FontWeight="Black" HorizontalAlignment="Left" Text="Name"></TextBlock>
+                            <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="LeaveHour"></TextBlock>
+                            <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="FromDate"></TextBlock>
+                            <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="EndDate"></TextBlock>
+
+                        </StackPanel>
+                        <ListView  Name="MyListView" HorizontalAlignment="Left" Width="300" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <TextBlock Width="100" HorizontalAlignment="Left" Text="{Binding Alias}" ></TextBlock>
+                                        <TextBlock Width="100"  Text="{Binding EnglishName}"></TextBlock>
+                                        <TextBlock  Width="100"  Text="{Binding LeaveHour}"></TextBlock>
+                                        <TextBlock Width="100"  Text="{Binding FromDate}"></TextBlock>
+                                        <TextBlock  Width="100"  Text="{Binding EndDate}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+
+                </Border>
+            </StackPanel>
+  
         </Grid>
     </Grid>
 </Page>

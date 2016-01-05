@@ -14,14 +14,14 @@
             <StackPanel Orientation="Horizontal" Width="500">
                 <TextBlock Text="Backup:" FontSize="21" VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" BorderThickness="2">
-                    <TextBox Width="130" Height="30"/>
+                    <TextBox BorderBrush="#FF0A9DE2" Width="130" Height="30"/>
                     <Image Width="30" Height="30" Source="ms-appx:///Image/people-icon.png"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Width="500">
                 <TextBlock Text="Forums:" FontSize="21" VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Width="200" Height="30"/>
+                    <TextBox BorderBrush="#FF0A9DE2" Width="200" Height="30"/>
                     <Image Width="38" Source="ms-appx:///Image/Forums-icon.png"/>
                 </StackPanel>
             </StackPanel>
