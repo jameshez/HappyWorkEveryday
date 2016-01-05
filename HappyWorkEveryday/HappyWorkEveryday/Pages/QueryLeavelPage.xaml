@@ -6,6 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
+    <Page.DataContext>
+        <Binding Path="QueryForLeavePage" Source="{StaticResource Locator}"></Binding>
+    </Page.DataContext>
+    
     <Grid Name="MyGrid" Background="#FF89E9FF">
         <Grid Margin="10,0,0,0">
             <Grid.RowDefinitions>
@@ -33,8 +38,8 @@
                                 <Image Height="30" Source="ms-appx:///Image/QueryRecords-icon.png"></Image>
                             </StackPanel>
                                 <TextBlock Text="Output:" FontSize="20"></TextBlock>
-                                <ListView>
-                                    <!--<ListView.ItemTemplate>
+                                <ListView ItemsSource="{Binding LeaveRecords}">
+                                    <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel>
                                                 <TextBlock Text="{Binding Alias}"></TextBlock>
@@ -42,7 +47,7 @@
                                                 <TextBlock Text="{Binding OverTime}"></TextBlock>
                                             </StackPanel>
                                         </DataTemplate>
-                                    </ListView.ItemTemplate>-->
+                                    </ListView.ItemTemplate>
                                 </ListView>
                             </StackPanel>
                        

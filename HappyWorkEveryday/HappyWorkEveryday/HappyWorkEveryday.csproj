@@ -198,6 +198,7 @@
     <Compile Include="Helper\FlyoutHelpers.cs" />
     <Compile Include="Helper\LocalInformationHelper.cs" />
     <Compile Include="Helper\Logger.cs" />
+    <Compile Include="Helper\ServiceFactory.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -257,7 +258,7 @@
     <Compile Include="ViewModel\AskforLeaveViewModel.cs" />
     <Compile Include="ViewModel\MainpageViewModel.cs" />
     <Compile Include="ViewModel\OrganizationViewModel.cs" />
-    <Compile Include="ViewModel\QueryforLveaveViewModel.cs" />
+    <Compile Include="ViewModel\QueryforLeaveViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

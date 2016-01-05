@@ -18,8 +18,10 @@ namespace HappyWorkEveryday
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<AskforLeaveViewModel>();
-
             Debug.WriteLine("AskforLeaveViewModel registered at {0}", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff"));
+
+            SimpleIoc.Default.Register<QueryforLeaveViewModel>();
+            Debug.WriteLine("QueryforLeaveViewModel registered at {0}", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff"));
         }
 
         public static AskforLeaveViewModel _AskForLeavePage;
@@ -34,5 +36,19 @@ namespace HappyWorkEveryday
                 return _AskForLeavePage;
             }
         }
+
+        private static QueryforLeaveViewModel _QueryForLeavePage;
+        public static QueryforLeaveViewModel QueryForLeavePage
+        {
+            get
+            {
+                if (_QueryForLeavePage == null)
+                    _QueryForLeavePage = ServiceLocator.Current.GetInstance<QueryforLeaveViewModel>();
+
+                Debug.WriteLine("QueryforLeaveViewModel initialized at {0}", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff"));
+                return _QueryForLeavePage;
+            }
+        }
+
     }
 }
