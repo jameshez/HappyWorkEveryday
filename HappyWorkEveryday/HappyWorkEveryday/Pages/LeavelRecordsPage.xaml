@@ -6,6 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <Binding Path="LeaveRecordPage" Source="{StaticResource Locator}"></Binding>
+    </Page.DataContext>
+    
     <Page.Resources>
         <DatePickerFlyout x:Key="MyDatePickFlyout"/>
     </Page.Resources>
@@ -58,16 +63,16 @@
                             <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="EndDate"></TextBlock>
 
                         </StackPanel>
-                        <ListView  Name="MyListView" HorizontalAlignment="Left" Width="300" >
+                        <ListView  Name="MyListView" HorizontalAlignment="Left" Width="300" ItemsSource="{Binding LeaveRecords}" >
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
 
                                         <TextBlock Width="100" HorizontalAlignment="Left" Text="{Binding Alias}" ></TextBlock>
-                                        <TextBlock Width="100"  Text="{Binding EnglishName}"></TextBlock>
-                                        <TextBlock  Width="100"  Text="{Binding LeaveHour}"></TextBlock>
-                                        <TextBlock Width="100"  Text="{Binding FromDate}"></TextBlock>
-                                        <TextBlock  Width="100"  Text="{Binding EndDate}"></TextBlock>
+                                        <TextBlock Width="100"  Text="{Binding Alias}"></TextBlock>
+                                        <TextBlock  Width="100"  Text="{Binding TotalTime}"></TextBlock>
+                                        <TextBlock Width="100"  Text="{Binding StartTime}"></TextBlock>
+                                        <TextBlock  Width="100"  Text="{Binding EndTime}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

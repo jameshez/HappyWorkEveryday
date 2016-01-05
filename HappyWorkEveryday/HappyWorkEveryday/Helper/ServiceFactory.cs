@@ -1,4 +1,5 @@
-﻿using HappyWorkEveryday.MSDNUserServiceReference;
+﻿using HappyWorkEveryday.DetailServiceReference;
+using HappyWorkEveryday.MSDNUserServiceReference;
 using HappyWorkEveryday.UserServiceReference;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,24 @@ namespace HappyWorkEveryday.Helper
                     
                 }
                 return _Client;
+            }
+        }
+
+
+        private static DetailServiceClient _Detail;
+        /// <summary>
+        /// detail record per engineer
+        /// </summary>
+        public static DetailServiceClient Detail
+        {
+            get
+            {
+                if (_Detail == null)
+                {
+                    _Detail = new DetailServiceClient();
+
+                }
+                return _Detail;
             }
         }
 
