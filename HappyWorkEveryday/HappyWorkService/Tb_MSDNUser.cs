@@ -19,5 +19,6 @@ namespace HappyWorkService
         public string Name { get; set; }
         public int IsCheckOut { get; set; }
         public int IsTrainee { get; set; }
+        public Nullable<int> TeamId { get; set; }
     }
 }

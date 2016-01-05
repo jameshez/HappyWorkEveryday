@@ -16,5 +16,6 @@ namespace HappyWorkService
     {
         public int Id { get; set; }
         public string TeamName { get; set; }
+        public string TeamLeader { get; set; }
     }
 }

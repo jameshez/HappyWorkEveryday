@@ -14,6 +14,7 @@ namespace HappyWorkService
     
     public partial class Tb_Detail
     {
+        public int Id { get; set; }
         public int UserId { get; set; }
         public string Alias { get; set; }
         public System.DateTime StartTime { get; set; }
@@ -21,5 +22,7 @@ namespace HappyWorkService
         public string MyBackUp { get; set; }
         public double TotalTime { get; set; }
         public string Reason { get; set; }
+        public int IsApproved { get; set; }
+        public string LeaveType { get; set; }
     }
 }

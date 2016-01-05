@@ -19,5 +19,6 @@ namespace HappyWorkService
         public string EnglishName { get; set; }
         public double OverTime { get; set; }
         public int RoleId { get; set; }
+        public Nullable<int> MsdnID { get; set; }
     }
 }

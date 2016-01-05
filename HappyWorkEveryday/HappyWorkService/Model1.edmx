@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AttendanceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AttendanceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Tb_AdminLog">
           <Key>
             <PropertyRef Name="Id" />
@@ -16,8 +16,9 @@
         </EntityType>
         <EntityType Name="Tb_Detail">
           <Key>
-            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Alias" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="StartTime" Type="datetime" Nullable="false" />
@@ -25,6 +26,8 @@
           <Property Name="MyBackUp" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TotalTime" Type="float" Nullable="false" />
           <Property Name="Reason" Type="nvarchar(max)" />
+          <Property Name="IsApproved" Type="int" Nullable="false" />
+          <Property Name="LeaveType" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tb_MSDNUser">
           <Key>
@@ -35,6 +38,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsCheckOut" Type="int" Nullable="false" />
           <Property Name="IsTrainee" Type="int" Nullable="false" />
+          <Property Name="TeamId" Type="int" />
         </EntityType>
         <EntityType Name="Tb_Role">
           <Key>
@@ -50,6 +54,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TeamName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeamLeader" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tb_Technology">
           <Key>
@@ -68,12 +73,38 @@
           <Property Name="EnglishName" Type="nvarchar" MaxLength="50" />
           <Property Name="OverTime" Type="float" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="MsdnID" Type="int" />
         </EntityType>
+        <Function Name="addAdminLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="alias" Type="nvarchar" Mode="In" />
+          <Parameter Name="time" Type="datetime" Mode="In" />
+          <Parameter Name="remarks" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Issuccess" Type="int" Mode="InOut" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="AddMsdnUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="alias" Type="nvarchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="ischeckout" Type="int" Mode="In" />
+          <Parameter Name="istrainee" Type="int" Mode="In" />
+          <Parameter Name="teamid" Type="int" Mode="In" />
+          <Parameter Name="IsSuccess" Type="int" Mode="InOut" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
         <Function Name="AddNewUserForOverTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="alias" Type="nvarchar" Mode="In" />
           <Parameter Name="englishName" Type="nvarchar" Mode="In" />
           <Parameter Name="overtime" Type="float" Mode="In" />
           <Parameter Name="roleId" Type="int" Mode="In" />
+          <Parameter Name="IsSuccess" Type="int" Mode="InOut" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="ApproveUserOverTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="totaltime" Type="float" Mode="In" />
+          <Parameter Name="IsSuccess" Type="int" Mode="InOut" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
         </Function>
         <EntityContainer Name="AttendanceModelStoreContainer">
           <EntitySet Name="Tb_AdminLog" EntityType="Self.Tb_AdminLog" Schema="dbo" store:Type="Tables" />
@@ -84,41 +115,84 @@
           <EntitySet Name="Tb_Technology" EntityType="Self.Tb_Technology" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tb_User" EntityType="Self.Tb_User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AttendanceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AttendanceEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="AddNewUserForOverTime">
+            <Parameter Name="alias" Mode="In" Type="String" />
+            <Parameter Name="englishName" Mode="In" Type="String" />
+            <Parameter Name="overtime" Mode="In" Type="Double" />
+            <Parameter Name="roleId" Mode="In" Type="Int32" />
+            <Parameter Name="IsSuccess" Mode="InOut" Type="Int32" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Tb_AdminLog" EntityType="AttendanceModel.Tb_AdminLog" />
+          <EntitySet Name="Tb_Detail" EntityType="AttendanceModel.Tb_Detail" />
+          <EntitySet Name="Tb_MSDNUser" EntityType="AttendanceModel.Tb_MSDNUser" />
+          <EntitySet Name="Tb_Role" EntityType="AttendanceModel.Tb_Role" />
+          <EntitySet Name="Tb_TeamInfo" EntityType="AttendanceModel.Tb_TeamInfo" />
+          <EntitySet Name="Tb_Technology" EntityType="AttendanceModel.Tb_Technology" />
+          <EntitySet Name="Tb_User" EntityType="AttendanceModel.Tb_User" />
+          <FunctionImport Name="addAdminLog">
+            <Parameter Name="alias" Mode="In" Type="String" />
+            <Parameter Name="time" Mode="In" Type="DateTime" />
+            <Parameter Name="remarks" Mode="In" Type="String" />
+            <Parameter Name="Issuccess" Mode="InOut" Type="Int32" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddMsdnUser">
+            <Parameter Name="alias" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="ischeckout" Mode="In" Type="Int32" />
+            <Parameter Name="istrainee" Mode="In" Type="Int32" />
+            <Parameter Name="teamid" Mode="In" Type="Int32" />
+            <Parameter Name="IsSuccess" Mode="InOut" Type="Int32" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ApproveUserOverTime">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="totaltime" Mode="In" Type="Double" />
+            <Parameter Name="IsSuccess" Mode="InOut" Type="Int32" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
         <EntityType Name="Tb_AdminLog">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Remarks" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tb_Detail">
           <Key>
-            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="MyBackUp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MyBackUp" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TotalTime" Type="Double" Nullable="false" />
           <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsApproved" Type="Int32" Nullable="false" />
+          <Property Name="LeaveType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tb_MSDNUser">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsCheckOut" Type="Int32" Nullable="false" />
           <Property Name="IsTrainee" Type="Int32" Nullable="false" />
+          <Property Name="TeamId" Type="Int32" />
         </EntityType>
         <EntityType Name="Tb_Role">
           <Key>
@@ -133,7 +207,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TeamName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeamName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeamLeader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tb_Technology">
           <Key>
@@ -141,111 +216,106 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TeamId" Type="Int32" Nullable="false" />
-          <Property Name="Technology" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Technology" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tb_User">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EnglishName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OverTime" Type="Double" Nullable="false" />
           <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="MsdnID" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="AttendanceEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Tb_AdminLog" EntityType="Self.Tb_AdminLog" />
-          <EntitySet Name="Tb_Detail" EntityType="Self.Tb_Detail" />
-          <EntitySet Name="Tb_MSDNUser" EntityType="Self.Tb_MSDNUser" />
-          <EntitySet Name="Tb_Role" EntityType="Self.Tb_Role" />
-          <EntitySet Name="Tb_TeamInfo" EntityType="Self.Tb_TeamInfo" />
-          <EntitySet Name="Tb_Technology" EntityType="Self.Tb_Technology" />
-          <EntitySet Name="Tb_User" EntityType="Self.Tb_User" />
-          <FunctionImport Name="AddNewUserForOverTime">
-            <Parameter Name="alias" Mode="In" Type="String" />
-            <Parameter Name="englishName" Mode="In" Type="String" />
-            <Parameter Name="overtime" Mode="In" Type="Double" />
-            <Parameter Name="roleId" Mode="In" Type="Int32" />
-          </FunctionImport>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AttendanceModelStoreContainer" CdmEntityContainer="AttendanceEntities">
+          <FunctionImportMapping FunctionImportName="AddNewUserForOverTime" FunctionName="AttendanceModel.Store.AddNewUserForOverTime" />
           <EntitySetMapping Name="Tb_AdminLog">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_AdminLog">
               <MappingFragment StoreEntitySet="Tb_AdminLog">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tb_Detail">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_Detail">
               <MappingFragment StoreEntitySet="Tb_Detail">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-                <ScalarProperty Name="MyBackUp" ColumnName="MyBackUp" />
-                <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+                <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+                <ScalarProperty Name="MyBackUp" ColumnName="MyBackUp" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tb_MSDNUser">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_MSDNUser">
               <MappingFragment StoreEntitySet="Tb_MSDNUser">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="IsCheckOut" ColumnName="IsCheckOut" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
                 <ScalarProperty Name="IsTrainee" ColumnName="IsTrainee" />
+                <ScalarProperty Name="IsCheckOut" ColumnName="IsCheckOut" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tb_Role">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_Role">
               <MappingFragment StoreEntitySet="Tb_Role">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UserLevel" ColumnName="UserLevel" />
                 <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="UserLevel" ColumnName="UserLevel" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tb_TeamInfo">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_TeamInfo">
               <MappingFragment StoreEntitySet="Tb_TeamInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TeamLeader" ColumnName="TeamLeader" />
                 <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tb_Technology">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_Technology">
               <MappingFragment StoreEntitySet="Tb_Technology">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
                 <ScalarProperty Name="Technology" ColumnName="Technology" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tb_User">
             <EntityTypeMapping TypeName="AttendanceModel.Tb_User">
               <MappingFragment StoreEntitySet="Tb_User">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Alias" ColumnName="Alias" />
-                <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
-                <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+                <ScalarProperty Name="MsdnID" ColumnName="MsdnID" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+                <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="AddNewUserForOverTime" FunctionName="AttendanceModel.Store.AddNewUserForOverTime" />
+          <FunctionImportMapping FunctionImportName="addAdminLog" FunctionName="AttendanceModel.Store.addAdminLog" />
+          <FunctionImportMapping FunctionImportName="AddMsdnUser" FunctionName="AttendanceModel.Store.AddMsdnUser" />
+          <FunctionImportMapping FunctionImportName="ApproveUserOverTime" FunctionName="AttendanceModel.Store.ApproveUserOverTime" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -35,7 +35,7 @@ namespace HappyWorkService
         public virtual DbSet<Tb_Technology> Tb_Technology { get; set; }
         public virtual DbSet<Tb_User> Tb_User { get; set; }
     
-        public virtual int AddNewUserForOverTime(string alias, string englishName, Nullable<double> overtime, Nullable<int> roleId)
+        public virtual int AddNewUserForOverTime(string alias, string englishName, Nullable<double> overtime, Nullable<int> roleId, ObjectParameter isSuccess, ObjectParameter msg)
         {
             var aliasParameter = alias != null ?
                 new ObjectParameter("alias", alias) :
@@ -53,7 +53,66 @@ namespace HappyWorkService
                 new ObjectParameter("roleId", roleId) :
                 new ObjectParameter("roleId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddNewUserForOverTime", aliasParameter, englishNameParameter, overtimeParameter, roleIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddNewUserForOverTime", aliasParameter, englishNameParameter, overtimeParameter, roleIdParameter, isSuccess, msg);
+        }
+    
+        public virtual int addAdminLog(string alias, Nullable<System.DateTime> time, string remarks, ObjectParameter issuccess, ObjectParameter msg)
+        {
+            var aliasParameter = alias != null ?
+                new ObjectParameter("alias", alias) :
+                new ObjectParameter("alias", typeof(string));
+    
+            var timeParameter = time.HasValue ?
+                new ObjectParameter("time", time) :
+                new ObjectParameter("time", typeof(System.DateTime));
+    
+            var remarksParameter = remarks != null ?
+                new ObjectParameter("remarks", remarks) :
+                new ObjectParameter("remarks", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addAdminLog", aliasParameter, timeParameter, remarksParameter, issuccess, msg);
+        }
+    
+        public virtual int AddMsdnUser(string alias, string name, Nullable<int> ischeckout, Nullable<int> istrainee, Nullable<int> teamid, ObjectParameter isSuccess, ObjectParameter msg)
+        {
+            var aliasParameter = alias != null ?
+                new ObjectParameter("alias", alias) :
+                new ObjectParameter("alias", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var ischeckoutParameter = ischeckout.HasValue ?
+                new ObjectParameter("ischeckout", ischeckout) :
+                new ObjectParameter("ischeckout", typeof(int));
+    
+            var istraineeParameter = istrainee.HasValue ?
+                new ObjectParameter("istrainee", istrainee) :
+                new ObjectParameter("istrainee", typeof(int));
+    
+            var teamidParameter = teamid.HasValue ?
+                new ObjectParameter("teamid", teamid) :
+                new ObjectParameter("teamid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddMsdnUser", aliasParameter, nameParameter, ischeckoutParameter, istraineeParameter, teamidParameter, isSuccess, msg);
+        }
+    
+        public virtual int ApproveUserOverTime(Nullable<int> id, Nullable<int> userid, Nullable<double> totaltime, ObjectParameter isSuccess, ObjectParameter msg)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var totaltimeParameter = totaltime.HasValue ?
+                new ObjectParameter("totaltime", totaltime) :
+                new ObjectParameter("totaltime", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ApproveUserOverTime", idParameter, useridParameter, totaltimeParameter, isSuccess, msg);
         }
     }
 }
