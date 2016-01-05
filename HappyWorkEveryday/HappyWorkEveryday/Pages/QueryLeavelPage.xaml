@@ -6,11 +6,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
+ 
+
+
+
     <Page.DataContext>
         <Binding Path="QueryForLeavePage" Source="{StaticResource Locator}"></Binding>
     </Page.DataContext>
-    
+
     <Grid Name="MyGrid" Background="#FF89E9FF">
         <Grid Margin="10,0,0,0">
             <Grid.RowDefinitions>
@@ -32,25 +35,48 @@
                         </PivotItem.Header>
                         <Grid>
                             <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="Please enter your alias:" FontSize="20"></TextBlock>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBox PlaceholderText="For example:v-fapeng" Width="400"></TextBox>
-                                <Image Height="30" Source="ms-appx:///Image/QueryRecords-icon.png"></Image>
-                            </StackPanel>
-                                <TextBlock Text="Output:" FontSize="20"></TextBlock>
-                                <ListView ItemsSource="{Binding LeaveRecords}">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel>
-                                                <TextBlock Text="{Binding Alias}"></TextBlock>
-                                                <TextBlock Text="{Binding EnglishName}"></TextBlock>
-                                                <TextBlock Text="{Binding OverTime}"></TextBlock>
+                                <TextBlock Text="Please enter your alias:" FontSize="20"></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox BorderBrush="#FF0A9DE2" PlaceholderText="For example:v-fapeng" Width="300"></TextBox>
+                                    <Image Height="30" Source="ms-appx:///Image/QueryRecords-icon.png"></Image>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Output:" FontSize="20" HorizontalAlignment="Left"></TextBlock>
+                                    <Border Width="300" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FF0A9DE2">
+                                        <StackPanel  Orientation="Vertical">
+                                            <StackPanel Background="#FF0A9DE2" Orientation="Horizontal" Width="300" BorderThickness="0">
+                                                <TextBlock Width="100" FontWeight="Black" HorizontalAlignment="Left" Text="Alias" Margin="10,0,0,0" ></TextBlock>
+
+
+                                                <TextBlock Width="100" FontWeight="Black" HorizontalAlignment="Left" Text="Name"></TextBlock>
+
+
+                                                <TextBlock   FontWeight="Black" HorizontalAlignment="Left" Text="OverTime"></TextBlock>
                                             </StackPanel>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
+                                            <ListView  Name="MyListView" ContainerContentChanging="MyListView_ContainerContentChanging" ItemsSource="{Binding LeaveRecords}" HorizontalAlignment="Left" Width="300" >
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+
+                                                            <TextBlock Width="100" HorizontalAlignment="Left" Text="{Binding Alias}" ></TextBlock>
+
+
+                                                            <TextBlock Width="100"  Text="{Binding EnglishName}"></TextBlock>
+
+
+                                                            <TextBlock  Width="100"  Text="{Binding OverTime}"></TextBlock>
+
+
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                        </StackPanel>
+
+                                    </Border>
+                                </StackPanel>
                             </StackPanel>
-                       
+
                         </Grid>
                     </PivotItem>
                     <PivotItem>
@@ -62,9 +88,9 @@
                                 <RowDefinition Height="40"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-                           
-                                <HyperlinkButton Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" NavigateUri="http://attendance.pactera.com/index_EN.aspx" Content="Click here to query your annual leavel" FontSize="20"></HyperlinkButton>
-                      
+
+                            <HyperlinkButton Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" NavigateUri="http://attendance.pactera.com/index_EN.aspx" Content="Click here to query your annual leavel" FontSize="20"></HyperlinkButton>
+
                         </Grid>
                     </PivotItem>
 
