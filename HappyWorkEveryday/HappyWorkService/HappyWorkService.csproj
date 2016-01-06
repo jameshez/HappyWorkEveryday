@@ -124,6 +124,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomModels\LeaveRecordPageModel.cs" />
     <Compile Include="IService1.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -152,6 +153,10 @@
       <DependentUpon>DetailService.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\DetailService\IDetailService.cs" />
+    <Compile Include="Services\LeaveRecordService\ILeaveRecordService.cs" />
+    <Compile Include="Services\LeaveRecordService\LeaveRecordService.svc.cs">
+      <DependentUpon>LeaveRecordService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Services\TechnologyService\ITechnologyService.cs" />
     <Compile Include="Services\TeamInfoService\ITeamInfoService.cs" />
     <Compile Include="Services\RoleService\IRoleService.cs" />
@@ -208,6 +213,7 @@
     <Content Include="Service1.svc" />
     <Content Include="Services\AdminService\AdminService.svc" />
     <Content Include="Services\DetailService\DetailService.svc" />
+    <Content Include="Services\LeaveRecordService\LeaveRecordService.svc" />
     <Content Include="Services\MSDNUserService\MSDNUserService.svc" />
     <Content Include="Services\RoleService\RoleService.svc" />
     <Content Include="Services\TeamInfoService\TeamInfoService.svc" />
