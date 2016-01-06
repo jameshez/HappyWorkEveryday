@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using HappyWorkEveryday.DetailServiceReference;
 using HappyWorkEveryday.Helper;
 using HappyWorkEveryday.LeaveRecordService;
@@ -17,13 +18,31 @@ namespace HappyWorkEveryday.ViewModel
         public LeaveRecordViewModel()
         {
             //initData();
+
+            SearchCommand = new RelayCommand<string>((alias) =>
+            {
+                var m = new ObservableCollection<LeaveRecordPageModel>( 
+                        from r in _SearchableLeaveRecords
+                        where r.Alias.Contains(alias) || r.EnglishName.Contains(alias)
+                        select r);
+
+                _LeaveRecords = m;
+                RaisePropertyChanged("LeaveRecords");
+            });
         }
+
+        public RelayCommand<string> SearchCommand
+        {
+            get; set;
+        }
+
 
         private async void initData()
         {
             try
             {
                 _LeaveRecords = await ServiceFactory.Detail.FindAllLeaveRecordsAsync();
+                _SearchableLeaveRecords = _LeaveRecords;
             }
             catch (Exception e)
             {
@@ -33,6 +52,7 @@ namespace HappyWorkEveryday.ViewModel
             RaisePropertyChanged("LeaveRecords");
         }
 
+        private ObservableCollection<LeaveRecordPageModel> _SearchableLeaveRecords;
         private ObservableCollection<LeaveRecordPageModel> _LeaveRecords;
         public ObservableCollection<LeaveRecordPageModel> LeaveRecords
         {

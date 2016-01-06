@@ -6,6 +6,10 @@
     xmlns:helper="using:HappyWorkEveryday.Helper"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:m="using:Microsoft.Xaml.Interactions.Media"
+    
     mc:Ignorable="d">
 
     <Page.DataContext>
@@ -50,7 +54,13 @@
         </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top">
-                <TextBox BorderBrush="#FF0A9DE2" PlaceholderText="Please enter alias:v-fapeng" Width="200" Height="30"></TextBox>
+                <TextBox x:Name="searchword" BorderBrush="#FF0A9DE2" PlaceholderText="Please enter alias:v-fapeng" Width="200" Height="30">
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="TextChanged">
+                            <core:InvokeCommandAction Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=searchword, Path=Text}"/>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                </TextBox>
             <Image Source="ms-appx:///Image/QueryLeavel-icon.png" Width="30" Height="30"></Image>
         </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="3">

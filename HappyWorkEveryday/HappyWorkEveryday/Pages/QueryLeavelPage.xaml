@@ -5,6 +5,9 @@
     xmlns:local="using:HappyWorkEveryday.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:m="using:Microsoft.Xaml.Interactions.Media"
     mc:Ignorable="d">
  
 
@@ -37,7 +40,13 @@
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="Please enter your alias:" FontSize="20"></TextBlock>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBox BorderBrush="#FF0A9DE2" PlaceholderText="For example:v-fapeng" Width="300"></TextBox>
+                                    <TextBox x:Name="searchword" BorderBrush="#FF0A9DE2" PlaceholderText="For example:v-fapeng" Width="300">
+                                        <i:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="TextChanged">
+                                                <core:InvokeCommandAction Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=searchword, Path=Text}"/>
+                                            </core:EventTriggerBehavior>
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
                                     <Image Height="30" Source="ms-appx:///Image/QueryRecords-icon.png"></Image>
                                 </StackPanel>
                                 <StackPanel Orientation="Vertical">
