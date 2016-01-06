@@ -13,20 +13,33 @@ namespace HappyWorkService.Services.LeaveRecordService
     // NOTE: In order to launch WCF Test Client for testing this service, please select LeaveRecordService.svc or LeaveRecordService.svc.cs at the Solution Explorer and start debugging.
     public class LeaveRecordService : ILeaveRecordService
     {
-        public IQueryable<LeaveRecordPageModel> FindAllLeaveRecords()
+        protected static object obj = new object();
+        public IList<LeaveRecordPageModel> FindAllLeaveRecords()
         {
-            var result = from user in DBRepository<Tb_User>.GetInstance().db.Tb_User
-                         join detail in DBRepository<Tb_Detail>.GetInstance().db.Tb_Detail on user.UserId equals detail.UserId
-                         select new LeaveRecordPageModel()
-                         {
-                             Alias = user.Alias,
-                             EnglishName = user.EnglishName,
-                             StartTime = detail.StartTime.ToString(),
-                             EndTime = detail.EndTime.ToString(),
-                             TotalTime = detail.TotalTime,
-                             LeaveType = detail.LeaveType
-                         };
-            return result;
+            lock (obj)
+            {
+                try
+                {
+                    var result = (from user in DBRepository<Tb_User>.db.Tb_User.ToList()
+                                  join detail in DBRepository<Tb_Detail>.db.Tb_Detail.ToList() on user.UserId equals detail.UserId
+                                  select new LeaveRecordPageModel()
+                                  {
+                                      Alias = user.Alias,
+                                      EnglishName = user.EnglishName,
+                                      StartTime = detail.StartTime.ToString(),
+                                      EndTime = detail.EndTime.ToString(),
+                                      TotalTime = detail.TotalTime,
+                                      LeaveType = detail.LeaveType
+                                  }).ToList();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+
+            }
         }
     }
 }

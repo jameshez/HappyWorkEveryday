@@ -7,7 +7,7 @@ namespace HappyWorkService.Repository
 {
     public class DBRepository<T> where T : class
     {
-        public AttendanceEntities db = new AttendanceEntities();
+        public static AttendanceEntities db = new AttendanceEntities();
         private static DBRepository<T> instance;
         private static readonly object syncObj = new object();
         private DBRepository()

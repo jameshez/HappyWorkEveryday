@@ -34,7 +34,7 @@ namespace HappyWorkService.Services
 
         public Tb_User FindByAlias(string Alias)
         {
-            return DBRepository<Tb_User>.GetInstance().db.Tb_User.Where(t => t.Alias == Alias).FirstOrDefault();
+            return DBRepository<Tb_User>.db.Tb_User.Where(t => t.Alias == Alias).FirstOrDefault();
         }
 
         public int Update(Tb_User t)

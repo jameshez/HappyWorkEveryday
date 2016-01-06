@@ -13,6 +13,6 @@ namespace HappyWorkService.Services.LeaveRecordService
     public interface ILeaveRecordService
     {
         [OperationContract]
-        IQueryable<LeaveRecordPageModel> FindAllLeaveRecords();
+        IList<LeaveRecordPageModel> FindAllLeaveRecords();
     }
 }
