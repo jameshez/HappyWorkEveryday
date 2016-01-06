@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f59ce5e9-f9ca-4ff7-9218-1495d3fbf731" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="437219f6-537d-4943-b05a-7b455906a77d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -24,11 +24,11 @@
     <MetadataSource Address="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LeaveRecordService.xsd" MetadataType="Schema" ID="baf47a3d-84c8-4257-84ac-cdf4acadf716" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?xsd=xsd1" />
-    <MetadataFile FileName="LeaveRecordService1.xsd" MetadataType="Schema" ID="56ec1908-9475-49e8-a802-2357b66d0d1a" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?xsd=xsd0" />
-    <MetadataFile FileName="LeaveRecordService.disco" MetadataType="Disco" ID="a98dde72-6b7d-481e-a389-c449c5e706c9" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?disco" />
-    <MetadataFile FileName="LeaveRecordService2.xsd" MetadataType="Schema" ID="74005b74-8c47-4a01-a02e-d584138e20c9" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?xsd=xsd2" />
-    <MetadataFile FileName="LeaveRecordService.wsdl" MetadataType="Wsdl" ID="27999223-2b46-45de-a9f4-86158459560f" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?wsdl" />
+    <MetadataFile FileName="LeaveRecordService.xsd" MetadataType="Schema" ID="a8407891-1803-47c7-88ae-370cc2029ba9" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LeaveRecordService1.xsd" MetadataType="Schema" ID="1cddf44c-e4b8-4606-9313-b1130c2cbb79" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LeaveRecordService.disco" MetadataType="Disco" ID="16802e30-8841-4846-b19e-0a4b9954d95d" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?disco" />
+    <MetadataFile FileName="LeaveRecordService2.xsd" MetadataType="Schema" ID="4970583d-a30e-4282-b14d-0a17283b65f7" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LeaveRecordService.wsdl" MetadataType="Wsdl" ID="e1452a5c-f8ac-406b-a05a-7a85f39aaafc" SourceId="1" SourceUrl="http://10.168.172.218:8090/Services/LeaveRecordService/LeaveRecordService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
