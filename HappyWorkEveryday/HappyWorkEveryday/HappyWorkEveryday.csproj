@@ -128,6 +128,19 @@
     <None Include="Service References\MSDNUserServiceReference\HappyWorkEveryday.MSDNUserServiceReference.Tb_MSDNUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\OrganizationService\HappyWorkEveryday.OrganizationService.OrganizationPageModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganizationService\OrganizationService.wsdl" />
+    <None Include="Service References\OrganizationService\OrganizationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrganizationService\OrganizationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrganizationService\OrganizationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\RoleServiceReference\HappyWorkEveryday.RoleServiceReference.Tb_Role.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -242,6 +255,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\OrganizationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\RoleServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,6 +312,13 @@
     <Content Include="Image\Forums-icon.png" />
     <Content Include="Image\Organization-icon.png" />
     <Content Include="Image\AskForLeavel-icon.png" />
+    <None Include="Service References\OrganizationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\OrganizationService\configuration.svcinfo" />
+    <None Include="Service References\OrganizationService\configuration91.svcinfo" />
+    <None Include="Service References\OrganizationService\OrganizationService.disco" />
     <None Include="Service References\LeaveRecordService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -408,6 +433,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AdminServiceReference\" />
     <WCFMetadataStorage Include="Service References\LeaveRecordService\" />
+    <WCFMetadataStorage Include="Service References\OrganizationService\" />
     <WCFMetadataStorage Include="Service References\RoleServiceReference\" />
     <WCFMetadataStorage Include="Service References\DetailServiceReference\" />
     <WCFMetadataStorage Include="Service References\MSDNUserServiceReference\" />
