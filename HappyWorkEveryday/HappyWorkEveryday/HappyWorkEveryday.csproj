@@ -148,6 +148,19 @@
     <None Include="Service References\MSDNUserServiceReference\MSDNUserService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\HappyWorkEveryday.ServiceReference1.LeaveRecordPageModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\LeaveRecordService.wsdl" />
+    <None Include="Service References\ServiceReference1\LeaveRecordService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\LeaveRecordService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\LeaveRecordService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\TeamInfoServiceReference\HappyWorkEveryday.TeamInfoServiceReference.Tb_TeamInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -239,6 +252,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\TeamInfoServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -276,6 +294,13 @@
     <Content Include="Image\Forums-icon.png" />
     <Content Include="Image\Organization-icon.png" />
     <Content Include="Image\AskForLeavel-icon.png" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\LeaveRecordService.disco" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Image\people-icon.png" />
     <Content Include="Image\Time-icon.png" />
@@ -385,6 +410,7 @@
     <WCFMetadataStorage Include="Service References\RoleServiceReference\" />
     <WCFMetadataStorage Include="Service References\DetailServiceReference\" />
     <WCFMetadataStorage Include="Service References\MSDNUserServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
     <WCFMetadataStorage Include="Service References\TeamInfoServiceReference\" />
     <WCFMetadataStorage Include="Service References\TechnologyServiceReference\" />
     <WCFMetadataStorage Include="Service References\UserServiceReference\" />
