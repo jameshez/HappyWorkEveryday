@@ -87,7 +87,7 @@ namespace HappyWorkEveryday.LeaveRecordService {
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string StartTime {
             get {
-                return this.StartTimeField;
+                return this.StartTimeField.ToString();
             }
             set {
                 if ((object.ReferenceEquals(this.StartTimeField, value) != true)) {

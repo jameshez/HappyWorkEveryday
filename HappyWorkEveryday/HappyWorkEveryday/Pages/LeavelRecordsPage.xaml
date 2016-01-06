@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:HappyWorkEveryday.Pages"
+    xmlns:helper="using:HappyWorkEveryday.Helper"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -13,6 +14,7 @@
     
     <Page.Resources>
         <DatePickerFlyout x:Key="MyDatePickFlyout"/>
+        <helper:DateToStringConverter x:Key="converter"></helper:DateToStringConverter>
     </Page.Resources>
     <Grid Background="#FF89E9FF">
         <Grid Margin="10,0,0,0">
@@ -63,16 +65,16 @@
                             <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="EndDate"></TextBlock>
 
                         </StackPanel>
-                        <ListView  Name="MyListView" HorizontalAlignment="Left" Width="300" ItemsSource="{Binding LeaveRecords}" >
+                        <ListView  Name="MyListView" HorizontalAlignment="Left" Width="650" ItemsSource="{Binding LeaveRecords}" >
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
 
                                         <TextBlock Width="100" HorizontalAlignment="Left" Text="{Binding Alias}" ></TextBlock>
                                         <TextBlock Width="100"  Text="{Binding EnglishName}"></TextBlock>
-                                        <TextBlock  Width="100"  Text="{Binding TotalTime}"></TextBlock>
-                                        <TextBlock Width="100"  Text="{Binding StartTime}"></TextBlock>
-                                        <TextBlock  Width="100"  Text="{Binding EndTime}"></TextBlock>
+                                        <TextBlock  Width="150"  Text="{Binding TotalTime}"></TextBlock>
+                                        <TextBlock Width="150"  Text="{Binding StartTime}"></TextBlock>
+                                        <TextBlock  Width="150"  Text="{Binding EndTime}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
