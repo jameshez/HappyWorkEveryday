@@ -69,7 +69,7 @@
                                     <StackPanel Orientation="Horizontal">
 
                                         <TextBlock Width="100" HorizontalAlignment="Left" Text="{Binding Alias}" ></TextBlock>
-                                        <TextBlock Width="100"  Text="{Binding Alias}"></TextBlock>
+                                        <TextBlock Width="100"  Text="{Binding EnglishName}"></TextBlock>
                                         <TextBlock  Width="100"  Text="{Binding TotalTime}"></TextBlock>
                                         <TextBlock Width="100"  Text="{Binding StartTime}"></TextBlock>
                                         <TextBlock  Width="100"  Text="{Binding EndTime}"></TextBlock>
