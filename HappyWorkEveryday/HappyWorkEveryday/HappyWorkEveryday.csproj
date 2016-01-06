@@ -221,6 +221,7 @@
     <Compile Include="BackUPUserControl.xaml.cs">
       <DependentUpon>BackUPUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Converters.cs" />
     <Compile Include="Helper\FlyoutHelpers.cs" />
     <Compile Include="Helper\LocalInformationHelper.cs" />
     <Compile Include="Helper\Logger.cs" />
