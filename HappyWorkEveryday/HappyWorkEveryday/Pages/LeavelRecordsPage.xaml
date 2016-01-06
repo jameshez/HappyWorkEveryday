@@ -60,9 +60,9 @@
                         <StackPanel Background="#FF0A9DE2" Orientation="Horizontal" BorderThickness="0">
                             <TextBlock Width="100" FontWeight="Black" HorizontalAlignment="Left" Text="Alias" Margin="10,0,0,0" ></TextBlock>
                             <TextBlock Width="100" FontWeight="Black" HorizontalAlignment="Left" Text="Name"></TextBlock>
-                            <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="LeaveHour"></TextBlock>
-                            <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="FromDate"></TextBlock>
-                            <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="EndDate"></TextBlock>
+                            <TextBlock Width="100"  FontWeight="Black" HorizontalAlignment="Left" Text="LeaveHour"></TextBlock>
+                            <TextBlock Width="200"  FontWeight="Black" HorizontalAlignment="Left" Text="FromDate"></TextBlock>
+                            <TextBlock Width="200"  FontWeight="Black" HorizontalAlignment="Left" Text="EndDate"></TextBlock>
 
                         </StackPanel>
                         <ListView  Name="MyListView" HorizontalAlignment="Left" Width="650" ItemsSource="{Binding LeaveRecords}" >
@@ -72,9 +72,9 @@
 
                                         <TextBlock Width="100" HorizontalAlignment="Left" Text="{Binding Alias}" ></TextBlock>
                                         <TextBlock Width="100"  Text="{Binding EnglishName}"></TextBlock>
-                                        <TextBlock  Width="150"  Text="{Binding TotalTime}"></TextBlock>
-                                        <TextBlock Width="150"  Text="{Binding StartTime}"></TextBlock>
-                                        <TextBlock  Width="150"  Text="{Binding EndTime}"></TextBlock>
+                                        <TextBlock  Width="100"  Text="{Binding TotalTime}"></TextBlock>
+                                        <TextBlock Width="200"  Text="{Binding StartTime}"></TextBlock>
+                                        <TextBlock  Width="200"  Text="{Binding EndTime}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

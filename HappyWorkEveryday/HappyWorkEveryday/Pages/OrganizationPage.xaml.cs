@@ -1,4 +1,6 @@
-﻿using HappyWorkEveryday.MSDNUserServiceReference;
+﻿using HappyWorkEveryday.Helper;
+using HappyWorkEveryday.MSDNUserServiceReference;
+using HappyWorkEveryday.OrganizationService;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,32 +29,25 @@ namespace HappyWorkEveryday.Pages
         public OrganizationPage()
         {
             this.InitializeComponent();
-            something();
+            //something();
             
 
         }
 
+        //ObservableCollection<OrganizationPageModel> a = new ObservableCollection<OrganizationPageModel>();
 
-        MSDNUserServiceClient MSDNUser_Client = new MSDNUserServiceClient();
-
-        ObservableCollection<Tb_MSDNUser> a = new ObservableCollection<Tb_MSDNUser>();
-
-        public async void something()
-        {
-            //var a = await MSDNUser_Client.FindAllAsync();
-
-            a.Add(new Tb_MSDNUser() { Alias = "UWP", Id = 1, Name = "Fang" });
-            a.Add(new Tb_MSDNUser() { Alias = "UWP", Id = 2, Name = "James" });
-            a.Add(new Tb_MSDNUser() { Alias = "F&D", Id = 2, Name = "Barry" });
-            a.Add(new Tb_MSDNUser() { Alias = "F&D", Id = 1, Name = "Dongwei" });
-            a.Add(new Tb_MSDNUser() { Alias = "JJKS", Id = 1, Name = "Minxing" });
+        //public async void something()
+        //{
+        //    //var a = await MSDNUser_Client.FindAllAsync();
+        //    var a = await ServiceFactory.Orginzation.FindOrganizationRelationshipAsync();
 
 
-            var t = from p in a
-                    group p by p.Alias into g
-                    select g;
 
-            item.ItemsSource = t;
-        }
+        //    var t = from p in a
+        //            group p by p.TeamName into g
+        //            select g;
+
+        //    item.ItemsSource = t;
+        //}
     }
 }

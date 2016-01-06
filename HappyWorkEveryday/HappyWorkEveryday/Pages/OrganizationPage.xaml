@@ -7,11 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:ZeroProximity.Controls"
     mc:Ignorable="d">
-
+    <Page.DataContext>
+        <Binding Path="OrgPage" Source="{StaticResource Locator}"></Binding>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Margin="10,0,0,0">
-        <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item">
+        <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item" ItemsSource="{Binding OrgRecords}">
             <controls:Accordion.ItemTemplate>
                 <DataTemplate>
                     <controls:AccordionItem Header="{Binding Key}" FontWeight="Black" FontSize="20" Content="{Binding}" >
@@ -21,7 +23,7 @@
                                     <ListView Background="Gray" ItemsSource="{Binding}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
-                                                <ListViewItem Content="{Binding Name}"></ListViewItem>
+                                                <ListViewItem Content="{Binding EnglishName}"></ListViewItem>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                     </ListView>

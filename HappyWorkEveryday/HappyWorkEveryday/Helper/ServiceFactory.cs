@@ -1,6 +1,7 @@
 ﻿using HappyWorkEveryday.DetailServiceReference;
 using HappyWorkEveryday.LeaveRecordService;
 using HappyWorkEveryday.MSDNUserServiceReference;
+using HappyWorkEveryday.OrganizationService;
 using HappyWorkEveryday.UserServiceReference;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,23 @@ namespace HappyWorkEveryday.Helper
                     
                 }
                 return _Client;
+            }
+        }
+
+        private static OrganizationServiceClient _Orginzation;
+        /// <summary>
+        /// orginzation detail data
+        /// </summary>
+        public static OrganizationServiceClient Orginzation
+        {
+            get
+            {
+                if (_Orginzation == null)
+                {
+                    _Orginzation = new OrganizationServiceClient();
+
+                }
+                return _Orginzation;
             }
         }
 
