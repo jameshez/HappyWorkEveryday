@@ -1,4 +1,5 @@
 ﻿using HappyWorkEveryday.DetailServiceReference;
+using HappyWorkEveryday.LeaveRecordService;
 using HappyWorkEveryday.MSDNUserServiceReference;
 using HappyWorkEveryday.UserServiceReference;
 using System;
@@ -30,17 +31,17 @@ namespace HappyWorkEveryday.Helper
         }
 
 
-        private static DetailServiceClient _Detail;
+        private static LeaveRecordServiceClient _Detail;
         /// <summary>
         /// detail record per engineer
         /// </summary>
-        public static DetailServiceClient Detail
+        public static LeaveRecordServiceClient Detail
         {
             get
             {
                 if (_Detail == null)
                 {
-                    _Detail = new DetailServiceClient();
+                    _Detail = new LeaveRecordServiceClient();
 
                 }
                 return _Detail;

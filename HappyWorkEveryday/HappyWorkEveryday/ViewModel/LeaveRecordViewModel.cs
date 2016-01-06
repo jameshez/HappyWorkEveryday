@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using HappyWorkEveryday.DetailServiceReference;
 using HappyWorkEveryday.Helper;
+using HappyWorkEveryday.LeaveRecordService;
 using HappyWorkEveryday.UserServiceReference;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace HappyWorkEveryday.ViewModel
         {
             try
             {
-                _LeaveRecords = await ServiceFactory.Detail.FindAllAsync();
+                _LeaveRecords = await ServiceFactory.Detail.FindAllLeaveRecordsAsync();
             }
             catch (Exception e)
             {
@@ -32,8 +33,8 @@ namespace HappyWorkEveryday.ViewModel
             RaisePropertyChanged("LeaveRecords");
         }
 
-        private ObservableCollection<Tb_Detail> _LeaveRecords;
-        public ObservableCollection<Tb_Detail> LeaveRecords
+        private ObservableCollection<LeaveRecordPageModel> _LeaveRecords;
+        public ObservableCollection<LeaveRecordPageModel> LeaveRecords
         {
             get
             {
