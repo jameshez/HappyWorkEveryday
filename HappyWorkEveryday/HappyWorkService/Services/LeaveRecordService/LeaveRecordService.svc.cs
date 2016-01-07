@@ -29,17 +29,19 @@ namespace HappyWorkService.Services.LeaveRecordService
                                       StartTime = detail.StartTime.ToString(),
                                       EndTime = detail.EndTime.ToString(),
                                       TotalTime = detail.TotalTime,
-                                      LeaveType = detail.LeaveType
-                                  }).ToList();
-                    return result;
-                }
-                catch (Exception ex)
-                {
+                                      LeaveType = detail.LeaveType,
+                                      IsApproved = detail.IsApproved == 0 ? "No" : "Yes"
 
-                    throw;
-                }
-
+                }).ToList();
+                return result;
             }
+                catch (Exception ex)
+            {
+
+                throw;
+            }
+
         }
     }
+}
 }
