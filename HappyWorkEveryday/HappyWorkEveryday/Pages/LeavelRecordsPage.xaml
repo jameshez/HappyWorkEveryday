@@ -215,7 +215,7 @@
         </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="3">
                 <TextBlock Text="Output:" FontSize="20" HorizontalAlignment="Left"></TextBlock>
-                <Border CornerRadius="10" Width="750" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FF0A9DE2">
+                <Border CornerRadius="10" Width="1000" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FF0A9DE2">
                     <StackPanel Orientation="Vertical">
                         <StackPanel Background="#FF0A9DE2" Orientation="Horizontal" BorderThickness="0">
                             <TextBlock Width="100" FontWeight="Black" HorizontalAlignment="Left" Text="Alias" Margin="10,0,0,0" ></TextBlock>
@@ -223,9 +223,11 @@
                             <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="LeaveHour"></TextBlock>
                             <TextBlock Width="200"  FontWeight="Black" HorizontalAlignment="Left" Text="FromDate"></TextBlock>
                             <TextBlock Width="200"  FontWeight="Black" HorizontalAlignment="Left" Text="EndDate"></TextBlock>
+                            <TextBlock Width="150"  FontWeight="Black" HorizontalAlignment="Left" Text="LeaveType"></TextBlock>
+                            <TextBlock Width="100"  FontWeight="Black" HorizontalAlignment="Left" Text="IsApprovel"></TextBlock>
 
                         </StackPanel>
-                        <ListView ContainerContentChanging="MyListView_ContainerContentChanging" Name="MyListView" HorizontalAlignment="Left" Width="750" ItemsSource="{Binding LeaveRecords}">
+                        <ListView ContainerContentChanging="MyListView_ContainerContentChanging" Name="MyListView" HorizontalAlignment="Left" Width="1000" ItemsSource="{Binding LeaveRecords}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -235,6 +237,8 @@
                                         <TextBlock  Width="150"  Text="{Binding TotalTime}"></TextBlock>
                                         <TextBlock Width="200"  Text="{Binding StartTime}"></TextBlock>
                                         <TextBlock  Width="200"  Text="{Binding EndTime}"></TextBlock>
+                                        <TextBlock Width="150"  Text="{Binding LeaveType}"></TextBlock>
+                                        <TextBlock  Width="100"  Text="{Binding LeaveType}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
