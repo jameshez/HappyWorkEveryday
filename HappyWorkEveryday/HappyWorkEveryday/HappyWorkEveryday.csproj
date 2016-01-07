@@ -229,6 +229,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyUserContorls\TextboxImageUserControl.xaml.cs">
+      <DependentUpon>TextboxImageUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AskForLeavePage.xaml.cs">
       <DependentUpon>AskForLeavePage.xaml</DependentUpon>
     </Compile>
@@ -306,11 +309,13 @@
   <ItemGroup>
     <Content Include="1307090.jpg" />
     <Content Include="Assets\smile.png" />
+    <Content Include="Image\Add_Button.png" />
     <Content Include="Image\bg.jpg" />
     <Content Include="Image\bg1.jpg" />
     <Content Include="Image\bg11.PNG" />
     <Content Include="Image\calendar-icon.png" />
     <Content Include="Image\Forums-icon.png" />
+    <Content Include="Image\minus_button.png" />
     <Content Include="Image\Organization-icon.png" />
     <Content Include="Image\AskForLeavel-icon.png" />
     <None Include="Service References\OrganizationService\Reference.svcmap">
@@ -404,6 +409,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MyUserContorls\TextboxImageUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AskForLeavePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -423,6 +432,10 @@
     <Page Include="Pages\SplitViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -76,9 +77,11 @@ namespace HappyWorkEveryday.Pages
             TestPanel.Name = "MyPanel" + count;
             TestPanel.Orientation = Orientation.Horizontal;
             BackUPUserControl test = new BackUPUserControl();
-            Button mybutton = new Button();
-            mybutton.Click += Mybutton_Click;
-            mybutton.Content = "Cancel";
+            Image mybutton = new Image();
+            mybutton.Height = 30;
+            mybutton.Width = 30;
+            mybutton.Tapped += Mybutton_Click;
+            mybutton.Source = new BitmapImage(new Uri("ms-appx:///Image/minus_button.png"));
             TestPanel.Children.Add(test);
             TestPanel.Children.Add(mybutton);
             BackupStackPanel.Children.Add(TestPanel);

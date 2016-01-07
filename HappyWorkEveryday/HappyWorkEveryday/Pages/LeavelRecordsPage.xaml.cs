@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -44,5 +45,19 @@ namespace HappyWorkEveryday.Pages
             DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
             myflyout.ShowAt(ToDateImage);
         }
+
+        private void MyListView_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+        {
+            if (args.ItemIndex % 2 == 0)
+            {
+                args.ItemContainer.Background = new SolidColorBrush(Colors.Aquamarine);
+            }
+            else
+            {
+                args.ItemContainer.Background = new SolidColorBrush(Colors.LightGreen);
+            }
+        }
+
+       
     }
 }
