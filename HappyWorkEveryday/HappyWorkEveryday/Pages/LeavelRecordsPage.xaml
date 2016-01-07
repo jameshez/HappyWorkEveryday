@@ -188,31 +188,41 @@
                 <Border BorderThickness="0,10,0,0" BorderBrush="#FF0A9DE2" Margin="-1,0,0,0"></Border>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top">
-        <StackPanel Orientation="Horizontal" Width="460">
-            <TextBlock Text="Date from:" FontSize="21" VerticalAlignment="Center"/>
-            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Width="460">
+                    <TextBlock Text="Date from:" FontSize="21" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal">
                         <TextBox Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="130" Height="30"/>
-                <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
-            <StackPanel Orientation="Horizontal">
+                        <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
                         <TextBox Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="130" Height="30"></TextBox>
-                <Image Name="ToDateImage" Tapped="ToDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
+                        <Image Name="ToDateImage" Tapped="ToDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"></Image>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top">
-                <TextBox Style="{StaticResource TextBoxStyle1}" x:Name="searchword" BorderBrush="#FF0A9DE2" PlaceholderText="Please enter alias:v-fapeng" Width="200" Height="30">
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <StackPanel HorizontalAlignment="Left" Width="460" Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top">
+                <TextBox HorizontalAlignment="Left" Style="{StaticResource TextBoxStyle1}" x:Name="searchword" BorderBrush="#FF0A9DE2" PlaceholderText="Please enter alias:v-fapeng" Width="230" Height="30">
                     <i:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="TextChanged">
                             <core:InvokeCommandAction Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=searchword, Path=Text}"/>
                         </core:EventTriggerBehavior>
                     </i:Interaction.Behaviors>
                 </TextBox>
-            <Image Source="ms-appx:///Image/QueryLeavel-icon.png" Width="30" Height="30"></Image>
+
+                <Image Source="ms-appx:///Image/QueryLeavel-icon.png" Width="30" Height="30"></Image>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <ComboBox PlaceholderText="Please choose LeavelType">
+                    <ComboBoxItem Content="Sick Leave"></ComboBoxItem>
+                    <ComboBoxItem Content="Annual Leave"></ComboBoxItem>
+                    <ComboBoxItem Content="Flexible Leave"></ComboBoxItem>
+                </ComboBox>
         </StackPanel>
+            </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="3">
                 <TextBlock Text="Output:" FontSize="20" HorizontalAlignment="Left"></TextBlock>
                 <Border CornerRadius="10" Width="1000" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="#FF0A9DE2">
