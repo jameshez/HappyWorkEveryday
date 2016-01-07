@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace HappyWorkEveryday
 {
-    public sealed partial class BackUPUserControl : UserControl
+    public sealed partial class BackUPUserControl :UserControl
     {
         public BackUPUserControl()
         {

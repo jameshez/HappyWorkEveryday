@@ -11,15 +11,30 @@
         <Binding Path="OrgPage" Source="{StaticResource Locator}"></Binding>
     </Page.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#FF89E9FF">
         <Grid Margin="10,0,0,0">
-        <controls:Accordion HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item" ItemsSource="{Binding OrgRecords}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
+                <Border BorderThickness="0,0,0,1" BorderBrush="Black" Height="45" >
+                    <StackPanel Orientation="Horizontal" Height="30" Grid.Row="0">
+                        <Image Source="ms-appx:///Assets/smile.png" Margin="0" Width="23" VerticalAlignment="Center"></Image>
+                        <TextBlock Text="Welcome to check the organization" FontSize="21" VerticalAlignment="Center" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,10,0,0" BorderBrush="#FF0A9DE2" Margin="-1,0,0,0"></Border>
+            </StackPanel>
+               
+                <controls:Accordion Background="#FF89E9FF" Grid.Row="1" HorizontalAlignment="Stretch" SelectionMode="ZeroOrOne" x:Name="item" ItemsSource="{Binding OrgRecords}">
             <controls:Accordion.ItemTemplate>
                 <DataTemplate>
-                    <controls:AccordionItem Header="{Binding Key}" FontWeight="Black" FontSize="20" Content="{Binding}" >
+                            <controls:AccordionItem Background="#FF89E9FF" Header="{Binding Key}" FontWeight="Black" FontSize="20" Content="{Binding}" >
                         <controls:AccordionItem.ContentTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                                        <StackPanel Background="#FF89E9FF" Orientation="Horizontal">
                                     <ListView Background="Gray" ItemsSource="{Binding}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
@@ -34,8 +49,8 @@
                 </DataTemplate>
             </controls:Accordion.ItemTemplate>
         </controls:Accordion>
-
-        <!--<controls:AccordionItem Header="UWP Team" FontWeight="Black" FontSize="20">
+              
+                <!--<controls:AccordionItem Header="UWP Team" FontWeight="Black" FontSize="20">
                 <controls:AccordionItem.Content>
                     <StackPanel Orientation="Horizontal">
                         <ListView Background="Gray">
@@ -104,7 +119,7 @@
                 </controls:AccordionItem.Content>
             </controls:AccordionItem>
         </controls:Accordion>-->
-
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>
