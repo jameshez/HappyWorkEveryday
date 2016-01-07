@@ -26,6 +26,8 @@ namespace HappyWorkEveryday.LeaveRecordService {
         
         private string EnglishNameField;
         
+        private string IsApprovedField;
+        
         private string LeaveTypeField;
         
         private string StartTimeField;
@@ -72,6 +74,19 @@ namespace HappyWorkEveryday.LeaveRecordService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IsApproved {
+            get {
+                return this.IsApprovedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IsApprovedField, value) != true)) {
+                    this.IsApprovedField = value;
+                    this.RaisePropertyChanged("IsApproved");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string LeaveType {
             get {
                 return this.LeaveTypeField;
@@ -87,7 +102,7 @@ namespace HappyWorkEveryday.LeaveRecordService {
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string StartTime {
             get {
-                return this.StartTimeField.ToString();
+                return this.StartTimeField;
             }
             set {
                 if ((object.ReferenceEquals(this.StartTimeField, value) != true)) {
