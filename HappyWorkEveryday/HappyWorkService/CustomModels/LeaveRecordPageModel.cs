@@ -13,6 +13,7 @@ namespace HappyWorkService.CustomModels
         public string EndTime { get; set; }
         public double TotalTime { get; set; }
         public string LeaveType { get; set; }
+        public string IsApproved { get; set; }
 
     }
 }
