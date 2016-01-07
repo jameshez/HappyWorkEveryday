@@ -21,9 +21,9 @@ namespace HappyWorkEveryday.ViewModel
             //initData();
             SearchCommand = new RelayCommand<string>((alias) =>
             {
-                var m = new ObservableCollection<Tb_User>(
-                        from r in _SearchableLeaveRecords
-                        where r.Alias.Contains(alias) || r.EnglishName.Contains(alias)
+            var m = new ObservableCollection<Tb_User>(
+                    from r in _SearchableLeaveRecords
+                    where r.Alias.Contains(alias) || r.EnglishName.ToUpper().Contains(alias.ToUpper())
                         select r);
 
                 _LeaveRecords = m;
