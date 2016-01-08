@@ -159,21 +159,39 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Flyout x:Key="MyBackUPFlyOut">
+            <Grid>
+                <ComboBox PlaceholderText="Choose one backup" Name="MyBackUPComboBox" SelectionChanged="MyBackUPComboBox_SelectionChanged">
+                    <ComboBoxItem Content="backup"></ComboBoxItem>
+                    <ComboBoxItem Content="backup1"></ComboBoxItem>
+                    <ComboBoxItem Content="backup2"></ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </Flyout>
+        <Flyout x:Key="MyForumsFlyOut">
+            <Grid>
+                <ComboBox PlaceholderText="Choose one forum" Name="MyForumsComboBox" SelectionChanged="MyForumsComboBox_SelectionChanged">
+                    <ComboBoxItem Content="forums"></ComboBoxItem>
+                    <ComboBoxItem Content="forums1"></ComboBoxItem>
+                    <ComboBoxItem Content="forums2"></ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </Flyout>
     </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Horizontal" Width="500">
                 <TextBlock Text="Backup:" FontSize="21" VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" BorderThickness="2">
-                    <TextBox Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="130" Height="30"/>
-                    <Image Width="30" Height="30" Source="ms-appx:///Image/people-icon.png"/>
+                    <TextBox Name="BackupTextBox" Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="130" Height="30"/>
+                    <Image Name="MyBackupImage" Tapped="MyBackupImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/people-icon.png"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Width="500">
                 <TextBlock Text="Forums:" FontSize="21" VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="200" Height="30"/>
-                    <Image Width="38" Source="ms-appx:///Image/Forums-icon.png"/>
+                    <TextBox Name="ForumsTextBox" Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="200" Height="30"/>
+                    <Image Name="MyForumsImage" Tapped="MyForumsImage_Tapped" Width="38" Source="ms-appx:///Image/Forums-icon.png"/>
                 </StackPanel>
             </StackPanel>
             

@@ -34,17 +34,17 @@ namespace HappyWorkEveryday.Pages
             this.InitializeComponent();
         }
 
-        private void FromDateImage_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
-            myflyout.ShowAt(FromDateImage);
-        }
+        //private void FromDateImage_Tapped(object sender, TappedRoutedEventArgs e)
+        //{
+        //    DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
+        //    myflyout.ShowAt(FromDateImage);
+        //}
 
-        private void ToDateImage_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
-            myflyout.ShowAt(ToDateImage);
-        }
+        //private void ToDateImage_Tapped(object sender, TappedRoutedEventArgs e)
+        //{
+        //    DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
+        //    myflyout.ShowAt(ToDateImage);
+        //}
 
         private void MyListView_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
         {

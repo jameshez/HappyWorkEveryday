@@ -19,9 +19,73 @@ namespace HappyWorkEveryday
 {
     public sealed partial class BackUPUserControl :UserControl
     {
+        public Dictionary<string, string> dict { get; set; }
         public BackUPUserControl()
         {
             this.InitializeComponent();
+            
+        }    
+
+       
+        public string BackUpTextBoxValue
+        {
+            get { return (string)GetValue(BackUpTextBoxValueProperty); }
+            set { SetValue(BackUpTextBoxValueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for BackUpTextBoxValue.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty BackUpTextBoxValueProperty =
+            DependencyProperty.Register("BackUpTextBoxValue", typeof(string), typeof(BackUPUserControl), new PropertyMetadata(0));
+        public string ForumsTextBoxValue
+        {
+            get { return (string)GetValue(ForumsTextBoxValueProperty); }
+            set { SetValue(ForumsTextBoxValueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for BackUpTextBoxValue.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ForumsTextBoxValueProperty =
+            DependencyProperty.Register("ForumsTextBoxValue", typeof(string), typeof(BackUPUserControl), new PropertyMetadata(0));
+
+
+       
+        private void MyBackUPComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BackUpTextBoxValue = BackupTextBox.Text.ToString();
+           
+            
+        }
+
+        private void MyForumsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ForumsTextBoxValue = ForumsTextBox.Text;
+            if(MyBackUPComboBox.SelectedIndex==-1)
+            {
+
+
+            }
+            else
+            {
+                dict = new Dictionary<string, string>();
+                dict.Add(BackUpTextBoxValue, ForumsTextBoxValue);
+            }
+        }
+
+        private void MyBackupImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Flyout myflyout = Resources["MyBackUPFlyOut"] as Flyout;
+            myflyout.ShowAt(MyBackupImage);
+            PlaneProjection PlaneProjection = new PlaneProjection();
+            PlaneProjection.GlobalOffsetZ = 150;
+            MyBackupImage.Projection = PlaneProjection;
+        }
+
+        private void MyForumsImage_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Flyout myflyout = Resources["MyForumsFlyOut"] as Flyout;
+            myflyout.ShowAt(MyForumsImage);
+            PlaneProjection PlaneProjection = new PlaneProjection();
+            PlaneProjection.GlobalOffsetZ = 150;
+            MyForumsImage.Projection = PlaneProjection;
         }
     }
 }
