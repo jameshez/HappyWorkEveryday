@@ -33,42 +33,6 @@ namespace HappyWorkEveryday.Pages
             Debug.WriteLine("AskForLeavePage initialized at {0}", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff"));
             //this.DataContext = new AskforLeaveViewModel();
         }
-
-        //private void FromDateImage_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
-        //    myflyout.ShowAt(FromDateImage);
-        //    PlaneProjection PlaneProjection = new PlaneProjection();
-        //    PlaneProjection.GlobalOffsetZ = 150;
-        //    FromDateImage.Projection = PlaneProjection;
-        //}
-
-        //private void FromTimeImage_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    TimePickerFlyout myflyout = Resources["MyTimePickerFlyout"] as TimePickerFlyout;
-        //    myflyout.ShowAt(FromTimeImage);
-        //    PlaneProjection PlaneProjection = new PlaneProjection();
-        //    PlaneProjection.GlobalOffsetZ = 150;
-        //    FromTimeImage.Projection = PlaneProjection;
-        //}
-
-        //private void ToDateImage_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    DatePickerFlyout myflyout = Resources["MyDatePickFlyout"] as DatePickerFlyout;
-        //    myflyout.ShowAt(ToDateImage);
-        //    PlaneProjection PlaneProjection = new PlaneProjection();
-        //    PlaneProjection.GlobalOffsetZ = 150;
-        //    ToDateImage.Projection = PlaneProjection;
-        //}
-
-        //private void ToTimeImage_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    TimePickerFlyout myflyout = Resources["MyTimePickerFlyout"] as TimePickerFlyout;
-        //    myflyout.ShowAt(ToTimeImage);
-        //    PlaneProjection PlaneProjection = new PlaneProjection();
-        //    PlaneProjection.GlobalOffsetZ = 150;
-        //    ToTimeImage.Projection = PlaneProjection;
-        //}
         static int count;
         StackPanel TestPanel;
         private void Button_Click(object sender, RoutedEventArgs e)
