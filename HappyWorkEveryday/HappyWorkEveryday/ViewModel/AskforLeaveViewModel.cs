@@ -28,6 +28,7 @@ namespace HappyWorkEveryday.ViewModel
         MSDNUserServiceClient MSDNUser_Client = new MSDNUserServiceClient();
         #region Property System
         public string localuser { get; set; }
+        #region Date and Time
         public string _startdate { get; set; }
         public string _todate { get; set; }
         public string _starttime { get; set; }
@@ -43,6 +44,36 @@ namespace HappyWorkEveryday.ViewModel
             }
         }
 
+        public string ToDate
+        {
+            get { return _todate; }
+            set
+            {
+                _todate = value;
+                RaisePropertyChanged("ToDate");
+            }
+        }
+
+        public string StartTime
+        {
+            get { return _starttime; }
+            set
+            {
+                _starttime = value;
+                RaisePropertyChanged("StartTime");
+            }
+        }
+
+        public string ToTime
+        {
+            get { return _totime; }
+            set
+            {
+                _totime = value;
+                RaisePropertyChanged("ToTime");
+            }
+        }
+        #endregion
 
         #region FlyoutProperty
         private bool isFlyoutOpen;
