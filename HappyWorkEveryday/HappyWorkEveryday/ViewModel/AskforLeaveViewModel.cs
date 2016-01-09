@@ -97,6 +97,8 @@ namespace HappyWorkEveryday.ViewModel
         public RelayCommand CloseCommand { get; set; }
 
         public RelayCommand<object> ComboBoxSelectCommand { get; set; }
+
+        
         #endregion
 
 
@@ -106,13 +108,14 @@ namespace HappyWorkEveryday.ViewModel
         {
             try
             {
+                InitializeData();
                 OpenCommand = new RelayCommand<object>(async (x) =>
                 {
                     RadioButton rb = (RadioButton)x;
                     if (rb.Name == "ForMySelfRadioButton")
                     {
                         var GetName = await LocalInformationHelper.getCurrentUserName();
-                        selectedUserRecord.Alias = GetName.Item2;
+                        SelectedAlias = GetName.Item2;                     
                     }
                     else if (rb.Name == "ForOthersRadioButton")
                     {
@@ -126,15 +129,20 @@ namespace HappyWorkEveryday.ViewModel
                     ComboBox cb = (ComboBox)x;
                     SelectedAlias = cb.SelectedItem.ToString();
                     SelectedUserRecord = await client.FindByAliasAsync(SelectedAlias);
+                    
                 });
+               
 
-                InitializeData();
             }
             catch (Exception e)
             {
-                Logger.WriteLogInfo(false, "Table does not contain" + SelectedAlias + "'s overtime");
+                Logger.WriteLogInfo(false, "Error:" + e.Message.ToString());
+               // Logger.WriteLogInfo(false, "Table does not contain" + SelectedAlias + "'s overtime");
             }
         }
+
+      
+
         private async void InitializeData()
         {
             //usergroup = await client.FindAllAsync();

@@ -27,8 +27,14 @@ namespace HappyWorkEveryday.MyUserContorls
             
         }
 
-
-
+        #region Barry Property System
+        private string _dateflyoutvalue;
+        public string StartDateFlyoutValue
+        {
+            get { return _dateflyoutvalue; }
+            set { value = _dateflyoutvalue; }
+        }
+        #endregion
         public string TextBoxDateText
         {
             get { return (string)GetValue(TextBoxDateTextProperty); }
@@ -110,8 +116,8 @@ namespace HappyWorkEveryday.MyUserContorls
             PlaneProjection PlaneProjection = new PlaneProjection();
             PlaneProjection.GlobalOffsetZ = 0;
             MyImage.Projection = PlaneProjection;
-            string test = (sender as DatePickerFlyout).Date.DateTime.ToString("yyyy-MM-dd");
-            MyTextBox.Text = test;
+            _dateflyoutvalue = (sender as DatePickerFlyout).Date.DateTime.ToString("yyyy-MM-dd");
+            MyTextBox.Text = _dateflyoutvalue;
             MyTextBox.Foreground = new SolidColorBrush(Colors.Red);
             MyTextBox.FontSize = 15;
             TextBoxDateText = MyTextBox.Text;
