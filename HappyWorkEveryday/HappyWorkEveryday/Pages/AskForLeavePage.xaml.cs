@@ -29,59 +29,20 @@ namespace HappyWorkEveryday.Pages
         public AskForLeavePage()
         {
             this.InitializeComponent();
-           
-            Debug.WriteLine("AskForLeavePage initialized at {0}", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss:ffff"));
-            //this.DataContext = new AskforLeaveViewModel();
+
+            List<string> alias = new List<string>();
+            alias.Add("v-doxie");
+            alias.Add("v-barryw");
+            alias.Add("v-james");
+
+            List<string> technology = new List<string>();
+            technology.Add("WPF");
+            technology.Add("UWP");
+            technology.Add("VB.NET");
+
+            uc.alias = alias;
+            uc.technology = technology;
         }
-        static int count;
-        StackPanel TestPanel;
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            TestPanel = new StackPanel();
-            TestPanel.Name = "MyPanel" + count;
-            TestPanel.Orientation = Orientation.Horizontal;
-            BackUPUserControl test = new BackUPUserControl();
-            Image mybutton = new Image();
-            mybutton.Name = count.ToString(); ;
-            mybutton.Height = 30;
-            mybutton.Width = 30;
-            mybutton.Tapped += Mybutton_Click;
-            mybutton.Source = new BitmapImage(new Uri("ms-appx:///Image/minus_button.png"));
-            TestPanel.Children.Add(test);
-            TestPanel.Children.Add(mybutton);
-            BackupStackPanel.Children.Add(TestPanel);
-            count++;
-
-        }
-
-        private void Mybutton_Click(object sender, RoutedEventArgs e)
-        {
-            Image testButton = sender as Image;
-            string name = "MyPanel" + testButton.Name;
-            StackPanel test = BackupStackPanel.FindName(name) as StackPanel;
-            BackupStackPanel.Children.Remove(test);
-                     
-        }
-
-        private void CancleButton_Click(object sender, RoutedEventArgs e)
-        {
-            BackupStackPanel.Children.Remove(BackupStackPanelFirst);
-        }
-
-       
-
-
-
-
-
-
-        //private void ForOthersRadioButton_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    if (ForOthersRadioButton.IsChecked == true)
-        //    {
-        //        Flyout MyFlyout = Resources["MyFlyout"] as Flyout;
-        //        MyFlyout.ShowAt(ForOthersRadioButton);
-        //    }
-        //}
+        
     }
 }

@@ -10,7 +10,7 @@
     xmlns:m="using:Microsoft.Xaml.Interactions.Media"
     xmlns:helper="using:HappyWorkEveryday.Helper"
     xmlns:localcontrol="using:HappyWorkEveryday"
-    xmlns:MyControlTextBox="using:HappyWorkEveryday.MyUserContorls"
+    xmlns:MyControls="using:HappyWorkEveryday.MyUserContorls"
     mc:Ignorable="d" Background="Black">
     <Page.DataContext>
         <Binding Path="AskForLeavePage" Source="{StaticResource Locator}"></Binding>
@@ -402,7 +402,7 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl  x:Name="test" MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControls:TextboxImageUserControl  x:Name="test" MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControls:TextboxImageUserControl>
                             <!--<TextBox Style="{StaticResource TextBoxStyle1}" BorderThickness="2" BorderBrush="#FF0A9DE2" Name="FromDateTextBox" Width="130" Height="30"/>
                             <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>-->
                         </StackPanel>
@@ -411,7 +411,7 @@
                     <StackPanel Orientation="Horizontal" Width="300" Name="ToDateStackPanel">
                         <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControls:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControls:TextboxImageUserControl>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -428,13 +428,13 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControls:MyBackUp ></MyControls:MyBackUp>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
                         <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControls:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControls:TextboxImageUserControl>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -445,30 +445,7 @@
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black"  Grid.Row="4">
                 <StackPanel Orientation="Vertical" Grid.Row="4">
-                    <StackPanel Orientation="Vertical" Name="BackupStackPanel">
-                        <StackPanel Name="BackupStackPanelFirst" Orientation="Horizontal">
-                            <localcontrol:BackUPUserControl></localcontrol:BackUPUserControl>
-                            <Image Name="CancleButton" Height="30" Tapped="CancleButton_Click" Source="ms-appx:///Image/minus_button.png"></Image>
-                        </StackPanel>
-
-                        <!--<StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Backup:" FontSize="21" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" BorderThickness="2">
-                            <TextBox Width="130" Height="30"/>
-                            <Image Width="30" Height="30" Source="ms-appx:///Image/people-icon.png"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Forums:" FontSize="21" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Width="200" Height="30"/>
-                            <Image Width="38" Source="ms-appx:///Image/Forums-icon.png"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <Button Content="Add"></Button>-->
-
-                    </StackPanel>
-                    <Image Height="30" Width="30" HorizontalAlignment="Left" Tapped="Button_Click" Source="ms-appx:///Image/Add_Button.png"></Image>
+                    <MyControls:MyBackUp x:Name="uc"></MyControls:MyBackUp>
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="5">

@@ -24,6 +24,7 @@ namespace HappyWorkEveryday
         {
             this.InitializeComponent();
             
+            
         }    
 
        
@@ -69,6 +70,7 @@ namespace HappyWorkEveryday
                 dict.Add(BackUpTextBoxValue, ForumsTextBoxValue);
             }
         }
+
 
         private void MyBackupImage_Tapped(object sender, TappedRoutedEventArgs e)
         {

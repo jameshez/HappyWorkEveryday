@@ -229,6 +229,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyUserContorls\MyBackUp.xaml.cs">
+      <DependentUpon>MyBackUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyUserContorls\TextboxImageUserControl.xaml.cs">
       <DependentUpon>TextboxImageUserControl.xaml</DependentUpon>
     </Compile>
@@ -408,6 +411,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyUserContorls\MyBackUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyUserContorls\TextboxImageUserControl.xaml">
       <SubType>Designer</SubType>
