@@ -19,15 +19,32 @@ using HappyWorkEveryday.Helper;
 
 namespace HappyWorkEveryday.ViewModel
 {
-
+   
 
     public class AskforLeaveViewModel : ViewModelBase
     {
 
         UserServiceClient client = new UserServiceClient();
         MSDNUserServiceClient MSDNUser_Client = new MSDNUserServiceClient();
+        #region Property System
+        public string localuser { get; set; }
+        public string _startdate { get; set; }
+        public string _todate { get; set; }
+        public string _starttime { get; set; }
+        public string _totime { get; set; }
 
-        #region Property
+        public string StartDate
+        {
+            get { return _startdate; }
+            set
+            {
+                _startdate = value;
+                RaisePropertyChanged("StartDate");            
+            }
+        }
+
+
+        #region FlyoutProperty
         private bool isFlyoutOpen;
         public bool IsFlyoutOpen
         {
@@ -38,7 +55,9 @@ namespace HappyWorkEveryday.ViewModel
                 RaisePropertyChanged("IsFlyoutOpen");
             }
         }
+        #endregion
 
+        #region Tb_User group
         //Initialize property for binding
         //User group property
         private ObservableCollection<Tb_User> usergroup = new ObservableCollection<Tb_User>();
@@ -52,19 +71,9 @@ namespace HappyWorkEveryday.ViewModel
                 //NotifyPropertyChanged("UserGroup");
             }
         }
-        //SelectedUserRecord property
-        private Tb_User selectedUserRecord = new Tb_User();
+        #endregion
 
-        public Tb_User SelectedUserRecord
-        {
-            get { return selectedUserRecord; }
-            set
-            {
-                selectedUserRecord = value;
-
-                RaisePropertyChanged("SelectedUserRecord");
-            }
-        }
+        #region ItemSource for Combobox
         //Get List alias
         private ObservableCollection<string> _user_alias_group = new ObservableCollection<string>();
 
@@ -77,7 +86,27 @@ namespace HappyWorkEveryday.ViewModel
                 RaisePropertyChanged("User_Alias_Group");
             }
         }
+        #endregion
 
+
+        #region Record when search using alias
+        //SelectedUserRecord collection
+        private Tb_User selectedUserRecord = new Tb_User();
+
+        public Tb_User SelectedUserRecord
+        {
+            get { return selectedUserRecord; }
+            set
+            {
+                selectedUserRecord = value;
+
+                RaisePropertyChanged("SelectedUserRecord");
+            }
+        }
+        #endregion
+
+        #region Selected Alias, used for button binding.
+        //Selected Alias, used for button binding.
         private string _selectedalias;
 
         public string SelectedAlias
@@ -90,32 +119,43 @@ namespace HappyWorkEveryday.ViewModel
             }
         }
         #endregion
+       
+
+        #endregion
 
 
         #region Command
+        //Popup flyout
         public RelayCommand<object> OpenCommand { get; set; }
+        //Command to close the flyout 
         public RelayCommand CloseCommand { get; set; }
-
+        //Select alias
         public RelayCommand<object> ComboBoxSelectCommand { get; set; }
-
+        //Submit userdata
+        public RelayCommand SubmitCommand { get; set; }
         
         #endregion
 
 
 
 
-        public AskforLeaveViewModel()
+        public  AskforLeaveViewModel()
         {
             try
             {
+                //InitializeData for combobox binding
                 InitializeData();
-                OpenCommand = new RelayCommand<object>(async (x) =>
+                //Get Local User
+                FetchLocalAlias();
+              
+                OpenCommand = new RelayCommand<object>((x) =>
                 {
                     RadioButton rb = (RadioButton)x;
                     if (rb.Name == "ForMySelfRadioButton")
                     {
-                        var GetName = await LocalInformationHelper.getCurrentUserName();
-                        SelectedAlias = GetName.Item2;                     
+
+                        SelectedAlias = localuser;
+
                     }
                     else if (rb.Name == "ForOthersRadioButton")
                     {
@@ -123,15 +163,33 @@ namespace HappyWorkEveryday.ViewModel
                         flyout.ShowAt(rb);
                     }
                 });
+
                 CloseCommand = new RelayCommand(() => IsFlyoutOpen = false);
+
+
                 ComboBoxSelectCommand = new RelayCommand<object>(async (x) =>
                 {
                     ComboBox cb = (ComboBox)x;
                     SelectedAlias = cb.SelectedItem.ToString();
                     SelectedUserRecord = await client.FindByAliasAsync(SelectedAlias);
                     
+                    
                 });
-               
+
+                SubmitCommand = new RelayCommand(() =>
+                  {
+                      
+                      var x = StartDate;
+                      if(SelectedUserRecord.OverTime==0)
+                      {
+
+                      }
+                      else
+                      {
+
+                      }
+                  }
+                );
 
             }
             catch (Exception e)
@@ -141,17 +199,26 @@ namespace HappyWorkEveryday.ViewModel
             }
         }
 
-      
+
 
         private async void InitializeData()
         {
             //usergroup = await client.FindAllAsync();
-          
+
             _user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));
+
+        }
+
+        private async void FetchLocalAlias()
+        {
+            var GetName = await LocalInformationHelper.getCurrentUserName();
+            localuser = GetName.Item2;
+            SelectedAlias = localuser;
         }
 
 
-
-
     }
+
+
+   
 }

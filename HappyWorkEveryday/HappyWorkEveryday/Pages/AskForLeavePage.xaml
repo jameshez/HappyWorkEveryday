@@ -402,7 +402,7 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl  x:Name="test" MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControlTextBox:TextboxImageUserControl TextBoxDateText="{Binding StartDate,Mode=TwoWay}"  x:Name="StartDate" MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControlTextBox:TextboxImageUserControl>
                             <!--<TextBox Style="{StaticResource TextBoxStyle1}" BorderThickness="2" BorderBrush="#FF0A9DE2" Name="FromDateTextBox" Width="130" Height="30"/>
                             <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>-->
                         </StackPanel>
@@ -411,7 +411,7 @@
                     <StackPanel Orientation="Horizontal" Width="300" Name="ToDateStackPanel">
                         <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControlTextBox:TextboxImageUserControl x:Name="ToDate" MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControlTextBox:TextboxImageUserControl>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -428,13 +428,13 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControlTextBox:TextboxImageUserControl x:Name="StartTime" MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControlTextBox:TextboxImageUserControl>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
                         <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <MyControlTextBox:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControlTextBox:TextboxImageUserControl>
+                            <MyControlTextBox:TextboxImageUserControl x:Name="ToTime" MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControlTextBox:TextboxImageUserControl>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -483,7 +483,14 @@
                 <TextBlock Text="Reason:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                 <RichEditBox BorderBrush="#FF0A9DE2" Height="100" Width="300" HorizontalAlignment="Left" Style="{StaticResource RichEditBoxStyle1}"/>
 
-                <Button Command="{Binding CloseCommand}" Name="SubmitButton" Content="Sumbit" Background="#FF79D8EE" FontSize="21" Style="{StaticResource ButtonStyle1}" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="300" Margin="0,25,0,0"></Button>
+                <Button  Name="SubmitButton" Content="Sumbit" Background="#FF79D8EE" FontSize="21" Style="{StaticResource ButtonStyle1}" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="300" Margin="0,25,0,0">
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:InvokeCommandAction Command="{Binding SubmitCommand}" CommandParameter="{Binding ElementName=SubmitButton}">
+                            </core:InvokeCommandAction>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>
