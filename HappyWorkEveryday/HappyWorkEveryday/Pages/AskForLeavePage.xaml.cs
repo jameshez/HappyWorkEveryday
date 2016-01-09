@@ -30,18 +30,7 @@ namespace HappyWorkEveryday.Pages
         {
             this.InitializeComponent();
 
-            List<string> alias = new List<string>();
-            alias.Add("v-doxie");
-            alias.Add("v-barryw");
-            alias.Add("v-james");
-
-            List<string> technology = new List<string>();
-            technology.Add("WPF");
-            technology.Add("UWP");
-            technology.Add("VB.NET");
-
-            uc.alias = alias;
-            uc.technology = technology;
+            
         }
         
     }
