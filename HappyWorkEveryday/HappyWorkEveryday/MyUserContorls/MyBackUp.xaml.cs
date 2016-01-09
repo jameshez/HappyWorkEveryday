@@ -124,20 +124,23 @@ namespace HappyWorkEveryday.MyUserContorls
         private void DeleteValue(string key, string value)
         {
             string[] values = _backup.GetValues(key);
-            List<string> ls = new List<string>();
-            foreach (string item in values)
+            if (values != null)
             {
-                if (item != value)
+                List<string> ls = new List<string>();
+                foreach (string item in values)
                 {
-                    ls.Add(item);
+                    if (item != value)
+                    {
+                        ls.Add(item);
+                    }
                 }
-            }
-            _backup.Remove(key);
-            if (ls.Count > 0)
-            {
-                foreach (string i in ls)
+                _backup.Remove(key);
+                if (ls.Count > 0)
                 {
-                    _backup.Add(key, i);
+                    foreach (string i in ls)
+                    {
+                        _backup.Add(key, i);
+                    }
                 }
             }
         }
