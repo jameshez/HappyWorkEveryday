@@ -26,42 +26,43 @@ namespace HappyWorkEveryday.Helper
 
             var list = classType.GetRuntimeProperties();
 
-            object obj = Activator.CreateInstance(classType);
-
-            foreach (PropertyInfo item in list)
-            {
-                if (item.PropertyType == typeof(string))
-                {
-                    if (item.Name.ToUpper().Contains("NAME"))
-                    {
-                        item.SetValue(obj, "FakeName");
-                    }
-                    else if (item.Name.ToUpper().Contains("TIME"))
-                    {
-                        item.SetValue(obj, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
-                    }
-                    else if (item.Name.ToUpper().Contains("ALIAS"))
-                    {
-                        item.SetValue(obj, "v-fake");
-                    }
-                    else
-                    {
-                        item.SetValue(obj, "Whatever");
-                    }
-
-                }
-                if (item.PropertyType == typeof(DateTime))
-                {
-                    item.SetValue(obj, DateTime.Now);
-                }
-                if (item.PropertyType == typeof(double))
-                {
-                    item.SetValue(obj, rnd.NextDouble()*100);
-                }
-
-            }
             for (int i = 0; i < n; i++)
             {
+                object obj = Activator.CreateInstance(classType);
+
+                foreach (PropertyInfo item in list)
+                {
+                    if (item.PropertyType == typeof(string))
+                    {
+                        if (item.Name.ToUpper().Contains("NAME"))
+                        {
+                            item.SetValue(obj, "FakeName");
+                        }
+                        else if (item.Name.ToUpper().Contains("TIME"))
+                        {
+                            item.SetValue(obj, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
+                        }
+                        else if (item.Name.ToUpper().Contains("ALIAS"))
+                        {
+                            item.SetValue(obj, "v-fake");
+                        }
+                        else
+                        {
+                            item.SetValue(obj, "Whatever");
+                        }
+
+                    }
+                    if (item.PropertyType == typeof(DateTime))
+                    {
+                        item.SetValue(obj, DateTime.Now);
+                    }
+                    if (item.PropertyType == typeof(double))
+                    {
+                        item.SetValue(obj, rnd.NextDouble()*100);
+                    }
+
+                }
+            
                 returnCollection.Add((T)obj);
             }
 

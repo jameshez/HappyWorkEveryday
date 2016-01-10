@@ -47,6 +47,7 @@ namespace HappyWorkEveryday.ViewModel
             {
                 Logger.WriteLogInfo(false, e);
                 _LeaveRecords = TestDataGenerator.Generate<Tb_User>(10);
+                _SearchableLeaveRecords = _LeaveRecords;
             }
 
             RaisePropertyChanged("LeaveRecords");
