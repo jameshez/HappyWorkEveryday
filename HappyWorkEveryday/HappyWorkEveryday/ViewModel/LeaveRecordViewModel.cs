@@ -22,19 +22,46 @@ namespace HappyWorkEveryday.ViewModel
             SearchCommand = new RelayCommand<string>((alias) =>
             {
 
-
                 var m = new ObservableCollection<LeaveRecordPageModel>( 
                         from r in _SearchableLeaveRecords
                         where (r.Alias.ToUpper().Contains(alias.ToUpper()) || r.EnglishName.ToUpper().Contains(alias.ToUpper()))
-                        && r.LeaveType.Equals("")
                         select r);
 
                 _LeaveRecords = m;
                 RaisePropertyChanged("LeaveRecords");
             });
+
+
+            LeaveTypeChangeCommand = new RelayCommand<string>((leavetype)=>
+            {
+                //leaveType = leavetype;
+                var result = new ObservableCollection<LeaveRecordPageModel>(
+                    from r in _LeaveRecords
+                    where r.LeaveType.Equals(leavetype)
+                    select r);
+                RaisePropertyChanged("LeaveRecords");
+            });
+        }
+
+        private string _leaveType;
+        public string leaveType
+        {
+            get
+            {
+                return _leaveType;
+            }
+            set
+            {
+                _leaveType = value.ToString();
+            }
         }
 
         public RelayCommand<string> SearchCommand
+        {
+            get; set;
+        }
+
+        public RelayCommand<string> LeaveTypeChangeCommand
         {
             get; set;
         }
