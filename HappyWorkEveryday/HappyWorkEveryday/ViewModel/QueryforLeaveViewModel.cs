@@ -23,8 +23,8 @@ namespace HappyWorkEveryday.ViewModel
             {
             var m = new ObservableCollection<Tb_User>(
                     from r in _SearchableLeaveRecords
-                    where r.Alias.Contains(alias) || r.EnglishName.ToUpper().Contains(alias.ToUpper())
-                        select r);
+                    where r.Alias.ToUpper().Contains(alias.ToUpper()) || r.EnglishName.ToUpper().Contains(alias.ToUpper())
+                    select r);
 
                 _LeaveRecords = m;
                 RaisePropertyChanged("LeaveRecords");
