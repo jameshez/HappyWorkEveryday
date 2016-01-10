@@ -47,6 +47,8 @@ namespace HappyWorkEveryday.ViewModel
             catch (Exception e)
             {
                 Logger.WriteLogInfo(false, e);
+
+                _LeaveRecords = TestDataGenerator.Generate<LeaveRecordPageModel>(10);
             }
 
             RaisePropertyChanged("LeaveRecords");

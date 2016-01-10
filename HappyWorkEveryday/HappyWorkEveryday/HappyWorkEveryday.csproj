@@ -226,6 +226,7 @@
     <Compile Include="Helper\LocalInformationHelper.cs" />
     <Compile Include="Helper\Logger.cs" />
     <Compile Include="Helper\ServiceFactory.cs" />
+    <Compile Include="Helper\TestDataGenerator.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
