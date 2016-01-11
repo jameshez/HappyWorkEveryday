@@ -29,8 +29,10 @@ namespace HappyWorkEveryday.Pages
         public AskForLeavePage()
         {
             this.InitializeComponent();
-
-            
+            List<string> test = new List<string>() { "test1", "tersty" };
+            List<string> test1 = new List<string>() { "test1", "tersty" };
+            uc.alias = test;
+            uc.technology = test1;
         }
         
     }

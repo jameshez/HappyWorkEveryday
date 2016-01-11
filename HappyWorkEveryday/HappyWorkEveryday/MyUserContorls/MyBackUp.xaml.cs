@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -13,12 +15,14 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace HappyWorkEveryday.MyUserContorls
 {
+ 
     public sealed partial class MyBackUp : UserControl
     {
         public MyBackUp()
@@ -71,6 +75,34 @@ namespace HappyWorkEveryday.MyUserContorls
             }
         }
 
+        public Color HexToColor(string hexColor)
+        {
+            //remove #
+            hexColor = hexColor.Replace("#", "");
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            int a = 255;
+
+            if (hexColor.Length == 8)
+            {
+                //#AARRGGBB
+                a = int.Parse(hexColor.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+                r = int.Parse(hexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+                g = int.Parse(hexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+                b = int.Parse(hexColor.Substring(6, 2), NumberStyles.AllowHexSpecifier);
+            }
+            else if (hexColor.Length == 6)
+            {
+                //#RRGGBB
+                r = int.Parse(hexColor.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+                g = int.Parse(hexColor.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+                b = int.Parse(hexColor.Substring(4, 2), NumberStyles.AllowHexSpecifier);
+            }
+            return Color.FromArgb(Convert.ToByte(a), Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b)); 
+        }
+
+
         private void CreateStackpanel(string name, string tech)
         {
             StackPanel sp = new StackPanel();
@@ -81,37 +113,61 @@ namespace HappyWorkEveryday.MyUserContorls
 
 
 
-            Button btn = new Button();
+            Image btn = new Image();
             btn.Tag = tag.ToString();
-            btn.Content = "Remove";
-            btn.Click += btn_Click;
+            btn.Source = new BitmapImage(new Uri("ms-appx:///Image/minus_button.png"));
+            btn.Tapped += btn_Click;
+            btn.Width = 30;
+            btn.Height = 30;
             btn.HorizontalAlignment = HorizontalAlignment.Right;
 
 
-
+            Border test = new Border();
+            test.CornerRadius =new CornerRadius(10);
+            test.BorderThickness = new Thickness(2);
+            test.BorderBrush = new SolidColorBrush(HexToColor("#FF0A9DE2"));
+            test.Background = new SolidColorBrush(HexToColor("#FFB8F2FF"));
             TextBlock tb1 = new TextBlock();
+            test.Width = 150;
+            
             tb1.Name = "txb1" + tag;
             //this.RegisterName("txb1" + tag, tb1);
             tb1.Text = name;
             tb1.HorizontalAlignment = HorizontalAlignment.Left;
+            test.Child = tb1;
+            TextBlock testbx = new TextBlock();
+            testbx.Width = 150;
+            test.Height = 30;
 
+            Border test1 = new Border();
+            test1.CornerRadius = new CornerRadius(10);
+            test1.BorderThickness = new Thickness(2);
+            test1.BorderBrush = new SolidColorBrush(HexToColor("#FF0A9DE2"));
+            test1.Background = new SolidColorBrush(HexToColor("#FFB8F2FF"));
+            test1.Width = 150;
+            test1.Height = 30;
             TextBlock tb2 = new TextBlock();
             tb2.Name = "txb2" + tag;
             //this.RegisterName("txb2" + tag, tb2);
             tb2.Text = tech;
-            tb2.HorizontalAlignment = HorizontalAlignment.Center;
+            tb2.HorizontalAlignment = HorizontalAlignment.Left;
 
-            sp.Children.Add(tb1);
-            sp.Children.Add(tb2);
+            test1.Child = tb2;
+            TextBlock testbx1 = new TextBlock();
+            testbx1.Width = 100;
+            sp.Children.Add(test);
+            sp.Children.Add(testbx);
+            sp.Children.Add(testbx1);
+            sp.Children.Add(test1);
             sp.Children.Add(btn);
-
+            sp.Height = 35;
             stackpanel.Children.Add(sp);
             tag++;
         }
 
         void btn_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
+            Image btn = sender as Image;
             string _tag = btn.Tag.ToString();
             StackPanel stp = stackpanel.FindName("stp" + _tag) as StackPanel;
             TextBlock tb1 = stackpanel.FindName("txb1" + _tag) as TextBlock;
@@ -142,12 +198,16 @@ namespace HappyWorkEveryday.MyUserContorls
                         _backup.Add(key, i);
                     }
                 }
+               
+                  
+                
             }
+          
         }
 
         private async void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            MyTextBlock.Visibility = Visibility.Visible;
             if (cbalias.SelectedItem == null || cbtechnology.SelectedItem == null)
             {
                 await new MessageDialog("Alias or Technology UnSelected").ShowAsync();

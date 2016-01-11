@@ -428,7 +428,7 @@
                     <StackPanel Orientation="Horizontal" Width="500">
                         <TextBlock Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <MyControls:MyBackUp ></MyControls:MyBackUp>
+                            <MyControls:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControls:TextboxImageUserControl>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="300">
@@ -439,7 +439,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Duration (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
-                        <TextBox Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="130" Height="30"></TextBox>
+                        <TextBox Foreground="Red" Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="130" Height="30"></TextBox>
                     </StackPanel>
                 </StackPanel>
             </Border>
