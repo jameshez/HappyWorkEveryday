@@ -29,11 +29,19 @@ namespace HappyWorkEveryday.Pages
         public AskForLeavePage()
         {
             this.InitializeComponent();
-            List<string> test = new List<string>() { "test1", "tersty" };
-            List<string> test1 = new List<string>() { "test1", "tersty" };
-            uc.alias = test;
-            uc.technology = test1;
+            this.Loaded += AskForLeavePage_Loaded;
+            
         }
-        
+
+        private async void AskForLeavePage_Loaded(object sender, RoutedEventArgs e)
+        {
+            var s =await HappyWorkEveryday.Helper.ServiceFactory.MSDNUser_Client.FindAllAsync();
+            List<string> ls = new List<string>();
+            foreach (var user in s)
+            {
+                ls.Add(user.Alias);
+            }
+            uc.alias = ls;
+        }
     }
 }
