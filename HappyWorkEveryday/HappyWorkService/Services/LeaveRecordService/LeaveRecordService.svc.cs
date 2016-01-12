@@ -20,28 +20,32 @@ namespace HappyWorkService.Services.LeaveRecordService
             {
                 try
                 {
-                    var result = (from user in DBRepository<Tb_User>.db.Tb_User.ToList()
-                                  join detail in DBRepository<Tb_Detail>.db.Tb_Detail.ToList() on user.UserId equals detail.UserId
-                                  select new LeaveRecordPageModel()
-                                  {
-                                      Alias = user.Alias,
-                                      EnglishName = user.EnglishName,
-                                      StartTime = detail.StartTime.ToString(),
-                                      EndTime = detail.EndTime.ToString(),
-                                      TotalTime = detail.TotalTime,
-                                      LeaveType = detail.LeaveType,
-                                      IsApproved = detail.IsApproved == 0 ? "No" : "Yes"
+                    using (AttendanceEntities db = new AttendanceEntities())
+                    {
+                        var result = (from user in db.Tb_User.ToList()
+                                      join detail in db.Tb_Detail.ToList() on user.UserId equals detail.UserId
+                                      select new LeaveRecordPageModel()
+                                      {
+                                          Alias = user.Alias,
+                                          EnglishName = user.EnglishName,
+                                          StartTime = detail.StartTime.ToString(),
+                                          EndTime = detail.EndTime.ToString(),
+                                          TotalTime = detail.TotalTime,
+                                          LeaveType = detail.LeaveType,
+                                          IsApproved = detail.IsApproved == 0 ? "No" : "Yes"
 
-                }).ToList();
-                return result;
-            }
+                                      }).ToList();
+                        return result;
+                    }
+
+                }
                 catch (Exception ex)
-            {
+                {
 
-                throw;
+                    throw;
+                }
+
             }
-
         }
     }
-}
 }
