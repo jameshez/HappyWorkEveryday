@@ -378,9 +378,12 @@
                         <Setter Target="HourLeavelStackPanel.(Grid.Column)" Value="0"></Setter>
                         <Setter Target="MyTimeFromTextBlock.Text" Value="From:"></Setter>
                         <Setter Target="HourTextBlock.Text" Value="Hours:"></Setter>
-                        <Setter Target="MyTimeFromTextBlock.Width" Value="55"></Setter>
-                        <Setter Target="ToTimeTextBlock.Width" Value="55"></Setter>
-                        <Setter Target="HourTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="MyTimeFromTextBlock.Width" Value="57"></Setter>
+                        <Setter Target="ToTimeTextBlock.Width" Value="57"></Setter>
+                        <Setter Target="HourTextBlock.Width" Value="57"></Setter>
+                        <Setter Target="LeaveTypeStackPanel.Orientation" Value="Vertical"></Setter>
+                        <Setter Target="MyRichEditBox.Width" Value="200"></Setter>
+                        <Setter Target="SubmitButton.Width" Value="200"></Setter>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
@@ -388,10 +391,7 @@
                         <AdaptiveTrigger  MinWindowWidth="700"></AdaptiveTrigger>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ForMySelfRadioButton.(Grid.Row)" Value="0"></Setter>
-                        <Setter Target="ForMySelfRadioButton.(Grid.Column)" Value="0"></Setter>
-                        <Setter Target="ForOthersRadioButton.(Grid.Row)" Value="0"></Setter>
-                        <Setter Target="ForOthersRadioButton.(Grid.Column)" Value="1"></Setter>
+                       
                         <Setter Target="FromDateStackPanel.(Grid.Row)" Value="0"></Setter>
                         <Setter Target="FromDateStackPanel.(Grid.Column)" Value="0"></Setter>
                         <Setter Target="ToDateStackPanel.(Grid.Row)" Value="1"></Setter>
@@ -410,9 +410,9 @@
                         <Setter Target="HourStackPanel.(Grid.Column)" Value="0"></Setter>
                         <Setter Target="MyTimeFromTextBlock.Text" Value="From:"></Setter>
                         <Setter Target="HourTextBlock.Text" Value="Hours:"></Setter>
-                        <Setter Target="MyTimeFromTextBlock.Width" Value="55"></Setter>
-                        <Setter Target="ToTimeTextBlock.Width" Value="55"></Setter>
-                        <Setter Target="HourTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="MyTimeFromTextBlock.Width" Value="57"></Setter>
+                        <Setter Target="ToTimeTextBlock.Width" Value="57"></Setter>
+                        <Setter Target="HourTextBlock.Width" Value="57"></Setter>
                     </VisualState.Setters>
                 </VisualState>
                 
@@ -421,6 +421,7 @@
                         <AdaptiveTrigger  MinWindowWidth="900"></AdaptiveTrigger>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
+                       
                         <Setter Target="FromDateStackPanel.(Grid.Row)" Value="0"></Setter>
                         <Setter Target="FromDateStackPanel.(Grid.Column)" Value="0"></Setter>
                         <Setter Target="ToDateStackPanel.(Grid.Row)" Value="0"></Setter>
@@ -440,6 +441,7 @@
                         <AdaptiveTrigger  MinWindowWidth="1300"></AdaptiveTrigger>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
+                       
                         <Setter Target="FromDateStackPanel.(Grid.Row)" Value="0"></Setter>
                         <Setter Target="FromDateStackPanel.(Grid.Column)" Value="0"></Setter>
                         <Setter Target="ToDateStackPanel.(Grid.Row)" Value="0"></Setter>
@@ -458,8 +460,8 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="40*"></RowDefinition>
-                <RowDefinition Height="400*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             
             <Border BorderThickness="0,0,0,1" BorderBrush="Black">
@@ -586,20 +588,25 @@
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black"  Grid.Row="4">
                 <StackPanel Orientation="Vertical" Grid.Row="4">
-                    <MyControls:MyBackUp x:Name="uc"></MyControls:MyBackUp>
+                   <MyControls:MyBackUp x:Name="uc"></MyControls:MyBackUp>
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="5">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Width="{Binding MyWidthProperty,Mode=TwoWay}">
                     <TextBlock Text="Leavel Type:" FontSize="21" Width="120" VerticalAlignment="Center"></TextBlock>
+             
+                <StackPanel Orientation="Horizontal"  Name="LeaveTypeStackPanel">
+                    
+  
                     <RadioButton Content="Flexible Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
                     <RadioButton Content="Sick Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
                     <RadioButton Content="Annual Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
                 </StackPanel>
+                </StackPanel>
             </Border>
             <StackPanel Orientation="Vertical"  Grid.Row="6">
                 <TextBlock Text="Reason:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
-                <RichEditBox BorderBrush="#FF0A9DE2" Height="100" Width="300" HorizontalAlignment="Left" Style="{StaticResource RichEditBoxStyle1}"/>
+                <RichEditBox Name="MyRichEditBox" BorderBrush="#FF0A9DE2" Height="100" Width="300" HorizontalAlignment="Left" Style="{StaticResource RichEditBoxStyle1}"/>
 
                 <Button Command="{Binding CloseCommand}" Name="SubmitButton" Content="Sumbit" Background="#FF79D8EE" FontSize="21" Style="{StaticResource ButtonStyle1}" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="300" Margin="0,25,0,0"></Button>
             </StackPanel>

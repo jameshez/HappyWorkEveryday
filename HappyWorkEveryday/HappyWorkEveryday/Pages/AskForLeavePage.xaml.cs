@@ -36,7 +36,13 @@ namespace HappyWorkEveryday.Pages
             uc.technology = test1;
             this.SizeChanged += AskForLeavePage_SizeChanged;
             this.DataContext = this;
+            this.Loaded += AskForLeavePage_Loaded;
             
+        }
+
+        private void AskForLeavePage_Loaded(object sender, RoutedEventArgs e)
+        {
+            MyWidthProperty = Window.Current.Bounds.Width;
         }
 
         private void AskForLeavePage_SizeChanged(object sender, SizeChangedEventArgs e)
