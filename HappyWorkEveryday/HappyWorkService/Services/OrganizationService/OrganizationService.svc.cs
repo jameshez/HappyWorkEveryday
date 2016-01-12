@@ -20,16 +20,20 @@ namespace HappyWorkService.Services.OrganizationService
             {
                 try
                 {
-                    var result = (from msdn in DBRepository<Tb_MSDNUser>.db.Tb_MSDNUser.ToList()
-                                  join team in DBRepository<Tb_TeamInfo>.db.Tb_TeamInfo.ToList() on msdn.TeamId equals team.Id
-                                  select new OrganizationPageModel()
-                                  {
-                                      Alias = msdn.Alias,
-                                      EnglishName = msdn.Name,
-                                      TeamName = team.TeamName,
-                                      TeamLeader = team.TeamName
-                                  }).ToList();
-                    return result;
+                    using (AttendanceEntities db = new AttendanceEntities())
+                    {
+                        var result = (from msdn in db.Tb_MSDNUser.ToList()
+                                      join team in db.Tb_TeamInfo.ToList() on msdn.TeamId equals team.Id
+                                      select new OrganizationPageModel()
+                                      {
+                                          Alias = msdn.Alias,
+                                          EnglishName = msdn.Name,
+                                          TeamName = team.TeamName,
+                                          TeamLeader = team.TeamName
+                                      }).ToList();
+                        return result;
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
