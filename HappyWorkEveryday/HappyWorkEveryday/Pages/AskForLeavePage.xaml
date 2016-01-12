@@ -348,17 +348,120 @@
         </Style>
     </Page.Resources>
     <Grid Background="#FF89E9FF">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MyTextBlock.Text" Value="Who will ask for leave:"></Setter>
+                        <Setter Target="ForMySelfRadioButton.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="ForMySelfRadioButton.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ForOthersRadioButton.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="ForOthersRadioButton.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="FromDateStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FromDateStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Row)" Value="2"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="MyDateFromTextBlock.Text" Value="From:"></Setter>
+                        <Setter Target="FlexibleLeaveTextBlock.Text" Value="FlexibleLeave(hours):"></Setter>
+                        <Setter Target="MyDateFromTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="ToDateTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="FromTimeStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FromTimeStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ToTimeStackPanel.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="ToTimeStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="HourStackPanel.(Grid.Row)" Value="2"></Setter>
+                        <Setter Target="HourLeavelStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="MyTimeFromTextBlock.Text" Value="From:"></Setter>
+                        <Setter Target="HourTextBlock.Text" Value="Hours:"></Setter>
+                        <Setter Target="MyTimeFromTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="ToTimeTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="HourTextBlock.Width" Value="55"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger  MinWindowWidth="700"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ForMySelfRadioButton.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="ForMySelfRadioButton.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ForOthersRadioButton.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="ForOthersRadioButton.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="FromDateStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FromDateStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Row)" Value="2"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="MyDateFromTextBlock.Text" Value="From:"></Setter>
+                        <Setter Target="FlexibleLeaveTextBlock.Text" Value="FlexibleLeave(hours):"></Setter>
+                        <Setter Target="MyDateFromTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="ToDateTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="FromTimeStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FromTimeStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ToTimeStackPanel.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="ToTimeStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="HourStackPanel.(Grid.Row)" Value="2"></Setter>
+                        <Setter Target="HourStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="MyTimeFromTextBlock.Text" Value="From:"></Setter>
+                        <Setter Target="HourTextBlock.Text" Value="Hours:"></Setter>
+                        <Setter Target="MyTimeFromTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="ToTimeTextBlock.Width" Value="55"></Setter>
+                        <Setter Target="HourTextBlock.Width" Value="55"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger  MinWindowWidth="900"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="FromDateStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FromDateStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="FromTimeStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FromTimeStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ToTimeStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="ToTimeStackPanel.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="HourStackPanel.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="HourStackPanel.(Grid.Column)" Value="0"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger  MinWindowWidth="1300"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="FromDateStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FromDateStackPanel.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="ToDateStackPanel.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="FlexibaleLeavelStackPanel.(Grid.Column)" Value="2"></Setter>
 
-        <Grid Margin="10,0,0,0">
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid Margin="10,0,0,0" Name="MyGrid">
             <Grid.RowDefinitions>
-                <RowDefinition Height="40*"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="40*"></RowDefinition>
-                <RowDefinition Height="40*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="40*"></RowDefinition>
                 <RowDefinition Height="400*"></RowDefinition>
             </Grid.RowDefinitions>
+            
             <Border BorderThickness="0,0,0,1" BorderBrush="Black">
                 <StackPanel Orientation="Horizontal" Grid.Row="0">
                     <Image Source="ms-appx:///Image/Warning-icon.png" Margin="0" Width="25" VerticalAlignment="Center"></Image>
@@ -370,77 +473,115 @@
                     <StackPanel Orientation="Vertical" Grid.Row="1">
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Please choose who will ask for leave:" FontSize="21"></TextBlock>
+                            <TextBlock Name="MyTextBlock" Text="Please choose who will ask for leave:" FontSize="21"></TextBlock>
                             <TextBlock Name="SelectedUserTextBox" FontSize="21" VerticalAlignment="Center" Text="{Binding SelectedAlias,Mode=TwoWay}" Width="559" Foreground="Red" Height="30"></TextBlock>
                         </StackPanel>
-                        <StackPanel Name="MyStackPanel" Orientation="Horizontal">
-                            <RadioButton Name="ForMySelfRadioButton" VerticalAlignment="Center" Content="For Myself" Width="300" FontSize="21">
-                                <i:Interaction.Behaviors>
-                                    <core:EventTriggerBehavior EventName="Checked">
-                                        <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForMySelfRadioButton}">
-                                        </core:InvokeCommandAction>
-                                    </core:EventTriggerBehavior>
-                                </i:Interaction.Behaviors>
-                            </RadioButton>
 
-                            <RadioButton Name="ForOthersRadioButton" Content="For Others" FontSize="21" VerticalAlignment="Center" FlyoutBase.AttachedFlyout="{StaticResource MyFlyout}">
-                                <i:Interaction.Behaviors>
-                                    <core:EventTriggerBehavior EventName="Checked">
-                                        <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForOthersRadioButton}">
-                                        </core:InvokeCommandAction>
-                                    </core:EventTriggerBehavior>
-                                </i:Interaction.Behaviors>
-                            </RadioButton>
-                        </StackPanel>
+                            <StackPanel  Name="MyStackPanel" Orientation="Horizontal">
 
+                            <Grid Width="{Binding MyWidthProperty,Mode=TwoWay}">
+                                    <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2.1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2.3*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                    <RadioButton Grid.Column="0"  Name="ForMySelfRadioButton" VerticalAlignment="Center" Content="For Myself"  FontSize="21">
+                                        <i:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="Checked">
+                                                <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForMySelfRadioButton}">
+                                                </core:InvokeCommandAction>
+                                            </core:EventTriggerBehavior>
+                                        </i:Interaction.Behaviors>
+                                    </RadioButton>
+
+
+                                    <RadioButton Grid.Column="1" Name="ForOthersRadioButton" Content="For Others" FontSize="21" VerticalAlignment="Center" FlyoutBase.AttachedFlyout="{StaticResource MyFlyout}">
+                                        <i:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="Checked">
+                                                <core:InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding ElementName=ForOthersRadioButton}">
+                                                </core:InvokeCommandAction>
+                                            </core:EventTriggerBehavior>
+                                        </i:Interaction.Behaviors>
+                                    </RadioButton>
+                                </Grid>
+                            </StackPanel>
+                 
                     </StackPanel>
                 </Border>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black"  Grid.Row="2">
 
-                <StackPanel Grid.Row="2" Orientation="Horizontal" Name="FromDateStackPanel">
-                    <StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Grid Width="{Binding MyWidthProperty,Mode=TwoWay}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.1*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2.3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                    <StackPanel Name="FromDateStackPanel" Orientation="Horizontal" Grid.Column="0">
+                        <TextBlock Name="MyDateFromTextBlock" Text="Date break from:" FontSize="21" VerticalAlignment="Center"/>
                         <StackPanel Orientation="Horizontal">
-                            <MyControls:TextboxImageUserControl  x:Name="test" MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControls:TextboxImageUserControl>
+                            <MyControls:TextboxImageUserControl  x:Name="test" MyWidth="110" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControls:TextboxImageUserControl>
                             <!--<TextBox Style="{StaticResource TextBoxStyle1}" BorderThickness="2" BorderBrush="#FF0A9DE2" Name="FromDateTextBox" Width="130" Height="30"/>
                             <Image Name="FromDateImage" Tapped="FromDateImage_Tapped" Width="30" Height="30" Source="ms-appx:///Image/calendar-icon.png"/>-->
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal" Width="300" Name="ToDateStackPanel">
-                        <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
+                        <StackPanel  Orientation="Horizontal" Grid.Column="1" Name="ToDateStackPanel">
+                        <TextBlock Name="ToDateTextBlock" Text="To:" FontSize="21" VerticalAlignment="Center"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <MyControls:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControls:TextboxImageUserControl>
+                            <MyControls:TextboxImageUserControl MyWidth="110" MyImageSoruce="ms-appx:///Image/calendar-icon.png"></MyControls:TextboxImageUserControl>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Available FlexibleLeave (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
+                    <StackPanel Name="FlexibaleLeavelStackPanel" Orientation="Horizontal" Grid.Column="2">
+                            <TextBlock Name="FlexibleLeaveTextBlock" Text="Available FlexibleLeave (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                         <StackPanel Orientation="Horizontal" BorderThickness="2">
                             <TextBlock Text="{Binding SelectedUserRecord.OverTime,Mode=TwoWay}" Width="100" Height="30" FontSize="21" VerticalAlignment="Center" Foreground="Red"></TextBlock>
                         </StackPanel>
                     </StackPanel>
+                    </Grid>
                 </StackPanel>
-
+                
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black"  Grid.Row="3">
                 <StackPanel Grid.Row="3" Orientation="Horizontal">
-                    <StackPanel Orientation="Horizontal" Width="500">
-                        <TextBlock Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal">
-                            <MyControls:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControls:TextboxImageUserControl>
+                    <Grid Width="{Binding MyWidthProperty,Mode=TwoWay}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.1*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2.3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Name="FromTimeStackPanel" Grid.Column="0" Orientation="Horizontal">
+                            <TextBlock Name="MyTimeFromTextBlock" Text="Time break from:" FontSize="21" VerticalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal">
+                                <MyControls:TextboxImageUserControl HorizontalAlignment="Left" MyWidth="110" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControls:TextboxImageUserControl>
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="300">
-                        <TextBlock Text="To:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
-                        <StackPanel Orientation="Horizontal">
-                            <MyControls:TextboxImageUserControl MyWidth="130" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControls:TextboxImageUserControl>
+                        <StackPanel Name="ToTimeStackPanel" Grid.Column="1" Orientation="Horizontal" Width="300">
+                            <TextBlock Name="ToTimeTextBlock" Text="To:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <MyControls:TextboxImageUserControl MyWidth="110" MyImageSoruce="ms-appx:///Image/Time-icon.png"></MyControls:TextboxImageUserControl>
+                            </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Duration (hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
-                        <TextBox Foreground="Red" Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="130" Height="30"></TextBox>
-                    </StackPanel>
+                        <StackPanel Name="HourStackPanel" Grid.Column="2" Orientation="Horizontal">
+                            <TextBlock Name="HourTextBlock" Text="Duration (Hours):" FontSize="21" VerticalAlignment="Center" ></TextBlock>
+                            <TextBox Foreground="Red" Style="{StaticResource TextBoxStyle1}" BorderBrush="#FF0A9DE2" Width="110" Height="30"></TextBox>
+                        </StackPanel>
+                    </Grid>
                 </StackPanel>
             </Border>
             <Border BorderThickness="0,0,0,1" BorderBrush="Black"  Grid.Row="4">
@@ -462,6 +603,9 @@
 
                 <Button Command="{Binding CloseCommand}" Name="SubmitButton" Content="Sumbit" Background="#FF79D8EE" FontSize="21" Style="{StaticResource ButtonStyle1}" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="45" Width="300" Margin="0,25,0,0"></Button>
             </StackPanel>
+
+          
+
         </Grid>
     </Grid>
 </Page>

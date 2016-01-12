@@ -236,7 +236,7 @@ namespace HappyWorkEveryday.ViewModel
         {
             //usergroup = await client.FindAllAsync();
 
-            _user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));
+            //_user_alias_group = new ObservableCollection<string>((await MSDNUser_Client.FindAllAsync()).Select(m => m.Alias));
 
         }
 

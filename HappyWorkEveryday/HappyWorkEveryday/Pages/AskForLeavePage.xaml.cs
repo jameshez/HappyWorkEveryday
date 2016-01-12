@@ -1,6 +1,7 @@
 ﻿using HappyWorkEveryday.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace HappyWorkEveryday.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AskForLeavePage : Page
+    public sealed partial class AskForLeavePage : Page, INotifyPropertyChanged
     {
         public AskForLeavePage()
         {
@@ -33,7 +34,40 @@ namespace HappyWorkEveryday.Pages
             List<string> test1 = new List<string>() { "test1", "tersty" };
             uc.alias = test;
             uc.technology = test1;
+            this.SizeChanged += AskForLeavePage_SizeChanged;
+            this.DataContext = this;
+            
         }
-        
+
+        private void AskForLeavePage_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            MyWidthProperty = Window.Current.Bounds.Width;
+
+        }
+
+      
+
+        public double MyWidthProperty
+        {
+            get { return (double)GetValue(MyWidthPropertyProperty); }
+            set { SetValue(MyWidthPropertyProperty, value);
+                NotifyPropertyChanged("MyWidthProperty");
+
+            }
+        }
+
+        // Using a DependencyProperty as the backing store for MyWidthProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MyWidthPropertyProperty =
+            DependencyProperty.Register("MyWidthProperty", typeof(double), typeof(AskForLeavePage), new PropertyMetadata(0));
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }

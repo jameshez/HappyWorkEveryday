@@ -74,7 +74,7 @@
                     </Grid>
                 </SplitView.Pane>
                 <SplitView.Content>
-                    <Frame x:Name="frame" Background="Transparent">
+                    <Frame x:Name="frame"  Background="Transparent">
                     
                 </Frame>
                 </SplitView.Content>
