@@ -16,6 +16,7 @@ using HappyWorkEveryday.Helper;
 using System.Diagnostics;
 using Windows.UI;
 using HappyWorkEveryday.ViewModel;
+using Windows.UI.ViewManagement;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -45,6 +46,8 @@ namespace HappyWorkEveryday
             this.DataContext = new MainpageViewModel(Root);
             ///testing
             //test();
+           
+
         }
 
         public Grid Root

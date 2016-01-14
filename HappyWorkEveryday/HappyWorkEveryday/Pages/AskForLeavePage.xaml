@@ -594,8 +594,8 @@
             <Border BorderThickness="0,0,0,1" BorderBrush="Black" Grid.Row="5">
                 <StackPanel Orientation="Horizontal" Width="{Binding MyWidthProperty,Mode=TwoWay}">
                     <TextBlock Text="Leavel Type:" FontSize="21" Width="120" VerticalAlignment="Center"></TextBlock>
-             
-                <StackPanel Orientation="Horizontal"  Name="LeaveTypeStackPanel">
+
+                    <StackPanel Width="{Binding MyWidthProperty,Mode=TwoWay}" Orientation="Horizontal"  Name="LeaveTypeStackPanel">
                     
   
                     <RadioButton Content="Flexible Leave" VerticalAlignment="Center" FontSize="21" Width="200"></RadioButton>
@@ -604,7 +604,7 @@
                 </StackPanel>
                 </StackPanel>
             </Border>
-            <StackPanel Orientation="Vertical"  Grid.Row="6">
+            <StackPanel Width="{Binding MyWidthProperty,Mode=TwoWay}" Orientation="Vertical"  Grid.Row="6">
                 <TextBlock Text="Reason:" FontSize="21" VerticalAlignment="Center" ></TextBlock>
                 <RichEditBox Name="MyRichEditBox" BorderBrush="#FF0A9DE2" Height="100" Width="300" HorizontalAlignment="Left" Style="{StaticResource RichEditBoxStyle1}"/>
 

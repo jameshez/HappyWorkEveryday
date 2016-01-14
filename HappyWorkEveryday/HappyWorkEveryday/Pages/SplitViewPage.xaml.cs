@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -37,12 +38,14 @@ namespace HappyWorkEveryday.Pages
             this.InitializeComponent();
             SpltViewItemTestList = new ObservableCollection<SpltViewItemTest>();
             MyListViewPanel.ItemsSource = SpltViewItemTestList;
-          
 
+            
 
         }
 
        
+          
+        
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -51,9 +54,11 @@ namespace HappyWorkEveryday.Pages
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE11A", Text = "QueryLeavel" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE90B", Text = "LeavelRecords" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE710", Text = "Organization" });
+            //ApplicationView.PreferredLaunchViewSize = new Size { Height = 930, Width = 550 };
+            //ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+            //MyListViewPanel.SelectedIndex = Convert.ToInt32(e.Parameter);
+        
 
-            MyListViewPanel.SelectedIndex = Convert.ToInt32(e.Parameter);
-            
 
         }
 
