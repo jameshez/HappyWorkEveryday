@@ -38,14 +38,16 @@ namespace HappyWorkEveryday.Pages
             this.InitializeComponent();
             SpltViewItemTestList = new ObservableCollection<SpltViewItemTest>();
             MyListViewPanel.ItemsSource = SpltViewItemTestList;
-
-            
+            this.Loaded += SplitViewPage_Loaded;
 
         }
 
-       
-          
-        
+        private void SplitViewPage_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            frame.Navigate(typeof(Pages.AskForLeavePage));
+            MyListViewPanel.SelectedIndex = 0;
+        }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
