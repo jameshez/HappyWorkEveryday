@@ -274,7 +274,7 @@
                                                     </DataTemplate>
                                                 </ListView.ItemTemplate>
                                             </ListView>
-                                            <myControls:PageControl></myControls:PageControl>
+                                            <myControls:PageControl Width="170" HorizontalAlignment="Right" itemPerPage="1"></myControls:PageControl>
                                         </StackPanel>
 
                                     </Border>

@@ -38,16 +38,11 @@ namespace HappyWorkEveryday.Pages
             this.InitializeComponent();
             SpltViewItemTestList = new ObservableCollection<SpltViewItemTest>();
             MyListViewPanel.ItemsSource = SpltViewItemTestList;
-            this.Loaded += SplitViewPage_Loaded;
+      
 
         }
 
-        private void SplitViewPage_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            frame.Navigate(typeof(Pages.AskForLeavePage));
-            MyListViewPanel.SelectedIndex = 0;
-        }
+ 
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -56,9 +51,8 @@ namespace HappyWorkEveryday.Pages
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE11A", Text = "QueryLeavel" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE90B", Text = "LeavelRecords" });
             SpltViewItemTestList.Add(new SpltViewItemTest { Button = "\uE710", Text = "Organization" });
-            //ApplicationView.PreferredLaunchViewSize = new Size { Height = 930, Width = 550 };
-            //ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
-            //MyListViewPanel.SelectedIndex = Convert.ToInt32(e.Parameter);
+           
+            MyListViewPanel.SelectedIndex = Convert.ToInt32(e.Parameter);
         
 
 
@@ -136,5 +130,7 @@ namespace HappyWorkEveryday.Pages
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+      
     }
 }

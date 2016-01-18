@@ -19,10 +19,29 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Content="First" Click="btnFirst_Click" Grid.Column="0"></Button>
-                <Button Content="Previous" Click="btnPrev_Click" Grid.Column="1"></Button>
-                <Button Content="Next" Click="btnNext_Click" Grid.Column="2"></Button>
-                <Button Content="Last" Click="btnLast_Click" Grid.Column="3"></Button>
+                <Button BorderBrush="Transparent" Background="Transparent" Click="btnFirst_Click" Foreground="Blue"  Grid.Column="0">
+                    <Button.Content>
+                        <TextBlock Text="&#xE7A7;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+
+                    </Button.Content>
+                </Button>
+                <Button BorderBrush="Transparent" Background="Transparent" Click="btnPrev_Click" Foreground="Blue" Grid.Column="1">
+                    <Button.Content>
+                        <TextBlock Text="&#xE0A6;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+                    </Button.Content>
+
+                </Button>
+                <Button BorderBrush="Transparent" Background="Transparent"  Click="btnNext_Click" Foreground="Blue" Grid.Column="2">
+                    <Button.Content>
+                        <TextBlock Text="&#xE0AB;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderBrush="Transparent" Background="Transparent" Click="btnLast_Click" Foreground="Blue" Grid.Column="3">
+                    <Button.Content>
+                        <TextBlock Text="&#xE7A6;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+        
+                    </Button.Content>
+                </Button>
                 <StackPanel Grid.Column="4" Orientation="Horizontal">
                     <TextBlock x:Name="tbCurrentPage" HorizontalAlignment="Left"></TextBlock>
                     <TextBlock Text="/" ></TextBlock>
