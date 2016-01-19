@@ -19,33 +19,33 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button BorderBrush="Transparent" Background="Transparent" Click="btnFirst_Click" Foreground="Blue"  Grid.Column="0">
+                <Button BorderBrush="Transparent" Background="Transparent" Click="btnFirst_Click" Foreground="Blue"  Grid.Column="0" ToolTipService.ToolTip="First" ToolTipService.Placement="Bottom">
                     <Button.Content>
-                        <TextBlock Text="&#xE7A7;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+                        <TextBlock Text="&#xE892;" FontFamily="Segoe MDL2 Assets" FontSize="13"/>
 
                     </Button.Content>
                 </Button>
-                <Button BorderBrush="Transparent" Background="Transparent" Click="btnPrev_Click" Foreground="Blue" Grid.Column="1">
+                <Button BorderBrush="Transparent" Background="Transparent" Click="btnPrev_Click" Foreground="Blue" Grid.Column="1" ToolTipService.ToolTip="Previous" ToolTipService.Placement="Bottom">
                     <Button.Content>
-                        <TextBlock Text="&#xE0A6;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+                        <TextBlock Text="&#xE0A6;" FontFamily="Segoe MDL2 Assets" FontSize="13"/>
                     </Button.Content>
 
                 </Button>
-                <Button BorderBrush="Transparent" Background="Transparent"  Click="btnNext_Click" Foreground="Blue" Grid.Column="2">
+                <Button BorderBrush="Transparent" Background="Transparent"  Click="btnNext_Click" Foreground="Blue" Grid.Column="2" ToolTipService.ToolTip="Next" ToolTipService.Placement="Bottom">
                     <Button.Content>
-                        <TextBlock Text="&#xE0AB;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+                        <TextBlock Text="&#xE0AB;" FontFamily="Segoe MDL2 Assets" FontSize="13"/>
                     </Button.Content>
                 </Button>
-                <Button BorderBrush="Transparent" Background="Transparent" Click="btnLast_Click" Foreground="Blue" Grid.Column="3">
+                <Button BorderBrush="Transparent" Background="Transparent" Click="btnLast_Click" Foreground="Blue" Grid.Column="3" ToolTipService.ToolTip="Last" ToolTipService.Placement="Bottom">
                     <Button.Content>
-                        <TextBlock Text="&#xE7A6;" FontFamily="Segoe MDL2 Assets" FontSize="15"/>
+                        <TextBlock Text="&#xE893;" FontFamily="Segoe MDL2 Assets" FontSize="13"/>
         
                     </Button.Content>
                 </Button>
                 <StackPanel Grid.Column="4" Orientation="Horizontal">
-                    <TextBlock x:Name="tbCurrentPage" HorizontalAlignment="Left"></TextBlock>
-                    <TextBlock Text="/" ></TextBlock>
-                    <TextBlock x:Name="tbTotalPage"  HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock x:Name="tbCurrentPage" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Blue"></TextBlock>
+                    <TextBlock Text="/" VerticalAlignment="Center" ></TextBlock>
+                    <TextBlock x:Name="tbTotalPage"  HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Red"></TextBlock>
                 </StackPanel>
             </Grid>
         </StackPanel>
