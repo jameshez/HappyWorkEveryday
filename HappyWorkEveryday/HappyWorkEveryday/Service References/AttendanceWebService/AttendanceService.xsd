@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.168.172.218:8095/AttendanceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AttendanceWCF" />
+  <xs:element name="GetAllMsdnUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMsdnUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AttendanceWCF" minOccurs="0" name="GetAllMsdnUsersResult" nillable="true" type="q1:ArrayOfMsdnUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLeaveRecoder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AttendanceWCF" minOccurs="0" name="type" type="q2:SearchType" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLeaveRecoderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AttendanceWCF" minOccurs="0" name="GetAllLeaveRecoderResult" nillable="true" type="q3:ArrayOfDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AttendanceWCF" minOccurs="0" name="type" type="q4:SearchType" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AttendanceWCF" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q5:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

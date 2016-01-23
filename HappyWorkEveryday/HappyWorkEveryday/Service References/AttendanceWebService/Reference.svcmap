@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fd46da1c-c240-482f-b0a1-eb71d6b4e5ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.168.172.218:8095/AttendanceService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AttendanceService.xsd" MetadataType="Schema" ID="44f14686-a9e4-4ef5-9625-9ce2aca2bf83" SourceId="1" SourceUrl="http://10.168.172.218:8095/AttendanceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AttendanceService1.xsd" MetadataType="Schema" ID="a97f27e5-0c16-4f6f-b775-cee466125990" SourceId="1" SourceUrl="http://10.168.172.218:8095/AttendanceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AttendanceService.wsdl" MetadataType="Wsdl" ID="519305e1-9642-42ce-ad6b-178aaeeeb544" SourceId="1" SourceUrl="http://10.168.172.218:8095/AttendanceService.svc?wsdl" />
+    <MetadataFile FileName="AttendanceService2.xsd" MetadataType="Schema" ID="b6ac4904-992c-4f5e-854e-cf30273be242" SourceId="1" SourceUrl="http://10.168.172.218:8095/AttendanceService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

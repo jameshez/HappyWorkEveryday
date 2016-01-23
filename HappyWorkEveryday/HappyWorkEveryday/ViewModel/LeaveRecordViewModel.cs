@@ -15,36 +15,33 @@ namespace HappyWorkEveryday.ViewModel
 {
     public class LeaveRecordViewModel : ViewModelBase
     {
+        AttendanceWebService.AttendanceServiceClient client = new AttendanceWebService.AttendanceServiceClient();
         public LeaveRecordViewModel()
         {
-            //initData();
+            initData();
 
             SearchCommand = new RelayCommand<string>((alias) =>
             {
-
-                var m = new ObservableCollection<LeaveRecordPageModel>( 
-                        from r in _SearchableLeaveRecords
-                        where (r.Alias.ToUpper().Contains(alias.ToUpper()) || r.EnglishName.ToUpper().Contains(alias.ToUpper()))
-                        select r);
-
-                _LeaveRecords = m;
-                RaisePropertyChanged("LeaveRecords");
-            });
-
-
-            LeaveTypeChangeCommand = new RelayCommand<string>((leavetype)=>
-            {
-                //leaveType = leavetype;
-                var result = new ObservableCollection<LeaveRecordPageModel>(
-                    from r in _LeaveRecords
-                    where r.LeaveType.Equals(leavetype)
-                    select r);
+                if (SelectedLeaveType != "All Type")
+                {
+                    var ret = from r in _SearchableLeaveRecords
+                              where (r.Alias.ToUpper().Contains(alias.ToUpper()) || r.EnglishName.ToUpper().Contains(alias.ToUpper())) && r.LeaveType == SelectedLeaveType
+                              select r;
+                    LeaveRecords = new ObservableCollection<object>(ret);
+                }
+                else
+                {
+                    var ret = from r in _SearchableLeaveRecords
+                              where r.Alias.ToUpper().Contains(alias.ToUpper()) || r.EnglishName.ToUpper().Contains(alias.ToUpper())
+                              select r;
+                    LeaveRecords = new ObservableCollection<object>(ret);
+                }
                 RaisePropertyChanged("LeaveRecords");
             });
         }
 
-        private string _leaveType;
-        public string leaveType
+        private ObservableCollection<String> _leaveType = new ObservableCollection<string>() { "All Type", "Sick Leave", "Annual Leave", "Flexible Leave" };
+        public ObservableCollection<string> leaveType
         {
             get
             {
@@ -52,9 +49,19 @@ namespace HappyWorkEveryday.ViewModel
             }
             set
             {
-                _leaveType = value.ToString();
+                _leaveType = value;
+                RaisePropertyChanged("leaveType");
             }
         }
+
+        private string _SelectedLeaveType = "All Type";
+
+        public string SelectedLeaveType
+        {
+            get { return _SelectedLeaveType; }
+            set { _SelectedLeaveType = value; RaisePropertyChanged("SelectedLeaveType"); }
+        }
+
 
         public RelayCommand<string> SearchCommand
         {
@@ -71,31 +78,43 @@ namespace HappyWorkEveryday.ViewModel
         {
             try
             {
-                _LeaveRecords = await ServiceFactory.Detail.FindAllLeaveRecordsAsync();
-                _SearchableLeaveRecords = _LeaveRecords;
+                var ret = await client.GetAllLeaveRecoderAsync(AttendanceWebService.SearchType.All, "");
+                ObservableCollection<object> cc = new ObservableCollection<object>(ret);
+                LeaveRecords = cc;
+                _SearchableLeaveRecords = ret;
             }
             catch (Exception e)
             {
                 Logger.WriteLogInfo(false, e);
-
-                _LeaveRecords = TestDataGenerator.Generate<LeaveRecordPageModel>(10);
-                _SearchableLeaveRecords = _LeaveRecords;
             }
-
             RaisePropertyChanged("LeaveRecords");
         }
 
-        private ObservableCollection<LeaveRecordPageModel> _SearchableLeaveRecords;
-        private ObservableCollection<LeaveRecordPageModel> _LeaveRecords;
-        public ObservableCollection<LeaveRecordPageModel> LeaveRecords
+        private ObservableCollection<AttendanceWebService.Detail> _SearchableLeaveRecords;
+        private ObservableCollection<object> _LeaveRecords;
+        public ObservableCollection<object> LeaveRecords
         {
-            get
+            get { return _LeaveRecords; }
+            set
             {
-                if (_LeaveRecords == null)
-                {
-                    initData();
-                }
-                return _LeaveRecords;
+                _LeaveRecords = value;
+                RaisePropertyChanged("LeaveRecords");
+            }
+        }
+
+
+
+
+
+        private ObservableCollection<object> _Itemsource;
+
+        public ObservableCollection<object> Itemsource
+        {
+            get { return _Itemsource; }
+            set
+            {
+                _Itemsource = value;
+                RaisePropertyChanged("Itemsource");
             }
         }
     }

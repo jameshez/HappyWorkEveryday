@@ -20,7 +20,7 @@ using Windows.UI.Xaml.Navigation;
 namespace HappyWorkEveryday.MyUserContorls
 {
     public delegate void ItemSourceChangedEventHandler(SourceChangedEventArges e);
-    public sealed partial class PageControl : UserControl,INotifyPropertyChanged
+    public sealed partial class PageControl : UserControl
     {
         public PageControl()
         {
@@ -33,15 +33,19 @@ namespace HappyWorkEveryday.MyUserContorls
             set
             {
                 SetValue(OriginalItemSourceProperty, value);
-                RaisedPropertyChanged("OriginalItemSource");
+
             }
         }
 
         // Using a DependencyProperty as the backing store for OriginalItemSource.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty OriginalItemSourceProperty =
-            DependencyProperty.Register("OriginalItemSource", typeof(ObservableCollection<object>), typeof(PageControl), new PropertyMetadata(new ObservableCollection<object>()));
+            DependencyProperty.Register("OriginalItemSource", typeof(ObservableCollection<object>), typeof(PageControl), new PropertyMetadata(new ObservableCollection<object>(), OnOriginalSourceChanged));
 
-
+        private static void OnOriginalSourceChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
+        {
+            ((PageControl)o).Filter();
+            ((PageControl)o).ShowCurrentPageIndex();
+        }
 
 
         public ObservableCollection<object> ItemSource
@@ -50,7 +54,7 @@ namespace HappyWorkEveryday.MyUserContorls
             set
             {
                 SetValue(ItemSourceProperty, value);
-                RaisedPropertyChanged("ItemSource");
+                
             }
         }
 
@@ -67,7 +71,7 @@ namespace HappyWorkEveryday.MyUserContorls
             set
             {
                 SetValue(currentPageIndexProperty, value);
-                RaisedPropertyChanged("currentPageIndex");
+                
             }
         }
 
@@ -84,7 +88,7 @@ namespace HappyWorkEveryday.MyUserContorls
             set
             {
                 SetValue(itemPerPageProperty, value);
-                RaisedPropertyChanged("itemPerPage");
+                
             }
         }
 
@@ -98,7 +102,7 @@ namespace HappyWorkEveryday.MyUserContorls
 
         private int totalPage = 0;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         public event ItemSourceChangedEventHandler SourceChanged;
 
@@ -107,14 +111,6 @@ namespace HappyWorkEveryday.MyUserContorls
             if (SourceChanged != null)
             {
                 SourceChanged(e);
-            }
-        }
-
-        private void RaisedPropertyChanged(string PropertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
             }
         }
 
@@ -138,6 +134,19 @@ namespace HappyWorkEveryday.MyUserContorls
             SourceChangedEventArges e = new SourceChangedEventArges(filtered);
             HandleSourceChanged(e);
             this.ItemSource = filtered;
+
+
+            if (string.IsNullOrEmpty(tbTotalPage.Text)||tbTotalPage.Text == "0")
+            {
+                int itemscount = OriginalItemSource.Count;
+                totalPage = itemscount / itemPerPage;
+                if (itemscount % itemPerPage != 0)
+                {
+                    totalPage += 1;
+                }
+
+                this.tbTotalPage.Text = totalPage.ToString();
+            }
 
         }
 

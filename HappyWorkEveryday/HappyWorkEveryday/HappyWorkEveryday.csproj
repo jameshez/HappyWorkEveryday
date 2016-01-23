@@ -109,6 +109,25 @@
     <None Include="Service References\AdminServiceReference\HappyWorkEveryday.AdminServiceReference.Tb_AdminLog.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AttendanceWebService\AttendanceService.wsdl" />
+    <None Include="Service References\AttendanceWebService\AttendanceService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWebService\AttendanceService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWebService\AttendanceService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttendanceWebService\HappyWorkEveryday.AttendanceWebService.Detail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWebService\HappyWorkEveryday.AttendanceWebService.MsdnUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttendanceWebService\HappyWorkEveryday.AttendanceWebService.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DetailServiceReference\HappyWorkEveryday.DetailServiceReference.Tb_Detail.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -261,6 +280,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\AttendanceWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LeaveRecordService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -325,6 +349,12 @@
     <Content Include="Image\minus_button.png" />
     <Content Include="Image\Organization-icon.png" />
     <Content Include="Image\AskForLeavel-icon.png" />
+    <None Include="Service References\AttendanceWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AttendanceWebService\configuration.svcinfo" />
+    <None Include="Service References\AttendanceWebService\configuration91.svcinfo" />
     <None Include="Service References\OrganizationService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -461,6 +491,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AdminServiceReference\" />
+    <WCFMetadataStorage Include="Service References\AttendanceWebService\" />
     <WCFMetadataStorage Include="Service References\LeaveRecordService\" />
     <WCFMetadataStorage Include="Service References\OrganizationService\" />
     <WCFMetadataStorage Include="Service References\RoleServiceReference\" />

@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:vm="using:HappyWorkEveryday.ViewModel"
     xmlns:local="using:HappyWorkEveryday.Pages"
+    xmlns:myUserControls="using:HappyWorkEveryday.MyUserContorls"
     xmlns:helper="using:HappyWorkEveryday.Helper"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -430,17 +431,7 @@
                     <StackPanel Grid.Row="2" Orientation="Horizontal">
                         <TextBlock Text="Leave Type:" VerticalAlignment="Center" FontSize="21"></TextBlock>
                         <ComboBox BorderBrush="#FF0A9DE2"  VerticalAlignment="Center" Name="LeaveTypeComboBox" 
-                                  Margin="0,7,0,6" Width="143" Style="{StaticResource ComboBoxStyle1}"
-                                  SelectedValue="{Binding Source={StaticResource leaveType}, Path=leaveType, Mode=TwoWay}">
-                            <!--<i:Interaction.Behaviors>
-                                <core:EventTriggerBehavior EventName="SelectionChanged">
-                                    <core:InvokeCommandAction Command="{Binding LeaveTypeChangeCommand}" CommandParameter="{Binding ElementName=LeaveTypeComboBox, Path=SelectedValue}"/>
-                                </core:EventTriggerBehavior>
-                            </i:Interaction.Behaviors>-->
-                            <ComboBoxItem Content="All Type"></ComboBoxItem>
-                            <ComboBoxItem Content="Sick Leave"></ComboBoxItem>
-                            <ComboBoxItem Content="Annual Leave"></ComboBoxItem>
-                            <ComboBoxItem Content="Flexible Leave"></ComboBoxItem>
+                                  Margin="0,7,0,6" Width="143" Style="{StaticResource ComboBoxStyle1}" ItemsSource="{Binding leaveType}" SelectedItem="{Binding SelectedLeaveType,Mode=TwoWay}">
                         </ComboBox>
                     </StackPanel>
 
@@ -461,7 +452,7 @@
                             <TextBlock Width="100"  FontWeight="Black" HorizontalAlignment="Left" Text="IsApprovel"></TextBlock>
 
                         </StackPanel>
-                        <ListView ContainerContentChanging="MyListView_ContainerContentChanging" Name="MyListView" HorizontalAlignment="Left" Width="1000" ItemsSource="{Binding LeaveRecords}" Style="{StaticResource ListViewStyle1}">
+                        <ListView ContainerContentChanging="MyListView_ContainerContentChanging" Name="MyListView" HorizontalAlignment="Left" Width="1000" ItemsSource="{Binding Itemsource}" Style="{StaticResource ListViewStyle1}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -477,6 +468,9 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
+                        <myUserControls:PageControl OriginalItemSource="{Binding LeaveRecords,Mode=TwoWay}" ItemSource="{Binding Itemsource,Mode=TwoWay}" itemPerPage="1">
+
+                        </myUserControls:PageControl>
                     </StackPanel>
 
                 </Border>
