@@ -8,7 +8,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -37,20 +36,12 @@ namespace HappyWorkEveryday.Pages
             uc.technology = test1;
             this.SizeChanged += AskForLeavePage_SizeChanged;
             this.DataContext = this;
-            this.Loaded += AskForLeavePage_Loaded;
-
-
-        }
-
-        private void AskForLeavePage_Loaded(object sender, RoutedEventArgs e)
-        {
-            MyWidthProperty = Window.Current.Bounds.Width;
+            
         }
 
         private void AskForLeavePage_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             MyWidthProperty = Window.Current.Bounds.Width;
-           
 
         }
 
@@ -64,7 +55,7 @@ namespace HappyWorkEveryday.Pages
 
             }
         }
-
+        
         // Using a DependencyProperty as the backing store for MyWidthProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MyWidthPropertyProperty =
             DependencyProperty.Register("MyWidthProperty", typeof(double), typeof(AskForLeavePage), new PropertyMetadata(0));
