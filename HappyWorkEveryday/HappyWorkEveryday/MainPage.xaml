@@ -16,7 +16,7 @@
             <ImageBrush ImageSource="Image/bg11.PNG"></ImageBrush>
         </Grid.Background>
        
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="700">
+        <StackPanel  Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="750">
             <TextBlock FontWeight="Black" x:Name="textBlock" HorizontalAlignment="Center" FontSize="70" TextWrapping="Wrap" Text="MSDN" VerticalAlignment="Top" Height="97"/>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Width="500" Height="500">
                 <Grid Width="500" Height="500">
